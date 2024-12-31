@@ -7,19 +7,19 @@
     >
       <div class="grid place-items-center py-7 pb-2 md:py-8 md:pb-3">
         <TituloCategoria :categoria="categoria" />
-        <hr class="border-gray-400 border-b-2 rounded-xl w-10 mx-auto" />
+        <hr class="border-gray-400 border-b-2 rounded-xl w-16 mx-auto" />
       </div>
       <swiper
-        :slides-per-view="2"
+        :slides-per-view="2.2"
         :loop="true"
         :navigation="true"
         :modules="[Navigation]"
         class="swiper-container"
         :breakpoints="{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 5 },
+          640: { slidesPerView: 2.2 },
+          768: { slidesPerView: 3.3 },
+          1024: { slidesPerView: 4.4 },
+          1280: { slidesPerView: 5.5 },
         }"
       >
         <swiper-slide
@@ -30,7 +30,7 @@
           <CardProduto class="m-2 my-5 md:m-5" :produto="produto" />
         </swiper-slide>
       </swiper>
-      <div class="w-full flex justify-end px-5">
+      <div class="w-full flex justify-end">
         <RouterLink
           :to="`/${categoria}`"
           class="btn btn-secondary text-base-100"

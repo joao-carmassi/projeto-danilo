@@ -1,6 +1,4 @@
-import DadosProduto from "@/view/DadosProduto.vue";
 import HomePageCarroseu from "@/view/HomePageCarroseu.vue";
-import MostraGrupo from "@/view/MostraGrupo.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
@@ -10,11 +8,11 @@ const routes = [
   },
   {
     path: "/:id",
-    component: MostraGrupo,
+    component: import("@/view/MostraGrupo.vue"),
   },
   {
     path: "/produtos/:id",
-    component: DadosProduto,
+    component: import("@/view/DadosProduto.vue"),
   },
 ];
 

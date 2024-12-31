@@ -1,18 +1,33 @@
 <template>
-  <nav class="navbar shadow-sm h-20 px-5 py-3 bg-secondary">
-    <div class="flex-1 h-full">
-      <button class="h-full rounded-full border-2 border-primary p-2.5">
+  <nav
+    class="w-full flex items-center justify-between shadow-sm h-20 px-5 py-3 bg-secondary"
+  >
+    <div class="h-full">
+      <button
+        @click="vaiParaHome"
+        class="h-full rounded-full border-2 aspect-square border-primary p-2.5"
+      >
         <img class="h-full" src="/assets/logo.png" alt="" />
       </button>
     </div>
-    <div class="flex-none gap-2">
-      <div class="form-control">
-        <input
-          type="text"
-          placeholder="Search"
-          class="input input-bordered focus:border-base-100 bg-secondary border-base-100 placeholder:text-base-100 text-base-100 focus:outline-base-100 duration-0 w-24 md:w-auto"
-        />
-      </div>
+    <div class="gap-2 w-full grid place-items-center">
+      <label class="input w-44 md:w-96 input-bordered flex items-center gap-2">
+        <input type="text" class="grow" placeholder="Search" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="h-4 w-4 opacity-70"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </label>
+    </div>
+    <div class="flex justify-end">
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
           <div class="indicator">
@@ -57,5 +72,10 @@ import ValorProduto from "./ValorProduto.vue";
 
 export default {
   components: { ValorProduto },
+  methods: {
+    vaiParaHome() {
+      this.$router.push("/");
+    },
+  },
 };
 </script>

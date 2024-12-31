@@ -6,7 +6,6 @@
   <FooterMain />
 </template>
 
-<!-- TODO: Fazer iconi de site ir para pagina inicial -->
 <!-- TODO: Botao comprar manda cara pagina do produtor -->
 <!-- TODO: Fazer pagina produto -->
 <!-- TODO: Fazer pagina carrinho -->
