@@ -1,19 +1,21 @@
 <template>
   <main class="pt-20 bg-base-200">
     <section
-      class="px-10"
+      class="md:px-10"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
-      <div class="grid lg: place-items-center py-8 pb-3">
-        <h2 class="capitalize text-3xl">{{ categoria.replace(/-/g, " ") }}:</h2>
+      <div class="grid lg: place-items-center py-5 pb-0 md:py-8 md:pb-3">
+        <h2 class="capitalize text-2xl font-montSerrat md:text-3xl">
+          {{ categoria.replace(/-/g, " ") }}:
+        </h2>
       </div>
       <swiper
         :slides-per-view="2"
         :loop="true"
         :navigation="true"
         :modules="[Navigation]"
-        class="swiper-container p-10"
+        class="swiper-container"
         :breakpoints="{
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
@@ -26,7 +28,7 @@
           v-for="(produto, index) in produtos[categoria]"
           :key="index"
         >
-          <CardProduto class="m-5" :produto="produto" />
+          <CardProduto class="m-2 my-5 md:m-5" :produto="produto" />
         </swiper-slide>
       </swiper>
     </section>
@@ -78,5 +80,12 @@ export default {
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 0px;
   --swiper-navigation-color: var(--cor-secundaria);
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 }
 </style>

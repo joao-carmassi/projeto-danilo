@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-base-100 shadow-lg flex flex-col gap-2 rounded-lg p-4">
+  <div class="bg-base-100 shadow-lg flex flex-col gap-2 rounded-lg p-3 md:p-4">
     <div class="w-full aspect-square bg-base-300 rounded-md"></div>
     <h2 class="text-gray-600 limitaTexto">{{ produto.nome }}</h2>
     <p v-if="produto.valor" class="font-semibold text-secondary">
