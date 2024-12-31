@@ -1,9 +1,9 @@
 <template>
   <footer
-    class="footer footer-center bg-base-100 text-base-content rounded p-10"
+    class="footer footer-center bg-base-200 text-base-content rounded p-10"
   >
     <nav class="flex flex-col gap-4">
-      <h6 class="font-semibold text-lg text-primary">
+      <h6 class="font-semibold text-lg text-secondary">
         Fale conosco agora mesmo:
       </h6>
       <a
@@ -21,7 +21,7 @@
           width="24"
           height="24"
           stroke-width="1.75"
-          class="text-primary"
+          class="text-secondary"
         >
           <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
           <path
@@ -45,7 +45,7 @@
           width="24"
           height="24"
           stroke-width="1.75"
-          class="text-primary"
+          class="text-secondary"
         >
           <path
             d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"

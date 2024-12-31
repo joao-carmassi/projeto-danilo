@@ -2,9 +2,7 @@
   <header class="relative">
     <NavMain class="absolute top-0 z-50" />
   </header>
-  <main>
-    <RouterView />
-  </main>
+  <RouterView />
   <FooterMain />
 </template>
 

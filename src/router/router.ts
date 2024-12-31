@@ -1,11 +1,7 @@
-import HeroHome from "@/view/HeroHome.vue";
-import HomePage from "@/view/HomePage.vue";
+import HomePageCarroseu from "@/view/HomePageCarroseu.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const routes = [
-  { path: "/", component: HeroHome },
-  { path: "/teste", component: HomePage },
-];
+const routes = [{ path: "/", component: HomePageCarroseu }];
 
 const router = createRouter({
   history: createWebHashHistory(),
