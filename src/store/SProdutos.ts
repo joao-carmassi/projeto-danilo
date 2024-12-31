@@ -11,7 +11,6 @@ const useCounterStore = defineStore("counter", {
       this.produtos = await baixaProdutos();
       this.categorias = Object.keys(this.produtos);
       this.adicionaIdProdutos();
-      console.log(this.produtos);
     },
 
     async getProdutos() {

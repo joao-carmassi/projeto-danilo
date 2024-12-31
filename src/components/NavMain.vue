@@ -38,10 +38,10 @@
           class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
         >
           <div class="card-body">
-            <span class="text-lg font-bold">8 Items</span>
-            <span class="text-secondary">Subtotal: $999</span>
+            <span class="text-lg text-gray-700 font-bold">8 Items</span>
+            <span>Value: <ValorProduto :valor="1000" /></span>
             <div class="card-actions">
-              <button class="btn btn-secondary text-base-100 btn-block">
+              <button class="btn btn-secondary mt-2 text-base-100 btn-block">
                 View cart
               </button>
             </div>
@@ -53,5 +53,9 @@
 </template>
 
 <script lang="ts">
-export default {};
+import ValorProduto from "./ValorProduto.vue";
+
+export default {
+  components: { ValorProduto },
+};
 </script>

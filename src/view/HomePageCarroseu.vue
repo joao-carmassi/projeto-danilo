@@ -1,14 +1,13 @@
 <template>
-  <main class="pt-20 bg-base-200">
+  <main class="pb-7 bg-base-200">
     <section
       class="md:px-10"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
-      <div class="grid lg: place-items-center py-5 pb-0 md:py-8 md:pb-3">
-        <h2 class="capitalize text-2xl font-montSerrat md:text-3xl">
-          {{ categoria.replace(/-/g, " ") }}:
-        </h2>
+      <div class="grid place-items-center py-7 pb-2 md:py-8 md:pb-3">
+        <TituloCategoria :categoria="categoria" />
+        <hr class="border-gray-400 border-b-2 rounded-xl w-10 mx-auto" />
       </div>
       <swiper
         :slides-per-view="2"
@@ -31,6 +30,14 @@
           <CardProduto class="m-2 my-5 md:m-5" :produto="produto" />
         </swiper-slide>
       </swiper>
+      <div class="w-full flex justify-end px-5">
+        <RouterLink
+          :to="`/${categoria}`"
+          class="btn btn-secondary text-base-100"
+        >
+          Ver mais {{ categoria }}
+        </RouterLink>
+      </div>
     </section>
   </main>
 </template>
@@ -44,12 +51,14 @@ import "swiper/css/navigation";
 import type { IProdutos } from "@/interface/IProdutos";
 import { storeProdutos } from "@/store/SProdutos";
 import CardProduto from "@/components/CardProduto.vue";
+import TituloCategoria from "@/components/TituloCategoria.vue";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
     CardProduto,
+    TituloCategoria,
   },
   data() {
     return {

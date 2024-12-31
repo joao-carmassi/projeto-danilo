@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="footer footer-center bg-base-200 text-base-content rounded p-10"
+    class="footer footer-center bg-base-100 text-base-content rounded p-10"
   >
     <nav class="flex flex-col gap-4">
       <h6 class="font-semibold text-lg text-secondary">
