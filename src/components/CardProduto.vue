@@ -1,12 +1,15 @@
 <template>
-  <div class="bg-base-100 shadow-lg flex flex-col gap-2 rounded-lg p-3 md:p-4">
+  <RouterLink
+    :to="`/produtos/${produto.id}`"
+    class="bg-base-100 lg:hover:scale-105 duration-300 shadow-lg flex flex-col gap-2 rounded-lg p-3 md:p-4"
+  >
     <div class="w-full aspect-square bg-base-300 rounded-md"></div>
     <h2 class="text-gray-600 text-sm md:text-base limitaTexto">
       {{ produto.nome }}
     </h2>
     <ValorProduto :valor="produto.valor" />
     <button class="btn btn-secondary mt-1.5 text-base-100">Comprar</button>
-  </div>
+  </RouterLink>
 </template>
 
 <script lang="ts">

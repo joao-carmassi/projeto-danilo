@@ -1,6 +1,6 @@
 <template>
   <section class="px-5 md:px-24 lg:px-52 flex flex-col gap-5">
-    <div class="mt-6">
+    <div class="mt-7">
       <TituloCategoria :categoria="id" />
       <div class="breadcrumbs text-sm">
         <ul>

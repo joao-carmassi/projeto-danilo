@@ -37,8 +37,26 @@ const useCounterStore = defineStore("counter", {
       }
     },
 
+    async getProduto(id: string) {
+      const estaVazio = Object.keys(this.produtos).length === 0;
+      if (estaVazio) {
+        await this.baixaProdutos();
+      }
+      const produtos = this.produtos;
+      for (const categoria in produtos) {
+        const produto = produtos[categoria].find(
+          (produto) => produto.id === id
+        );
+        if (produto) {
+          return produto;
+        }
+      }
+    },
+
     geraId(codigos: string[]) {
-      return codigos.join("_");
+      let id: string = codigos.join("_");
+      id = id.replace(/\//g, "_");
+      return id;
     },
   },
 });
@@ -49,6 +67,7 @@ export const storeProdutos = async () => {
   const dadosStoreProdutos = {
     getProdutos: await store.getProdutos(),
     getCategorias: await store.getCategorias(),
+    getProduto: async (id: string) => await store.getProduto(id),
   };
 
   return dadosStoreProdutos;
