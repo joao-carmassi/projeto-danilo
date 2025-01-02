@@ -50,7 +50,7 @@ export default {
     async baixaProdutos() {
       this.produtos = (await this.SProdutos).getProdutos;
       this.produtos = this.produtos[this.id];
-      document.getElementById("tituloCategoria")?.scrollIntoView();
+      window.scrollTo(0, 0);
     },
   },
 };

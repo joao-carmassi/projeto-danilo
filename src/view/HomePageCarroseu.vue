@@ -30,7 +30,7 @@
           <CardProduto class="m-2 my-5 md:m-5" :produto="produto" />
         </swiper-slide>
       </swiper>
-      <div class="w-full flex justify-end">
+      <div class="w-full pr-3 md:pr-0 flex justify-end">
         <RouterLink
           :to="`/${categoria}`"
           class="btn btn-secondary text-base-100"
@@ -70,6 +70,7 @@ export default {
   async created() {
     this.produtos = (await this.SProdutos).getProdutos;
     this.categorias = (await this.SProdutos).getCategorias;
+    window.scrollTo(0, 0);
   },
   setup() {
     return {

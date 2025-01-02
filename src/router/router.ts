@@ -8,11 +8,11 @@ const routes = [
   },
   {
     path: "/:id",
-    component: import("@/view/MostraGrupo.vue"),
+    component: () => import("@/view/MostraGrupo.vue"),
   },
   {
     path: "/produtos/:id",
-    component: import("@/view/DadosProduto.vue"),
+    component: () => import("@/view/DadosProduto.vue"),
   },
 ];
 

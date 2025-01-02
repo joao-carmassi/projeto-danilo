@@ -7,7 +7,7 @@
         @click="vaiParaHome"
         class="h-full rounded-full border-2 aspect-square border-primary p-2.5"
       >
-        <img class="h-full" src="/assets/logo.png" alt="" />
+        <img class="h-full" src="/assets/img/logo.png" alt="" />
       </button>
     </div>
     <div class="gap-2 w-full grid place-items-center">

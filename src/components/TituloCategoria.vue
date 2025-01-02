@@ -1,6 +1,6 @@
 <template>
   <h2 class="capitalize text-2xl font-montSerrat md:text-3xl">
-    {{ categoria.replace(/-/g, " ") }}:
+    {{ categoria.replace(/-/g, " ") }}
   </h2>
 </template>
 

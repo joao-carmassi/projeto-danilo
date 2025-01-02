@@ -12,7 +12,7 @@
 <script lang="ts">
 export default {
   props: {
-    valor: { type: Number, required: true },
+    valor: { type: Number || undefined, required: true },
   },
 };
 </script>
