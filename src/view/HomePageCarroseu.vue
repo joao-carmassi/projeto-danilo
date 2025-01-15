@@ -40,7 +40,7 @@
               :to="`/marca/${categoria}`"
               class="btn btn-secondary uppercase text-base-100"
             >
-              CLIQUE PARA VER MAIS PEÇAS {{ categoria }}
+              <span class="font-semibold text-lg">+</span> {{ categoria }}
             </RouterLink>
           </div>
         </swiper>
@@ -59,7 +59,7 @@
     </section>
     <hr class="border-secondary" />
     <section
-      class="px-5 pb-6 md:pb-20 pt-14 w-full flex justify-center items-center gap-5 flex-col"
+      class="px-5 pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
     >
       <p class="text-lg">Estamos no instagram:</p>
       <h2 class="text-4xl md:text-5xl font-semibold text-secondary">

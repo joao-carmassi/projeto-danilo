@@ -1,6 +1,6 @@
 <template>
   <img
-    class="w-56 mix-blend-multiply my-2"
+    class="w-36 md:w-56 mix-blend-multiply my-2"
     :src="`./img/marcas/${categoria}.png`"
     :alt="`Logo da ${categoria}`"
   />
