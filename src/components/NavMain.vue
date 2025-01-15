@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="gap-2 hidden w-full md:grid place-items-center">
-        <InputPesquisaProduto class="md:w-96 lg:w-[40rem]" />
+        <InputPesquisaProduto class="md:w-96 lg:w-[32.5rem]" />
       </div>
       <div class="flex justify-end">
         <div class="dropdown dropdown-end">

@@ -66,7 +66,7 @@ export const storeCarrinho = defineStore("carrinho", {
       }
     },
     enviaCarrinhoWhatsApp() {
-      const mensagem = `Olá, gostaria de fazer um pedido:%0A%0A*${
+      const mensagem = `Olá, gostaria de fazer uma cotação:%0A%0A*${
         this.produtos.items.length >= 2 ? "Produtos" : "Produto"
       }:*${this.produtos.items
         .map((item) => {

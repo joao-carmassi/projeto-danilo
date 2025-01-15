@@ -3,7 +3,7 @@
     id="animacaoScroll"
     class="bg-base-100 lg:hover:scale-105 duration-300 shadow-lg flex flex-col gap-2 rounded-lg p-3 md:p-4"
   >
-    <RouterLink class="flex flex-col gap-2" :to="`/produtos/${produto.id}`">
+    <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <img
         :src="`./img/produtos/${produto.id}.png`"
         class="w-full object-contain border border-gray-300 border-solid aspect-square rounded-md"

@@ -1,12 +1,12 @@
 <template>
   <div ref="container" class="relative">
-    <label class="input input-bordered flex items-center gap-2">
+    <label class="input input-bordered rounded-full flex items-center gap-2">
       <input
         type="text"
         v-model="inputPesquisa"
         @focus="onFocusInput"
         class="grow"
-        placeholder="Search"
+        placeholder="Digite o nome ou código da peça"
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"

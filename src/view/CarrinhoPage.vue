@@ -29,7 +29,11 @@
         <tbody>
           <tr v-for="(produto, index) in SCarrinho.produtos.items" :key="index">
             <td class="flex flex-col gap-3 items-start">
-              <RowProduto class="py-1.5" :produto="produto.produto" />
+              <RowProduto
+                class="py-1.5"
+                :classes="'h-16 text-lg text'"
+                :produto="produto.produto"
+              />
               <!-- Mobile -->
               <div
                 class="flex md:hidden w-full justify-between items-center gap-2"

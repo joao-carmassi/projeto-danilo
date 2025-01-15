@@ -13,9 +13,10 @@
   </section>
 </template>
 
+<!-- TODO: Fazer menu flutuante -->
 <!-- TODO: Arrumar router para imagem -->
-<!-- TODO: Fazer enviar carrinho para o zap -->
 <!-- TODO: Animacoes -->
+<!-- TODO: Deploy na vercel -->
 
 <script lang="ts">
 import ContainerNotificacao from "./components/ContainerNotificacao.vue";

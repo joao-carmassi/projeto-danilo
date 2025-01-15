@@ -3,12 +3,13 @@
     <p class="text-gray-600 px-4 pb-4">
       Resultado da pesquisa para: {{ produtoPesquisado }}
     </p>
-    <div class="max-h-[70vh] overflow-auto" v-if="produtos.length">
+    <div class="max-h-[45vh] overflow-auto" v-if="produtos.length">
       <RowProduto
         v-for="(produto, index) in produtos"
         :key="index"
-        class="hover:bg-base-200 p-5 border-t border-gray-300"
+        class="hover:bg-base-200 p-1.5 border-t border-gray-300"
         :produto="produto"
+        :classes="'h-11 text-xs'"
         @click="limpaPesquisa"
       />
     </div>

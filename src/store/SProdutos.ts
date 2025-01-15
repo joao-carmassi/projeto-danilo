@@ -14,6 +14,7 @@ export const storeProdutos = defineStore("counter", {
         this.produtos = this.separaProdutosPorMarcas();
         this.categorias = Object.keys(this.produtos);
         this.categorias.sort();
+        this.transformaIdString();
         this.adicionaIdProdutos();
       } else {
         return;
@@ -46,6 +47,7 @@ export const storeProdutos = defineStore("counter", {
       for (const categoria in produtos) {
         produtos[categoria].forEach((produto) => {
           const marca = produto.marca;
+          if (produto.marca === "MITSUBISHI") return;
           if (!produtosPorMarca[marca]) {
             produtosPorMarca[marca] = [];
           }
@@ -82,7 +84,7 @@ export const storeProdutos = defineStore("counter", {
           return nome.includes(pesquisaLower) || codigo.includes(pesquisaLower);
         });
         if (produtosCategoria.length > 0) {
-          resultado = produtosCategoria;
+          resultado = [...resultado, ...produtosCategoria];
         }
       }
       return resultado;
@@ -92,6 +94,16 @@ export const storeProdutos = defineStore("counter", {
       const codigoX = codigo.toString();
 
       return codigoX.split("_");
+    },
+
+    transformaIdString() {
+      for (const categoria in this.produtos) {
+        this.produtos[categoria].forEach((produto) => {
+          if (typeof produto.id === "number") {
+            produto.id = produto.id.toString();
+          }
+        });
+      }
     },
   },
 });

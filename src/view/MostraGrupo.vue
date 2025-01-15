@@ -20,7 +20,7 @@
         class=""
         v-for="(produto, index) in produtos"
         :key="index"
-        :produto="produto as IProduto"
+        :produto="produto"
       />
     </div>
   </section>
@@ -29,7 +29,7 @@
 <script lang="ts">
 import CardProduto from "@/components/CardProduto.vue";
 import TituloCategoria from "@/components/TituloCategoria.vue";
-import type { IProduto, IProdutos } from "@/interface/IProdutos";
+import type { IProduto } from "@/interface/IProdutos";
 import { storeProdutos } from "@/store/SProdutos";
 
 export default {
@@ -38,7 +38,7 @@ export default {
     return {
       id: this.$route.params.id as string,
       SProdutos: storeProdutos(),
-      produtos: {} as IProdutos | IProduto[],
+      produtos: {} as IProduto[],
     };
   },
   watch: {
@@ -53,11 +53,13 @@ export default {
   methods: {
     async baixaProdutos() {
       window.scrollTo(0, 0);
-      this.produtos = await this.SProdutos.getProdutos();
-      this.produtos = this.produtos[this.id];
-      if (this.produtos === undefined) {
+      let ItemsPesquisados;
+      ItemsPesquisados = await this.SProdutos.getProdutos();
+      ItemsPesquisados = ItemsPesquisados[this.id];
+      if (ItemsPesquisados === undefined) {
         this.$router.push("/404");
       }
+      this.produtos = ItemsPesquisados;
     },
   },
 };

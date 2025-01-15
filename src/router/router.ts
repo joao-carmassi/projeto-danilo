@@ -8,21 +8,20 @@ const routes = [
     component: HomePageCarroseu,
   },
   {
-    path: "/:id",
+    path: "/marca/:id",
     component: () => import("@/view/MostraGrupo.vue"),
   },
   {
-    path: "/produtos/:id",
+    path: "/produto/:id",
     component: () => import("@/view/DadosProduto.vue"),
   },
   {
     path: "/carrinho",
     component: () => import("@/view/CarrinhoPage.vue"),
   },
-
   {
     path: "/:pathMatch(.*)*",
-    component: NotFound,
+    redirect: "/404",
   },
   {
     path: "/404",
@@ -33,6 +32,15 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  // Se a rota não for válida, redireciona para 404
+  if (to.matched.length === 0) {
+    next("/404");
+  } else {
+    next();
+  }
 });
 
 export default router;

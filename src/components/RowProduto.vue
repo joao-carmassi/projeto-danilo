@@ -1,18 +1,16 @@
 <template>
-  <RouterLink :to="`/produtos/${produto.id}`" class="flex items-center gap-3">
+  <RouterLink
+    :to="`/produtos/${produto.id}`"
+    class="flex items-center gap-3"
+    :class="classes"
+  >
     <img
       :src="`./img/produtos/${produto.id}.png`"
       alt="Imagem do produto"
-      class="block object-contain aspect-square h-16 border border-gray-300 rounded-sm"
+      class="block object-contain aspect-square h-full border border-gray-300 rounded-sm"
     />
-    <h2 class="text-lg break-all">
-      {{
-        produto.nome
-          .toLowerCase()
-          .replace(/\b\w/g, (char) => char.toUpperCase())
-          .toLowerCase()
-          .replace(/\b\w/g, (char) => char.toUpperCase())
-      }}
+    <h2 class="break-all">
+      {{ produto.nome }}
     </h2>
   </RouterLink>
 </template>
@@ -26,6 +24,9 @@ export default {
     produto: {
       type: Object as PropType<IProduto>,
       required: true,
+    },
+    classes: {
+      type: String,
     },
   },
 };
