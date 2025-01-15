@@ -48,7 +48,7 @@
     </section>
     <section class="grid py-12 md:px-10 place-items-center">
       <a
-        class="w-full md:w-11/12 grid place-items-center"
+        class="w-11/12 grid place-items-center"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
         <img
@@ -59,12 +59,10 @@
     </section>
     <hr class="border-secondary" />
     <section
-      class="px-5 pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
+      class="px-5 bg-secondary pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
     >
-      <p class="text-lg">Estamos no instagram:</p>
-      <h2 class="text-4xl md:text-5xl font-semibold text-secondary">
-        @lojadovrf
-      </h2>
+      <p class="text-lg text-white">Estamos no instagram:</p>
+      <h2 class="text-4xl md:text-5xl font-semibold text-white">@lojadovrf</h2>
     </section>
     <hr class="border-secondary" />
   </main>
@@ -119,7 +117,6 @@ export default {
 <style>
 .swiper-container {
   --swiper-navigation-size: 50px;
-  --swiper-navigation-sides-offset: -10px;
   --swiper-navigation-color: #080069;
   --swiper-pagination-color: white;
   --swiper-navigation-sides-offset: 50px;
@@ -148,9 +145,9 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
+  .swiper-container {
+    --swiper-navigation-size: 40px;
+    --swiper-navigation-sides-offset: 3px;
   }
 }
 </style>

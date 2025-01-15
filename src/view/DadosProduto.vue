@@ -7,7 +7,7 @@
       class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
     >
       <div
-        class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col h-20 md:w-32 md:h-auto"
+        class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col h-24 md:w-32 md:h-auto"
       >
         <button
           class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
