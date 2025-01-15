@@ -13,9 +13,8 @@
   </section>
 </template>
 
+<!-- TODO: 2 imgs comprensor -->
 <!-- TODO: Fazer menu flutuante -->
-<!-- TODO: Arrumar router para imagem -->
-<!-- TODO: Animacoes -->
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">

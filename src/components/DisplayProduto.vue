@@ -9,7 +9,9 @@
         :key="index"
         class="hover:bg-base-200 p-1.5 border-t border-gray-300"
         :produto="produto"
-        :classes="'h-11 text-xs'"
+        :classes="'min-h-11 text-xs'"
+        :img="'h-10'"
+        :codigos="'text-[0.6rem]'"
         @click="limpaPesquisa"
       />
     </div>
@@ -56,3 +58,27 @@ export default {
   emits: ["limpaPesquisa"],
 };
 </script>
+
+<style scoped>
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #080069 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #080069;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+</style>

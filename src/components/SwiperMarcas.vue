@@ -12,7 +12,7 @@
   >
     <swiper-slide class="my-auto">
       <img
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
         src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2mobile-geyf9qthbl.png"
         alt="Imagem produto"
       />
@@ -24,7 +24,7 @@
     </swiper-slide>
     <swiper-slide class="my-auto">
       <img
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
         src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner1mobile---placas-eletr-nicas-chiller-brasil-xq8cs6nktw.png"
         alt="Imagem produto"
       />
@@ -36,7 +36,7 @@
     </swiper-slide>
     <swiper-slide class="my-auto">
       <img
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
         src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2mobile---uni-refrigeracao-chillerbrasil-rlf8ad0367.png"
         alt="Imagem produto"
       />
@@ -78,5 +78,6 @@ export default {
   --swiper-navigation-size: 25px !important;
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 20px !important;
+  position: relative !important;
 }
 </style>

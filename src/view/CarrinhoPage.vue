@@ -32,6 +32,8 @@
               <RowProduto
                 class="py-1.5"
                 :classes="'h-16 text-lg text'"
+                :img="'h-14'"
+                :codigos="'text-sm'"
                 :produto="produto.produto"
               />
               <!-- Mobile -->

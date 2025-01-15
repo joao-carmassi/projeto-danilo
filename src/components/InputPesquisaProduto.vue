@@ -1,6 +1,6 @@
 <template>
   <div ref="container" class="relative">
-    <label class="input input-bordered rounded-full flex items-center gap-2">
+    <label class="input rounded-full flex items-center gap-2">
       <input
         type="text"
         v-model="inputPesquisa"

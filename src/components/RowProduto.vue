@@ -1,17 +1,23 @@
 <template>
   <RouterLink
-    :to="`/produtos/${produto.id}`"
+    :to="`/produto/${produto.id}`"
     class="flex items-center gap-3"
     :class="classes"
   >
     <img
       :src="`./img/produtos/${produto.id}.png`"
       alt="Imagem do produto"
-      class="block object-contain aspect-square h-full border border-gray-300 rounded-sm"
+      class="block object-contain aspect-square border border-gray-300 rounded-sm"
+      :class="img"
     />
-    <h2 class="break-all">
-      {{ produto.nome }}
-    </h2>
+    <div>
+      <h2 class="break-all text-secondary font-semibold">
+        {{ produto.nome }}
+      </h2>
+      <p class="text-gray-600" :class="codigos">
+        {{ produto.codigos.join(", ") }}
+      </p>
+    </div>
   </RouterLink>
 </template>
 
@@ -26,6 +32,12 @@ export default {
       required: true,
     },
     classes: {
+      type: String,
+    },
+    img: {
+      type: String,
+    },
+    codigos: {
       type: String,
     },
   },

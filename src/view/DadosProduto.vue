@@ -12,24 +12,21 @@
       </div> -->
       <img
         :src="`./img/produtos/${produto.id}.png`"
-        class="w-full rounded-xl object-contain border-2 border-gray-300 aspect-square"
+        class="w-full rounded-xl object-contain border-2 border-secondary aspect-square"
         alt="Imagem do produto"
       />
     </div>
     <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
-      <p class="text-gray-500 text-lg font-semibold">
-        {{
-          produto.marca
-            .toLowerCase()
-            .replace(/\b\w/g, (char) => char.toUpperCase()) || "Marca"
-        }}
-      </p>
-      <h2 class="text-2xl lg:text-3xl font-semibold">
-        {{
-          produto.nome
-            .toLowerCase()
-            .replace(/\b\w/g, (char) => char.toUpperCase()) || "Nome"
-        }}
+      <img
+        class="w-20 mt-1.5"
+        :src="`./img/marcas/${produto.marca}.png`"
+        :alt="`Logo ${produto.marca}`"
+      />
+      <!-- <p class="text-gray-500 text-lg font-semibold">
+        {{ produto.marca }}
+      </p> -->
+      <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
+        {{ produto.nome || "Nome" }}
       </h2>
       <p class="text-gray-500 text-lg">SKU: {{ produto.sku }}</p>
       <!-- <ValorProduto

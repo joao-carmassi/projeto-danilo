@@ -13,7 +13,7 @@ export const storeProdutos = defineStore("counter", {
         this.produtos = await baixaProdutosJson();
         this.produtos = this.separaProdutosPorMarcas();
         this.categorias = Object.keys(this.produtos);
-        this.categorias.sort();
+        this.ordenaCategorias();
         this.transformaIdString();
         this.adicionaIdProdutos();
       } else {
@@ -104,6 +104,17 @@ export const storeProdutos = defineStore("counter", {
           }
         });
       }
+    },
+
+    ordenaCategorias() {
+      const orderm = ["MIDEA", "TOSHIBA", "HITACHI"];
+      this.categorias.sort((a, b) => {
+        const indexA = orderm.indexOf(a);
+        const indexB = orderm.indexOf(b);
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+      });
     },
   },
 });

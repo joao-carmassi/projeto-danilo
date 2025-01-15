@@ -6,23 +6,20 @@
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <img
         :src="`./img/produtos/${produto.id}.png`"
-        class="w-full object-contain border border-gray-300 border-solid aspect-square rounded-md"
+        class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
         loading="lazy"
       />
-      <p class="text-secondary mt-2 text-sm font-semibold">
-        {{
-          produto.marca
-            .toLowerCase()
-            .replace(/\b\w/g, (char) => char.toUpperCase())
-        }}
-      </p>
+      <!-- <p class="text-secondary mt-2 text-sm font-semibold">
+        {{ produto.marca }}
+      </p> -->
+      <img
+        class="w-12 mt-1.5"
+        :src="`./img/marcas/${produto.marca}.png`"
+        :alt="`Logo ${produto.marca}`"
+      />
       <h2 class="text-gray-600 text-sm md:text-base limitaTexto">
-        {{
-          produto.nome
-            .toLowerCase()
-            .replace(/\b\w/g, (char) => char.toUpperCase())
-        }}
+        {{ produto.nome }}
       </h2>
       <!-- <ValorProduto class="text-secondary" :valor="produto.VALOR" /> -->
     </RouterLink>
