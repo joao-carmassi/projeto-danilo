@@ -1,5 +1,7 @@
 <template>
   <footer>
+    <hr class="border-secondary" />
+
     <div class="footer bg-base-100 text-neutral-content p-10">
       <nav>
         <h6 class="text-lg font-semibold mb-0.5 text-secondary">
@@ -27,7 +29,7 @@
               d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
             ></path>
           </svg>
-          <span class="font-semibold">Whatsapp:</span> +55 11 96918-9244
+          <span class="font-semibold">Whatsapp:</span> +55 (11) 96918-9244
         </a>
         <a
           target="_blank"

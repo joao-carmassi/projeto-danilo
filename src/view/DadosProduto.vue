@@ -1,6 +1,6 @@
 <template>
   <section
-    class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-96 bg-base-100"
+    class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-96 bg-base-100 pb-14"
   >
     <div
       v-if="compressor"

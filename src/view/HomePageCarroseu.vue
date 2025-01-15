@@ -57,14 +57,17 @@
         />
       </a>
     </section>
-    <hr class="border-secondary" />
     <section
       class="px-5 bg-secondary pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
     >
       <p class="text-lg text-white">Estamos no instagram:</p>
-      <h2 class="text-4xl md:text-5xl font-semibold text-white">@lojadovrf</h2>
+      <a
+        href="https://www.instagram.com/lojadovrf/"
+        target="_blank"
+        class="text-4xl md:text-5xl font-semibold text-white"
+        >@lojadovrf</a
+      >
     </section>
-    <hr class="border-secondary" />
   </main>
 </template>
 

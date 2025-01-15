@@ -78,7 +78,7 @@
           </tr>
         </tbody>
       </table>
-      <div class="w-full flex justify-end">
+      <div class="w-full flex justify-end pb-10">
         <div class="flex w-full md:w-72 px-4 flex-col gap-2">
           <!-- <div class="flex justify-between items-center">
             <h3 class="text-xl font-semibold">Total:</h3>
