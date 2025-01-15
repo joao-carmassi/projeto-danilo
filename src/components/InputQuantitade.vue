@@ -1,5 +1,5 @@
 <template>
-  <div class="flex border border-gray-400 rounded-md items-center">
+  <div class="flex border border-secondary rounded-md items-center">
     <button
       @click="alterarQuantidade(-1)"
       class="w-7 h-full flex items-center justify-center"
@@ -7,7 +7,7 @@
       -
     </button>
     <input
-      class="w-12 h-full text-center border-x border-gray-300 outline-none"
+      class="w-12 h-full text-center border-x border-secondary outline-none"
       type="number"
       v-model.number="inputQuantidade"
       min="1"

@@ -5,9 +5,17 @@
     :class="classes"
   >
     <img
+      v-if="compressor"
+      :src="`./img/produtos/compressor-${produto.marca}.png`"
+      alt="Imagem do produto"
+      class="block object-contain aspect-square border border-secondary rounded-sm"
+      :class="img"
+    />
+    <img
+      v-else
       :src="`./img/produtos/${produto.id}.png`"
       alt="Imagem do produto"
-      class="block object-contain aspect-square border border-gray-300 rounded-sm"
+      class="block object-contain aspect-square border border-secondary rounded-sm"
       :class="img"
     />
     <div>
@@ -26,6 +34,11 @@ import type { IProduto } from "@/interface/IProdutos";
 import type { PropType } from "vue";
 
 export default {
+  data() {
+    return {
+      compressor: false,
+    };
+  },
   props: {
     produto: {
       type: Object as PropType<IProduto>,
@@ -40,6 +53,9 @@ export default {
     codigos: {
       type: String,
     },
+  },
+  mounted() {
+    this.compressor = this.produto.nome.includes("COMPRESSOR");
   },
 };
 </script>

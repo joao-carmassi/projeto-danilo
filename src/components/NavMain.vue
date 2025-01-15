@@ -14,7 +14,10 @@
       </div>
       <div class="flex justify-end">
         <div class="dropdown dropdown-end">
-          <RouterLink to="/carrinho" class="btn btn-ghost btn-circle">
+          <RouterLink
+            to="/carrinho"
+            class="btn border hover:border-white border-white btn-ghost btn-circle"
+          >
             <div class="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

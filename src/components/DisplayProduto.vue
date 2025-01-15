@@ -1,13 +1,13 @@
 <template>
-  <div class="absolute py-4 pb-0 shadow-md w-full bg-base-100 top-16">
-    <p class="text-gray-600 px-4 pb-4">
+  <div class="absolute shadow-md w-full bg-base-100 top-16">
+    <!-- <p class="text-gray-600 px-4 pb-4">
       Resultado da pesquisa para: {{ produtoPesquisado }}
-    </p>
+    </p> -->
     <div class="max-h-[45vh] overflow-auto" v-if="produtos.length">
       <RowProduto
         v-for="(produto, index) in produtos"
         :key="index"
-        class="hover:bg-base-200 p-1.5 border-t border-gray-300"
+        class="hover:bg-base-200 p-1.5 border-b border-gray-300"
         :produto="produto"
         :classes="'min-h-11 text-xs'"
         :img="'h-10'"

@@ -3,13 +3,45 @@
     class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-96 bg-base-100"
   >
     <div
+      v-if="compressor"
+      class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
+    >
+      <div
+        class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col h-20 md:w-32 md:h-auto"
+      >
+        <button
+          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
+          @click="trocaImage(`compressor-${produto.marca}`)"
+        >
+          <img
+            class="rounded-md aspect-square"
+            :src="`/img/produtos/compressor-${produto.marca}.png`"
+            alt="Imagem do produto"
+          />
+        </button>
+        <button
+          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
+          @click="trocaImage(produto.id)"
+        >
+          <img
+            class="rounded-md aspect-square"
+            :src="`/img/produtos/${produto.id}.png`"
+            alt="Imagem do produto"
+          />
+        </button>
+      </div>
+      <img
+        :src="
+          imagemCompressor || `./img/produtos/compressor-${produto.marca}.png`
+        "
+        class="w-full md:w-[80%] rounded-xl object-contain border-2 border-secondary aspect-square"
+        alt="Imagem do produto"
+      />
+    </div>
+    <div
+      v-else
       class="flex flex-col-reverse md:flex-row items-start gap-5 col-span-5 md:col-span-3 place-items-center"
     >
-      <!-- <div class="w-full md:w-32 gap-3 flex-row md:flex-col">
-        <span class="w-full block rounded-md aspect-square bg-gray-200"></span>
-        <span class="w-full block rounded-md aspect-square bg-gray-200"></span>
-        <span class="w-full block rounded-md aspect-square bg-gray-200"></span>
-      </div> -->
       <img
         :src="`./img/produtos/${produto.id}.png`"
         class="w-full rounded-xl object-contain border-2 border-secondary aspect-square"
@@ -66,7 +98,7 @@
       </p>
     </div>
     <div class="col-span-5">
-      <h3 class="text-2xl text-gray-600 font-semibold">Descrição:</h3>
+      <h3 class="text-2xl text-secondary font-semibold">Descrição:</h3>
       <p
         v-html="descricaoFormatada || 'Descrição'"
         class="text-lg text-gray-600"
@@ -91,6 +123,8 @@ export default {
       SCarrinho: storeCarrinho(),
       inputQuantidade: 1 as number,
       quantidade: 1 as number,
+      compressor: false,
+      imagemCompressor: "",
     };
   },
   watch: {
@@ -108,9 +142,10 @@ export default {
       this.produto = (await (
         await this.SProdutos
       ).getProduto(this.id)) as IProduto;
-      if (this.produto === undefined) {
-        this.$router.push("/404");
-      }
+
+      if (this.produto.nome.includes("COMPRESSOR")) this.compressor = true;
+
+      if (this.produto === undefined) this.$router.push("/404");
     },
     attQuantidade(valor: number) {
       this.quantidade = valor;
@@ -122,10 +157,32 @@ export default {
     moveTelaTopo() {
       window.scrollTo(0, 0);
     },
+    trocaImage(img: string | number) {
+      this.imagemCompressor = `./img/produtos/${img}.png`;
+    },
   },
   computed: {
     descricaoFormatada() {
-      const descricao = this.produto.descricao || "";
+      let descricao = this.produto.descricao || "";
+
+      const negrito = [
+        "Por que escolher a nossa loja?",
+        "COMPATIBILIDADE GARANTIDA:",
+        "PRAZO DE ENTREGA:",
+        "ENVIO RÁPIDO E SEGURO!",
+        "loja",
+      ];
+
+      negrito.forEach((texto) => {
+        if (descricao.includes(texto)) {
+          descricao = descricao.replace(
+            texto,
+            `<span class='font-semibold text-secondary'>${texto}</span>`
+          );
+        }
+      });
+      console.log(descricao);
+
       return descricao.replace(/\n/g, "<br>");
     },
   },

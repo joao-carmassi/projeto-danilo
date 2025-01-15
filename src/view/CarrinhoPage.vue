@@ -31,7 +31,7 @@
             <td class="flex flex-col gap-3 items-start">
               <RowProduto
                 class="py-1.5"
-                :classes="'h-16 text-lg text'"
+                :classes="' text-lg text'"
                 :img="'h-14'"
                 :codigos="'text-sm'"
                 :produto="produto.produto"

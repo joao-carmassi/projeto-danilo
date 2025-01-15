@@ -1,10 +1,18 @@
 <template>
   <div
     id="animacaoScroll"
-    class="bg-base-100 lg:hover:scale-105 duration-300 shadow-lg flex flex-col gap-2 rounded-lg p-3 md:p-4"
+    class="bg-base-100 border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg shadow-gray-300 flex flex-col gap-2 rounded-lg p-3 md:p-4"
   >
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <img
+        v-if="compressor"
+        :src="`./img/produtos/compressor-${produto.marca}.png`"
+        class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
+        alt="Imagem do produto"
+        loading="lazy"
+      />
+      <img
+        v-else
         :src="`./img/produtos/${produto.id}.png`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
@@ -18,7 +26,7 @@
         :src="`./img/marcas/${produto.marca}.png`"
         :alt="`Logo ${produto.marca}`"
       />
-      <h2 class="text-gray-600 text-sm md:text-base limitaTexto">
+      <h2 class="text-secondary text-sm md:text-base limitaTexto">
         {{ produto.nome }}
       </h2>
       <!-- <ValorProduto class="text-secondary" :valor="produto.VALOR" /> -->
@@ -49,6 +57,7 @@ export default {
     return {
       SCarrinho: storeCarrinho(),
       CNotificacao: new NotificacaoController(),
+      compressor: false,
     };
   },
   methods: {
@@ -56,6 +65,9 @@ export default {
       this.SCarrinho.adicionaProduto(this.produto);
       this.CNotificacao.geraNotificacao();
     },
+  },
+  mounted() {
+    if (this.produto.nome.includes("COMPRESSOR")) this.compressor = true;
   },
 };
 </script>

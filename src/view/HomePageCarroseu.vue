@@ -1,10 +1,11 @@
 <template>
-  <main class="bg-base-200">
+  <main class="bg-base-100">
     <section>
       <SwiperMarcas />
     </section>
     <section
-      class="pb-5 md:pb-7 relative"
+      class="containerCarrosel relative"
+      :class="geraPadding(index)"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
@@ -45,7 +46,7 @@
         </swiper>
       </div>
     </section>
-    <section class="grid md:px-10 place-items-center">
+    <section class="grid py-12 md:px-10 place-items-center">
       <a
         class="w-11/12 grid place-items-center"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
@@ -56,14 +57,16 @@
         />
       </a>
     </section>
+    <hr class="border-secondary" />
     <section
-      class="px-5 pb-20 pt-14 w-full flex justify-center items-center gap-5 flex-col"
+      class="px-5 pb-6 md:pb-20 pt-14 w-full flex justify-center items-center gap-5 flex-col"
     >
       <p class="text-lg">Estamos no instagram:</p>
       <h2 class="text-4xl md:text-5xl font-semibold text-secondary">
         @lojadovrf
       </h2>
     </section>
+    <hr class="border-secondary" />
   </main>
 </template>
 
@@ -104,6 +107,12 @@ export default {
       Navigation,
     };
   },
+  methods: {
+    geraPadding(index: number) {
+      if (index == 0) return "pr-0";
+      return "pt-5 md:pt-7";
+    },
+  },
 };
 </script>
 
@@ -112,6 +121,7 @@ export default {
   --swiper-navigation-size: 50px;
   --swiper-navigation-sides-offset: -10px;
   --swiper-navigation-color: #080069;
+  --swiper-pagination-color: white;
   --swiper-navigation-sides-offset: 50px;
   position: unset;
 

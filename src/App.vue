@@ -13,7 +13,7 @@
   </section>
 </template>
 
-<!-- TODO: 2 imgs comprensor -->
+<!-- TODO: Nao sei oq la da navbar celular fixa -->
 <!-- TODO: Fazer menu flutuante -->
 <!-- TODO: Deploy na vercel -->
 
