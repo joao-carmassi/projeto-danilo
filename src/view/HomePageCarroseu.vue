@@ -48,7 +48,7 @@
     </section>
     <section class="grid py-12 md:px-10 place-items-center">
       <a
-        class="w-11/12 grid place-items-center"
+        class="w-full md:w-11/12 grid place-items-center"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
         <img

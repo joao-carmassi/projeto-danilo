@@ -15,7 +15,7 @@
         >
           <img
             class="rounded-md aspect-square"
-            :src="`/img/produtos/compressor-${produto.marca}.png`"
+            :src="`./img/produtos/compressor-${produto.marca}.png`"
             alt="Imagem do produto"
           />
         </button>
@@ -25,7 +25,7 @@
         >
           <img
             class="rounded-md aspect-square"
-            :src="`/img/produtos/${produto.id}.png`"
+            :src="`./img/produtos/${produto.id}.png`"
             alt="Imagem do produto"
           />
         </button>
