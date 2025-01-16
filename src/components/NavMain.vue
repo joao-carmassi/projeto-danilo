@@ -42,37 +42,68 @@
               aria-label="close sidebar"
               class="drawer-overlay"
             ></label>
-            <ul class="menu join join-vertical w-60 bg-base-200 min-h-full p-4">
+            <div
+              class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full"
+            >
+              <div
+                class="h-5 bg-secondary text-white flex items-center justify-end px-5"
+              >
+                <!-- <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="24"
+                    height="24"
+                    stroke-width="2"
+                  >
+                    <path d="M18 6l-12 12"></path>
+                    <path d="M6 6l12 12"></path>
+                  </svg>
+                </button> -->
+              </div>
               <div
                 v-for="(marca, index) in marcas"
                 :key="index"
-                class="collapse collapse-arrow join-item border-gray-400 border"
+                class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
               >
-                <input type="checkbox" name="my-accordion-4" />
+                <input
+                  class="px-4 min-h-14"
+                  type="checkbox"
+                  name="my-accordion-4"
+                />
                 <div
-                  class="collapse-title h-1 text-lg font-semibold text-secondary"
+                  class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
                 >
                   {{ marca }}
                 </div>
-                <div class="collapse-content">
-                  <p
+                <div class="collapse-content pl-3 flex flex-col">
+                  <RouterLink
+                    @click="fechaDrawer()"
+                    :class="{ 'border-t': index !== 0 }"
+                    class="py-2.5 pl-2 border-gray-300 font-semibold"
+                    :to="`/${marca}/${tipo}`"
                     v-for="(tipo, index) in tiposDasMarcas[marca]"
                     :key="index"
                   >
-                    {{ tipo }}
-                  </p>
+                    - {{ tipo }}
+                  </RouterLink>
                 </div>
               </div>
-            </ul>
+            </div>
           </div>
         </div>
         <div class="h-full">
           <button
             @click="vaiParaHome"
-            class="h-full flex items-center gap-2 md:hidden py-2.5"
+            class="h-full w-2/3 flex justify-center items-center gap-2 md:hidden py-2.5 mx-auto"
           >
-            <img class="h-full" src="/img/simbolo.png" alt="" />
-            <h1 class="text-primary text-xl font-bold">Loja do VRF</h1>
+            <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
+            <!-- <img class="h-full" src="/img/simbolo.png" alt="" />
+            <h1 class="text-primary text-xl font-bold">Loja do VRF</h1> -->
           </button>
         </div>
         <div class="gap-2 hidden w-full md:grid place-items-center">
@@ -117,8 +148,8 @@
       <ul class="menu gap-3 menu-horizontal px-1">
         <li class="static py-2" v-for="(marca, index) in marcas" :key="index">
           <details id="detailsNav">
-            <summary>
-              <Routerlink :to="`/marcas/${marca}`">{{ marca }}</Routerlink>
+            <summary @click="paginaMarcas(marca)">
+              {{ marca }}
             </summary>
             <ul
               class="flex min-h-16 flex-wrap right-1/2 translate-x-1/2 rounded-none gap-3 justify-center items-center w-[100vw] text-black"
@@ -143,6 +174,7 @@ import { storeCarrinho } from "@/store/SCarrinho";
 import InputPesquisaProduto from "./InputPesquisaProduto.vue";
 import { storeProdutos } from "@/store/SProdutos";
 import type { DetailsHTMLAttributes } from "vue";
+import router from "@/router/router";
 
 export default {
   components: { InputPesquisaProduto },
@@ -158,6 +190,16 @@ export default {
   methods: {
     vaiParaHome() {
       this.$router.push("/");
+    },
+    paginaMarcas(marca: string) {
+      router.push(`/marca/${marca}`);
+    },
+    fechaDrawer() {
+      const inputDrawer = document.getElementById(
+        "my-drawer-3"
+      ) as HTMLInputElement;
+      console.log(inputDrawer);
+      inputDrawer.checked = false;
     },
   },
   async mounted() {
@@ -180,7 +222,7 @@ export default {
       });
       const navBar = document.getElementById("navBar") as HTMLElement;
       navBar.addEventListener("mouseleave", () => {
-        alvo.open = false;
+        detail.removeAttribute("open");
       });
     });
   },

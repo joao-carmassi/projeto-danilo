@@ -5,7 +5,7 @@
     :class="classes"
   >
     <img
-      v-if="compressor"
+      v-if="testeECompressor"
       :src="`./img/produtos/compressor-${produto.marca}.png`"
       alt="Imagem do produto"
       class="block object-contain aspect-square border border-secondary rounded-sm"
@@ -60,9 +60,6 @@ export default {
       type: String,
     },
   },
-  mounted() {
-    this.compressor = this.produto.nome.includes("COMPRESSOR");
-  },
   computed: {
     deixaNomeDoProdutoIgualPesquisaNegrito() {
       let nome = this.produto.nome;
@@ -83,6 +80,9 @@ export default {
         );
       }
       return codigo;
+    },
+    testeECompressor() {
+      return this.produto.nome.includes("COMPRESSOR");
     },
   },
 };

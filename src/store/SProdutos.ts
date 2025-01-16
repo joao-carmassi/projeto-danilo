@@ -162,11 +162,21 @@ export const storeProdutos = defineStore("counter", {
       return resultado;
     },
 
-    filtaPorMarcaETipo(marca: string, tipo: string) {
-      const teste = this.produtos[marca];
-      const produtos = teste.filter((produto) => {
-        return produto.tipo === tipo;
-      });
+    async filtaPorMarcaETipo(marca: string, tipo: string) {
+      if (!this.produtos[marca]) {
+        console.error(`Marca ${marca} não encontrada.`);
+        return [];
+      }
+
+      // Filtra os produtos
+      const produtos = this.produtos[marca].filter(
+        (produto) => produto.tipo === tipo
+      );
+
+      if (!produtos || produtos.length === 0) {
+        console.warn(`Nenhum produto encontrado para ${marca} e tipo ${tipo}`);
+      }
+
       return produtos;
     },
 

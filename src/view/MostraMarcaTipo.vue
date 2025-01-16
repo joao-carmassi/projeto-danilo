@@ -23,31 +23,35 @@ export default {
     };
   },
   watch: {
-    "$route.params.tipo": {
+    "$route.params": {
       immediate: true,
       handler() {
+        this.marca = this.$route.params.marca as string;
         this.tipo = this.$route.params.tipo as string;
         this.baixaProdutos();
       },
     },
-    "$route.params.marca": {
-      immediate: true,
-      handler() {
-        this.marca = this.$route.params.marca as string;
-        this.baixaProdutos();
-      },
-    },
   },
+
   methods: {
     async baixaProdutos() {
       window.scrollTo(0, 0);
+
+      if (!this.marca || !this.tipo) {
+        console.error("Marca ou tipo não definidos.");
+        return;
+      }
+
       const ItemsPesquisados = await this.SProdutos.filtaPorMarcaETipo(
         this.marca,
         this.tipo
       );
-      if (ItemsPesquisados === undefined || ItemsPesquisados.length <= 0)
+
+      if (!ItemsPesquisados || ItemsPesquisados.length === 0) {
         this.$router.push("/404");
-      this.produtos = ItemsPesquisados;
+      } else {
+        this.produtos = ItemsPesquisados;
+      }
     },
   },
 };

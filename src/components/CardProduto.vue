@@ -5,7 +5,7 @@
   >
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <img
-        v-if="compressor"
+        v-if="testeECompressor"
         :src="`./img/produtos/compressor-${produto.marca}.png`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
@@ -66,8 +66,10 @@ export default {
       this.CNotificacao.geraNotificacao();
     },
   },
-  mounted() {
-    if (this.produto.nome.includes("COMPRESSOR")) this.compressor = true;
+  computed: {
+    testeECompressor() {
+      return this.produto.nome.includes("COMPRESSOR");
+    },
   },
 };
 </script>
