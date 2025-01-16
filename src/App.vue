@@ -13,7 +13,6 @@
   </section>
 </template>
 
-<!-- TODO: Fazer a coluna tipo nos produtos -->
 <!-- TODO: Pagina dos produtos -->
 <!-- TODO: Fazer menu flutuante -->
 <!-- TODO: Deploy na vercel -->

@@ -10,5 +10,6 @@ export interface IProduto {
   marca: string;
   equipamento: string;
   id: string | number;
+  tipo: string;
   codigos: string[];
 }

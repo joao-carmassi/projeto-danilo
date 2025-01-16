@@ -15,7 +15,7 @@
         @click="limpaPesquisa"
       />
     </div>
-    <p class="pb-5 px-5 italic" v-else>Nenhum resultado encontrado.</p>
+    <p class="py-5 px-5 italic" v-else>Nenhum resultado encontrado.</p>
   </div>
 </template>
 

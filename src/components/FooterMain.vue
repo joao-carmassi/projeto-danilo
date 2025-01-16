@@ -68,8 +68,13 @@
       </nav>
       <nav>
         <h6 class="text-lg font-semibold mb-0.5 text-secondary">Produtos</h6>
-        <a class="link link-hover">Lorem</a>
-        <a class="link link-hover">Lorem</a>
+        <RouterLink
+          :to="`/produtos/${tipo}`"
+          v-for="(tipo, index) in SProdutos.tipos"
+          :key="index"
+          class="link link-hover"
+          >{{ tipo }}</RouterLink
+        >
       </nav>
     </div>
     <div class="footer bg-base-200 text-base-content p-5 px-10">

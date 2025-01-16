@@ -1,7 +1,7 @@
 <template>
   <section class="px-5 pb-12 bg-base-200 md:px-24 lg:px-48 flex flex-col gap-5">
     <div class="mt-8 px-2">
-      <TituloCategoria :categoria="id" id="tituloCategoria" />
+      <TituloCategoria v-if="!eProduto" :categoria="id" id="tituloCategoria" />
       <div class="breadcrumbs text-sm">
         <ul>
           <li><RouterLink to="/">Home</RouterLink></li>
@@ -39,6 +39,7 @@ export default {
       id: this.$route.params.id as string,
       SProdutos: storeProdutos(),
       produtos: {} as IProduto[],
+      eProduto: false,
     };
   },
   watch: {
@@ -57,7 +58,11 @@ export default {
       ItemsPesquisados = await this.SProdutos.getProdutos();
       ItemsPesquisados = ItemsPesquisados[this.id];
       if (ItemsPesquisados === undefined) {
-        this.$router.push("/404");
+        ItemsPesquisados = this.SProdutos.filtraPordutosPorTipo(this.id);
+        this.eProduto = true;
+        if (ItemsPesquisados.length === 0) {
+          this.$router.push("/404");
+        }
       }
       this.produtos = ItemsPesquisados;
     },

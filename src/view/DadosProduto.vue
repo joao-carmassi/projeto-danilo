@@ -125,6 +125,7 @@ export default {
       quantidade: 1 as number,
       compressor: false,
       imagemCompressor: "",
+      MITSUBISHI: false,
     };
   },
   watch: {
@@ -181,7 +182,6 @@ export default {
           );
         }
       });
-      console.log(descricao);
 
       return descricao.replace(/\n/g, "<br>");
     },

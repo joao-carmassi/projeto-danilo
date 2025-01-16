@@ -4,7 +4,11 @@ import { defineStore } from "pinia";
 
 export const storeProdutos = defineStore("counter", {
   state: () => {
-    return { produtos: {} as IProdutos, categorias: [] as string[] };
+    return {
+      produtos: {} as IProdutos,
+      categorias: [] as string[],
+      tipos: [] as string[],
+    };
   },
   actions: {
     async baixaProdutos() {
@@ -16,6 +20,8 @@ export const storeProdutos = defineStore("counter", {
         this.ordenaCategorias();
         this.transformaIdString();
         this.adicionaIdProdutos();
+        this.dicionaTipo();
+        this.salvaTipos();
       } else {
         return;
       }
@@ -33,6 +39,12 @@ export const storeProdutos = defineStore("counter", {
       return this.categorias;
     },
 
+    async getTipos() {
+      await this.baixaProdutos();
+
+      return this.tipos;
+    },
+
     adicionaIdProdutos() {
       for (const categoria in this.produtos) {
         this.produtos[categoria].forEach((produto) => {
@@ -47,7 +59,6 @@ export const storeProdutos = defineStore("counter", {
       for (const categoria in produtos) {
         produtos[categoria].forEach((produto) => {
           const marca = produto.marca;
-          if (produto.marca === "MITSUBISHI") return;
           if (!produtosPorMarca[marca]) {
             produtosPorMarca[marca] = [];
           }
@@ -115,6 +126,38 @@ export const storeProdutos = defineStore("counter", {
         if (indexB === -1) return -1;
         return indexA - indexB;
       });
+    },
+
+    dicionaTipo() {
+      for (const categoria in this.produtos) {
+        this.produtos[categoria].forEach((produto) => {
+          produto.tipo = produto.nome.split(" ")[0];
+        });
+      }
+    },
+
+    salvaTipos() {
+      const tipos = new Set<string>();
+      for (const categoria in this.produtos) {
+        this.produtos[categoria].forEach((produto) => {
+          tipos.add(produto.tipo);
+        });
+      }
+      this.tipos = Array.from(tipos);
+    },
+
+    filtraPordutosPorTipo(tipo: string) {
+      const produtos = this.produtos;
+      let resultado: IProduto[] = [];
+      for (const categoria in produtos) {
+        const produtosCategoria = produtos[categoria].filter((produto) => {
+          return produto.tipo === tipo;
+        });
+        if (produtosCategoria.length > 0) {
+          resultado = [...resultado, ...produtosCategoria];
+        }
+      }
+      return resultado;
     },
   },
 });

@@ -5,7 +5,7 @@
     </section>
     <section
       class="containerCarrosel relative"
-      :class="geraPadding(index)"
+      :class="geraPadding(index, categoria)"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
@@ -13,7 +13,7 @@
       <div class="md:px-10">
         <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-4">
           <TituloCategoria :categoria="categoria" />
-          <hr class="border-gray-400 border-b-2 rounded-xl w-16 mx-auto" />
+          <hr class="border-secondary border-b-2 rounded-xl w-16 mx-auto" />
         </div>
         <swiper
           :slides-per-view="2"
@@ -96,6 +96,7 @@ export default {
       SProdutos: storeProdutos(),
       produtos: {} as IProdutos,
       categorias: [] as string[],
+      MITSUBISHI: false,
     };
   },
   async created() {
@@ -109,9 +110,13 @@ export default {
     };
   },
   methods: {
-    geraPadding(index: number) {
+    geraPadding(index: number, categoria: string) {
       if (index == 0) return "pr-0";
-      return "pt-5 md:pt-7";
+      if (categoria == "MITSUBISHI") return "hidden";
+      return "pt-5 md:pt-7 ";
+    },
+    eMitsubushi(categoria: string) {
+      return categoria !== "MITSUBISHI";
     },
   },
 };
