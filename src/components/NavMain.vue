@@ -152,9 +152,17 @@
               {{ marca }}
             </summary>
             <ul
-              class="flex min-h-16 flex-wrap right-1/2 translate-x-1/2 rounded-none gap-3 justify-center items-center w-[100vw] text-black"
+              class="flex min-h-16 flex-wrap right-1/2 translate-x-1/2 rounded-none justify-center items-center w-[100vw] text-black"
             >
-              <li v-for="(tipo, index) in tiposDasMarcas[marca]" :key="index">
+              <li
+                class="flex flex-row"
+                v-for="(tipo, index) in tiposDasMarcas[marca]"
+                :key="index"
+              >
+                <span
+                  v-if="index > 0"
+                  class="border-l border-gray-300 w-0 p-0"
+                ></span>
                 <RouterLink
                   :to="`/${marca}/${tipo}`"
                   class="text-secondary font-semibold"
