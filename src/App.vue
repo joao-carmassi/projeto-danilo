@@ -5,7 +5,7 @@
     </header>
     <main>
       <RouterView
-        class="pt-[7.8rem] mx-auto md:pt-[4.5rem] min-h-[70vh] max-w-[2000px]"
+        class="pt-[8.2rem] mx-auto md:pt-[8rem] min-h-[70vh] max-w-[2000px]"
       />
     </main>
     <FooterMain />
@@ -13,8 +13,6 @@
   </section>
 </template>
 
-<!-- TODO: pesquisa em negrito -->
-<!-- TODO: Fazer menu flutuante -->
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">

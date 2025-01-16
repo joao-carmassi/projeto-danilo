@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute rounded-md shadow-md w-full bg-base-100 top-16">
+  <div class="absolute z-50 rounded-md shadow-md w-full bg-base-100 top-16">
     <!-- <p class="text-gray-600 px-4 pb-4">
       Resultado da pesquisa para: {{ produtoPesquisado }}
     </p> -->
@@ -15,6 +15,7 @@
         :classes="'min-h-11 text-xs'"
         :img="'h-10'"
         :codigos="'text-[0.6rem]'"
+        :negrito="produtoPesquisado.toLocaleUpperCase()"
         @click="limpaPesquisa"
       />
     </div>

@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts">
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { IProduto } from "@/interface/IProdutos";
 import CardProduto from "./CardProduto.vue";
 

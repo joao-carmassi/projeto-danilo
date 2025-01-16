@@ -19,12 +19,15 @@
       :class="img"
     />
     <div>
-      <h2 class="break-all text-secondary font-semibold">
-        {{ produto.nome }}
-      </h2>
-      <p class="text-gray-600" :class="codigos">
-        {{ produto.codigos.join(", ") }}
-      </p>
+      <h2
+        v-html="deixaNomeDoProdutoIgualPesquisaNegrito"
+        class="break-all text-secondary font-semibold"
+      ></h2>
+      <p
+        v-html="deixaCodigoDoProdutoIgualPesquisaNegrito"
+        class="text-gray-600"
+        :class="codigos"
+      ></p>
     </div>
   </RouterLink>
 </template>
@@ -53,9 +56,34 @@ export default {
     codigos: {
       type: String,
     },
+    negrito: {
+      type: String,
+    },
   },
   mounted() {
     this.compressor = this.produto.nome.includes("COMPRESSOR");
+  },
+  computed: {
+    deixaNomeDoProdutoIgualPesquisaNegrito() {
+      let nome = this.produto.nome;
+      if (nome.includes(this.negrito as string)) {
+        nome = nome.replace(
+          new RegExp(this.negrito as string, "g"),
+          `<span class="font-bold">${this.negrito}</span>`
+        );
+      }
+      return nome;
+    },
+    deixaCodigoDoProdutoIgualPesquisaNegrito() {
+      let codigo = this.produto.codigos.join(", ");
+      if (codigo.includes(this.negrito as string)) {
+        codigo = codigo.replace(
+          new RegExp(this.negrito as string, "g"),
+          `<span class="font-bold">${this.negrito}</span>`
+        );
+      }
+      return codigo;
+    },
   },
 };
 </script>

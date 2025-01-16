@@ -169,5 +169,23 @@ export const storeProdutos = defineStore("counter", {
       });
       return produtos;
     },
+
+    async capturaOsTiposDeProdutosDeCadaMarca() {
+      await this.getCategorias();
+
+      const categoriasComTipos: Record<string, string[]> = {};
+
+      this.categorias.forEach((categoria) => {
+        const produtos = this.produtos[categoria];
+        const tipos = new Set<string>();
+        produtos.forEach((produto) => {
+          tipos.add(produto.tipo);
+        });
+
+        categoriasComTipos[categoria] = Array.from(tipos);
+      });
+
+      return categoriasComTipos;
+    },
   },
 });

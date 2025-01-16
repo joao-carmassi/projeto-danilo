@@ -5,7 +5,7 @@
         type="text"
         v-model="inputPesquisa"
         @focus="onFocusInput"
-        class="grow"
+        class="grow font-semibold placeholder:font-normal"
         placeholder="Digite o nome ou código da peça"
       />
       <svg
