@@ -1,9 +1,12 @@
 <template>
-  <div class="absolute shadow-md w-full bg-base-100 top-16">
+  <div class="absolute rounded-md shadow-md w-full bg-base-100 top-16">
     <!-- <p class="text-gray-600 px-4 pb-4">
       Resultado da pesquisa para: {{ produtoPesquisado }}
     </p> -->
-    <div class="max-h-[45vh] overflow-auto" v-if="produtos.length">
+    <div
+      class="max-h-[45vh] mr-1 rounded-md overflow-auto"
+      v-if="produtos.length"
+    >
       <RowProduto
         v-for="(produto, index) in produtos"
         :key="index"
@@ -70,6 +73,7 @@ export default {
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 16px;
+  height: 10px;
 }
 
 *::-webkit-scrollbar-track {

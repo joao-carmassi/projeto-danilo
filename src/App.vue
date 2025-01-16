@@ -13,7 +13,7 @@
   </section>
 </template>
 
-<!-- TODO: Pagina dos produtos -->
+<!-- TODO: pesquisa em negrito -->
 <!-- TODO: Fazer menu flutuante -->
 <!-- TODO: Deploy na vercel -->
 

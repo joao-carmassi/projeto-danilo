@@ -8,16 +8,20 @@ const routes = [
     component: HomePageCarroseu,
   },
   {
-    path: "/marca/:id",
-    component: () => import("@/view/MostraGrupo.vue"),
-  },
-  {
     path: "/produto/:id",
     component: () => import("@/view/DadosProduto.vue"),
   },
   {
+    path: "/marca/:id",
+    component: () => import("@/view/MostraMarca.vue"),
+  },
+  {
     path: "/produtos/:id",
-    component: () => import("@/view/MostraGrupo.vue"),
+    component: () => import("@/view/MostraProdutos.vue"),
+  },
+  {
+    path: "/:marca/:tipo",
+    component: () => import("@/view/MostraMarcaTipo.vue"),
   },
   {
     path: "/carrinho",
@@ -39,9 +43,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // Se a rota não for válida, redireciona para 404
-  if (to.matched.length === 0) {
-    next("/404");
+  if (window.location.href.includes("/img/produtos/")) {
+    window.location.href = "/";
   } else {
     next();
   }

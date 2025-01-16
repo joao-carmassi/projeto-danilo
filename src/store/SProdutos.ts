@@ -146,18 +146,28 @@ export const storeProdutos = defineStore("counter", {
       this.tipos = Array.from(tipos);
     },
 
-    filtraPordutosPorTipo(tipo: string) {
-      const produtos = this.produtos;
+    filtraPordutosPorTipo(tipo: string, produtos: IProdutos) {
+      const produtosAFiltrar = produtos;
       let resultado: IProduto[] = [];
-      for (const categoria in produtos) {
-        const produtosCategoria = produtos[categoria].filter((produto) => {
-          return produto.tipo === tipo;
-        });
+      for (const categoria in produtosAFiltrar) {
+        const produtosCategoria = produtosAFiltrar[categoria].filter(
+          (produto) => {
+            return produto.tipo === tipo;
+          }
+        );
         if (produtosCategoria.length > 0) {
           resultado = [...resultado, ...produtosCategoria];
         }
       }
       return resultado;
+    },
+
+    filtaPorMarcaETipo(marca: string, tipo: string) {
+      const teste = this.produtos[marca];
+      const produtos = teste.filter((produto) => {
+        return produto.tipo === tipo;
+      });
+      return produtos;
     },
   },
 });
