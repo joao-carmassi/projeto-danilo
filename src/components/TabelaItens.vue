@@ -6,12 +6,13 @@
       class=""
       v-for="(produto, index) in produtos"
       :key="index"
-      :produto="produto"
+      :produto="produto as IProduto"
     />
   </div>
 </template>
 
 <script lang="ts">
+import type { IProduto } from "@/interface/IProdutos";
 import CardProduto from "./CardProduto.vue";
 
 export default {

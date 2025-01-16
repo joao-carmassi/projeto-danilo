@@ -6,7 +6,7 @@
       class=""
       v-for="(produto, index) in produtos"
       :key="index"
-      :produto="produto"
+      :produto="testeFoda(produto)"
     />
   </div>
 </template>
@@ -22,8 +22,14 @@ export default {
   },
   props: {
     produtos: {
-      type: Object as PropType<IProduto[]>,
+      type: Array as PropType<IProduto[]>,
       required: true,
+    },
+  },
+  methods: {
+    testeFoda(produto: IProduto) {
+      const a = produto as IProduto;
+      return a;
     },
   },
 };
