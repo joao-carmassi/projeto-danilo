@@ -16,14 +16,6 @@ const routes = [
     component: () => import("@/view/MostraMarca.vue"),
   },
   {
-    path: "/produtos/:id",
-    component: () => import("@/view/MostraProdutos.vue"),
-  },
-  {
-    path: "/:marca/:tipo",
-    component: () => import("@/view/MostraMarcaTipo.vue"),
-  },
-  {
     path: "/carrinho",
     component: () => import("@/view/CarrinhoPage.vue"),
   },

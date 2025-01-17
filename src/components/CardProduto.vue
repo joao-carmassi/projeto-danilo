@@ -26,9 +26,16 @@
         :src="`./img/marcas/${produto.marca}.png`"
         :alt="`Logo ${produto.marca}`"
       />
-      <h2 class="text-secondary text-sm md:text-base limitaTexto">
-        {{ produto.nome }}
-      </h2>
+      <div>
+        <h2
+          class="text-secondary font-semibold text-sm md:text-base limitaTexto"
+        >
+          {{ produto.nome }}
+        </h2>
+        <p class="text-xs limitaTexto text-gray-500">
+          {{ produto.codigos.join(", ") }}
+        </p>
+      </div>
       <!-- <ValorProduto class="text-secondary" :valor="produto.VALOR" /> -->
     </RouterLink>
     <button

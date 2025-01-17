@@ -1,54 +1,240 @@
 <template>
-  <nav
-    id="navBar"
-    class="w-full flex gap-2 flex-col shadow-sm px-5 py-3 bg-secondary"
-  >
-    <div class="flex gap-3 flex-col">
-      <div class="flex items-center justify-between h-12">
-        <div class="h-full">
-          <button
-            @click="vaiParaHome"
-            class="h-full hidden md:block rounded-full border-2 aspect-square border-primary p-2.5"
-          >
-            <img class="h-full" src="/img/simbolo.png" alt="" />
-          </button>
-          <input
-            id="my-drawer-3"
-            type="checkbox"
-            class="drawer-toggle md:hidden"
-          />
-          <label
-            for="my-drawer-3"
-            aria-label="open sidebar"
-            class="btn border border-white btn-square md:hidden btn-ghost"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block h-6 w-6 stroke-current text-white"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </label>
-          <div class="drawer-side z-50">
-            <label
-              for="my-drawer-3"
-              aria-label="close sidebar"
-              class="drawer-overlay"
-            ></label>
+  <div class="w-full">
+    <MensagemPix />
+    <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-3 bg-secondary">
+      <div class="flex gap-3 flex-col">
+        <div class="flex items-center justify-between h-12">
+          <div class="h-full aspect-square">
             <div
-              class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full"
+              class="itens-pc w-60 hidden h-full md:flex justify-center items-center"
             >
-              <div
-                class="h-5 bg-secondary text-white flex items-center justify-end px-5"
+              <RouterLink class="flex lg:justify-center items-center" to="/">
+                <img class="md:w-4/5 lg:w-full" src="/img/logo.png" alt="" />
+              </RouterLink>
+            </div>
+            <div class="Itens-Celular block md:hidden">
+              <input
+                id="my-drawer-3"
+                type="checkbox"
+                class="drawer-toggle md:hidden"
+              />
+              <label
+                for="my-drawer-3"
+                aria-label="open sidebar"
+                class="btn border border-white btn-square md:hidden btn-ghost"
               >
-                <!-- <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block h-6 w-6 stroke-current text-white"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+              <div class="drawer-side z-50">
+                <label
+                  for="my-drawer-3"
+                  aria-label="close sidebar"
+                  class="drawer-overlay"
+                ></label>
+                <div
+                  class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full"
+                >
+                  <div
+                    class="h-5 bg-secondary text-white flex items-center justify-end px-5"
+                  ></div>
+                  <div
+                    class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
+                  >
+                    <input
+                      class="px-4 min-h-14"
+                      type="checkbox"
+                      name="my-accordion-4"
+                    />
+                    <div
+                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                    >
+                      <div class="flex items-center justify-center gap-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          width="25"
+                          height="25"
+                          stroke-width="1.5"
+                          class="text-secondary"
+                        >
+                          <path
+                            d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"
+                          ></path>
+                        </svg>
+                        <p class="text-secondary">Central De atendimentos</p>
+                      </div>
+                    </div>
+                    <div class="collapse-content flex flex-col">
+                      <ul class="menu rounded-md p-0 dropdown-content z-[1]">
+                        <li>
+                          <a
+                            target="_blank"
+                            href="mailto:vendas@lojadovrf.com.br"
+                            class="rounded-t-md flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                          >
+                            <span class="block font-normal"
+                              >Envie uma Mensagem:</span
+                            >
+                            <div class="flex gap-1 items-start">
+                              <svg
+                                class="inline"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="20"
+                                height="20"
+                                stroke-width="2"
+                              >
+                                <path
+                                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                                ></path>
+                                <path d="M3 7l9 6l9 -6"></path>
+                              </svg>
+                              <p>vendas@lojadovrf.com.br</p>
+                            </div>
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <a
+                            target="_blank"
+                            href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
+                            class="flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                          >
+                            <span class="block font-normal"
+                              >Compre por telefone:</span
+                            >
+                            <div class="flex gap-1 items-start">
+                              <svg
+                                class="inline text-green-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="20"
+                                height="20"
+                                stroke-width="2"
+                              >
+                                <path
+                                  d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
+                                ></path>
+                                <path
+                                  d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+                                ></path>
+                              </svg>
+                              <p>(11) 116918-9244</p>
+                            </div>
+                          </a>
+                        </li>
+                        <hr />
+                        <li>
+                          <div
+                            class="rounded-b-md hover:bg-base-200 flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                          >
+                            <span class="block font-normal"
+                              >Horário de atendimento:</span
+                            >
+                            <div class="flex gap-1 items-start">
+                              <svg
+                                class="inline"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="24"
+                                height="24"
+                                stroke-width="2"
+                              >
+                                <path
+                                  d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"
+                                ></path>
+                                <path d="M12 12l3 -2"></path>
+                                <path d="M12 7v5"></path>
+                              </svg>
+                              <p>Domingo a Domingo das 07 às 20 horas</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    v-for="(tipo, index) in tipos"
+                    :key="index"
+                    class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
+                  >
+                    <input
+                      class="px-4 min-h-14"
+                      type="checkbox"
+                      name="my-accordion-4"
+                    />
+                    <div
+                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                    >
+                      {{ tipo }}
+                    </div>
+                    <div class="collapse-content pl-3 flex flex-col">
+                      <RouterLink
+                        @click="fechaDrawer()"
+                        :class="{ 'border-t': index !== 0 }"
+                        class="py-2.5 pl-2 border-gray-300 font-semibold"
+                        to="/404"
+                        v-for="(marca, index) in tiposDasMarcas[tipo]"
+                        :key="index"
+                      >
+                        - {{ marca }}
+                      </RouterLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-full md:hidden">
+            <button
+              @click="vaiParaHome"
+              class="h-full w-2/3 flex justify-center items-center gap-2 md:hidden py-2.5 mx-auto"
+            >
+              <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
+              <!-- <img class="h-full" src="/img/simbolo.png" alt="" />
+              <h1 class="text-primary text-xl font-bold">Loja do VRF</h1> -->
+            </button>
+          </div>
+          <div class="hidden md:flex justify-center items-center gap-1">
+            <InputPesquisaProduto class="md:w-72 lg:w-[32.5rem]" />
+          </div>
+          <div class="flex gap-2 justify-end">
+            <details
+              id="detailsTelefone"
+              class="hidden md:block dropdown dropdown-end m-0"
+            >
+              <summary
+                class="btn bg-white py-1.5 h-fit btn-sm text-left pl-1 m-1"
+              >
+                <div class="flex items-center justify-center gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -56,143 +242,170 @@
                     stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    width="24"
-                    height="24"
-                    stroke-width="2"
+                    width="30"
+                    height="30"
+                    stroke-width="1.5"
+                    class="text-secondary"
                   >
-                    <path d="M18 6l-12 12"></path>
-                    <path d="M6 6l12 12"></path>
+                    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                </button> -->
-              </div>
-              <div
-                v-for="(marca, index) in marcas"
-                :key="index"
-                class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
+                  <p class="text-secondary">
+                    Central De <span class="block">atendimentos</span>
+                  </p>
+                </div>
+              </summary>
+              <ul
+                class="menu w-56 rounded-md p-0 dropdown-content bg-base-100 z-[1] shadow"
               >
-                <input
-                  class="px-4 min-h-14"
-                  type="checkbox"
-                  name="my-accordion-4"
-                />
-                <div
-                  class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
-                >
-                  {{ marca }}
-                </div>
-                <div class="collapse-content pl-3 flex flex-col">
-                  <RouterLink
-                    @click="fechaDrawer()"
-                    :class="{ 'border-t': index !== 0 }"
-                    class="py-2.5 pl-2 border-gray-300 font-semibold"
-                    :to="`/${marca}/${tipo}`"
-                    v-for="(tipo, index) in tiposDasMarcas[marca]"
-                    :key="index"
+                <li>
+                  <a
+                    target="_blank"
+                    href="mailto:vendas@lojadovrf.com.br"
+                    class="rounded-t-md flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
                   >
-                    - {{ tipo }}
-                  </RouterLink>
+                    <span class="block font-normal">Envie uma Mensagem:</span>
+                    <div class="flex gap-1 items-start">
+                      <svg
+                        class="inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="20"
+                        height="20"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                        ></path>
+                        <path d="M3 7l9 6l9 -6"></path>
+                      </svg>
+                      <p>vendas@lojadovrf.com.br</p>
+                    </div>
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
+                    class="flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                  >
+                    <span class="block font-normal">Compre por telefone:</span>
+                    <div class="flex gap-1 items-start">
+                      <svg
+                        class="inline text-green-500"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="20"
+                        height="20"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
+                        ></path>
+                        <path
+                          d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+                        ></path>
+                      </svg>
+                      <p>(11) 116918-9244</p>
+                    </div>
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <div
+                    class="rounded-b-md hover:bg-base-100 flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                  >
+                    <span class="block font-normal"
+                      >Horário de atendimento:</span
+                    >
+                    <div class="flex gap-1 items-start">
+                      <svg
+                        class="inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="24"
+                        height="24"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"
+                        ></path>
+                        <path d="M12 12l3 -2"></path>
+                        <path d="M12 7v5"></path>
+                      </svg>
+                      <p>Domingo a Domingo das 07 às 20 horas</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </details>
+            <div class="dropdown dropdown-end">
+              <RouterLink
+                to="/carrinho"
+                class="btn border-white focus:border-secondary border-2 btn-ghost btn-circle"
+              >
+                <div class="indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 text-base-100 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                  <span class="badge badge-sm indicator-item">{{
+                    SCarrinho.produtos.items.length
+                  }}</span>
                 </div>
-              </div>
+              </RouterLink>
             </div>
           </div>
         </div>
-        <div class="h-full">
-          <button
-            @click="vaiParaHome"
-            class="h-full w-2/3 flex justify-center items-center gap-2 md:hidden py-2.5 mx-auto"
-          >
-            <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
-            <!-- <img class="h-full" src="/img/simbolo.png" alt="" />
-            <h1 class="text-primary text-xl font-bold">Loja do VRF</h1> -->
-          </button>
-        </div>
-        <div class="gap-2 hidden w-full md:grid place-items-center">
-          <InputPesquisaProduto class="md:w-96 lg:w-[32.5rem]" />
-        </div>
-        <div class="flex justify-end">
-          <div class="dropdown dropdown-end">
-            <RouterLink
-              to="/carrinho"
-              class="btn border border-white btn-ghost btn-circle"
-            >
-              <div class="indicator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 text-base-100 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span class="badge badge-sm indicator-item">{{
-                  SCarrinho.produtos.items.length
-                }}</span>
-              </div>
-            </RouterLink>
-          </div>
+        <div class="md:hidden h-12 flex items-center justify-center w-full">
+          <InputPesquisaProduto class="w-full" />
         </div>
       </div>
-      <div class="md:hidden h-12 flex items-center justify-center w-full">
-        <InputPesquisaProduto class="w-full" />
-      </div>
-    </div>
-    <div
-      class="hidden relative h-12 md:flex items-center justify-center text-white"
-    >
-      <ul class="menu gap-3 menu-horizontal px-1">
-        <li class="static py-2" v-for="(marca, index) in marcas" :key="index">
-          <details id="detailsNav">
-            <summary @click="paginaMarcas(marca)">
-              {{ marca }}
-            </summary>
-            <ul
-              class="flex min-h-16 flex-wrap right-1/2 translate-x-1/2 rounded-none justify-center items-center w-[100vw] text-black"
-            >
-              <li
-                class="flex flex-row"
-                v-for="(tipo, index) in tiposDasMarcas[marca]"
-                :key="index"
-              >
-                <span
-                  v-if="index > 0"
-                  class="border-l border-gray-300 w-0 p-0"
-                ></span>
-                <RouterLink
-                  :to="`/${marca}/${tipo}`"
-                  class="text-secondary font-semibold"
-                  >{{ tipo }}</RouterLink
-                >
-              </li>
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script lang="ts">
 import { storeCarrinho } from "@/store/SCarrinho";
 import InputPesquisaProduto from "./InputPesquisaProduto.vue";
 import { storeProdutos } from "@/store/SProdutos";
-import type { DetailsHTMLAttributes } from "vue";
 import router from "@/router/router";
+import type { DetailsHTMLAttributes } from "vue";
+import MensagemPix from "./MensagemPix.vue";
 
 export default {
-  components: { InputPesquisaProduto },
+  components: { InputPesquisaProduto, MensagemPix },
   data() {
     return {
       inputPesquisa: "",
       SCarrinho: storeCarrinho(),
       SProdutos: storeProdutos(),
-      marcas: [] as string[],
-      tiposDasMarcas: {} as Record<string, string[]>,
+      tipos: [] as string[],
+      tiposDasMarcas: {} as {
+        [key: string]: string[];
+      },
     };
   },
   methods: {
@@ -211,12 +424,10 @@ export default {
     },
   },
   async mounted() {
-    this.SCarrinho.carregaDados();
-    this.marcas = await this.SProdutos.getCategorias();
-    this.tiposDasMarcas =
-      await this.SProdutos.capturaOsTiposDeProdutosDeCadaMarca();
+    this.tipos = await this.SProdutos.getTipos();
+    this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
 
-    const details = document.querySelectorAll("#detailsNav");
+    const details = document.querySelectorAll("#detailsTelefone");
     details.forEach((detail) => {
       let alvo: DetailsHTMLAttributes;
       detail.addEventListener("mouseenter", (e) => {

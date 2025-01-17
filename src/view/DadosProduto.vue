@@ -1,6 +1,6 @@
 <template>
   <section
-    class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-96 bg-base-100 pb-14"
+    class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-64 bg-base-100 pb-14"
   >
     <div
       v-if="compressor"
@@ -57,10 +57,15 @@
       <!-- <p class="text-gray-500 text-lg font-semibold">
         {{ produto.marca }}
       </p> -->
-      <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
+      <h2
+        class="text-2xl leading-8 break-all text-secondary lg:text-3xl font-semibold"
+      >
         {{ produto.nome || "Nome" }}
       </h2>
       <p class="text-gray-500 text-lg">SKU: {{ produto.sku }}</p>
+      <p class="text-gray-500 text-lg">
+        Códigos compatíveis: {{ produto.codigos.join(", ") }}
+      </p>
       <!-- <ValorProduto
         class="text-xl text-secondary"
         v-if="produto.VALOR !== undefined"
@@ -98,11 +103,57 @@
       </p>
     </div>
     <div class="col-span-5">
-      <h3 class="text-2xl text-secondary font-semibold">Descrição:</h3>
+      <h3 class="text-lg text-secondary font-semibold">Descrição:</h3>
       <p
         v-html="descricaoFormatada || 'Descrição'"
         class="text-lg text-gray-600"
       ></p>
+    </div>
+    <div class="w-full col-span-full">
+      <h2 class="text-2xl text-secondary font-semibold">
+        Produtos Semelhantes...
+      </h2>
+      <swiper
+        :slides-per-view="2"
+        :loop="true"
+        class="swiper-container"
+        space-between="30"
+        :breakpoints="{
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+        }"
+      >
+        <swiper-slide
+          class="my-auto"
+          v-for="(produto, index) in SProdutos.produtos.MIDEA"
+          :key="index"
+        >
+          <CardProduto class="my-5" :produto="produto" />
+        </swiper-slide>
+      </swiper>
+      <!-- <swiper
+        :slides-per-view="2"
+        :loop="true"
+        :navigation="true"
+        :modules="[Navigation]"
+        class="swiper-container w-11/12"
+        :breakpoints="{
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+        }"
+      >
+        <swiper-slide
+          class="my-auto"
+          v-for="(produto, index) in SProdutos.produtos.MIDEA"
+          :key="index"
+        >
+          <CardProduto class="my-5 mx-3 md:mx-5" :produto="produto" />
+        </swiper-slide>
+      </swiper> -->
     </div>
   </section>
 </template>
@@ -113,8 +164,15 @@ import type { IProduto } from "@/interface/IProdutos";
 import { storeCarrinho } from "@/store/SCarrinho";
 import { storeProdutos } from "@/store/SProdutos";
 
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+import CardProduto from "@/components/CardProduto.vue";
+import { Navigation } from "swiper/modules";
+
 export default {
-  components: { InputQuantitade },
+  components: { InputQuantitade, Swiper, SwiperSlide, CardProduto },
   data() {
     return {
       id: this.$route.params.id as string,
@@ -178,7 +236,7 @@ export default {
         if (descricao.includes(texto)) {
           descricao = descricao.replace(
             texto,
-            `<span class='font-semibold text-secondary'>${texto}</span>`
+            `<span class='font-semibold text-xl text-secondary'>${texto}</span>`
           );
         }
       });
@@ -188,6 +246,11 @@ export default {
   },
   created() {
     this.moveTelaTopo();
+  },
+  setup() {
+    return {
+      modules: [Navigation],
+    };
   },
 };
 </script>

@@ -9,6 +9,7 @@
     :fadeEffect="{ crossFade: true }"
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     class="swiper-container swiperMarcas"
+    data-teste="a"
   >
     <swiper-slide class="my-auto">
       <img

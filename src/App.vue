@@ -1,18 +1,20 @@
 <template>
-  <section class="bg-base-200">
+  <section class="bg-base-100 max-w-[2000px] mx-auto">
     <header>
-      <NavMain class="fixed top-0 z-50" />
+      <NavMain class="fixed max-w-[2000px] top-0 z-50" />
     </header>
     <main>
-      <RouterView
-        class="pt-[8.2rem] mx-auto md:pt-[8rem] min-h-[70vh] max-w-[2000px]"
-      />
+      <NavMain class="max-w-[2000px] top-0 z-50" />
+      <RouterView class="mx-auto min-h-[70vh]" />
     </main>
     <FooterMain />
     <ContainerNotificacao />
   </section>
 </template>
 
+<!-- TODO: pagina produtos, marcas, tipos -->
+<!-- TODO: menu -->
+<!-- TODO: footer -->
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">

@@ -168,7 +168,6 @@ export const storeProdutos = defineStore("counter", {
         return [];
       }
 
-      // Filtra os produtos
       const produtos = this.produtos[marca].filter(
         (produto) => produto.tipo === tipo
       );
@@ -194,8 +193,29 @@ export const storeProdutos = defineStore("counter", {
 
         categoriasComTipos[categoria] = Array.from(tipos);
       });
-
+      // {} as Record<string, string[]>,
       return categoriasComTipos;
+    },
+
+    async separaMarcasDeUmProduto() {
+      const produtos = await this.getProdutos();
+      const marcasPorTipo: Record<string, string[]> = {};
+      for (const categoria in produtos) {
+        const produtosCategoria = produtos[categoria];
+        produtosCategoria.forEach((produto) => {
+          const tipo = produto.tipo;
+          const marca = produto.marca;
+
+          if (!marcasPorTipo[tipo]) {
+            marcasPorTipo[tipo] = [];
+          }
+
+          if (!marcasPorTipo[tipo].includes(marca)) {
+            marcasPorTipo[tipo].push(marca);
+          }
+        });
+      }
+      return marcasPorTipo;
     },
   },
 });
