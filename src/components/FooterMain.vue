@@ -2,7 +2,7 @@
   <footer>
     <hr class="border-secondary" />
     <div
-      class="flex gap-x-10 py-10 w-10/12 mx-auto justify-between items-center"
+      class="grid grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-10 w-10/12 mx-auto justify-between items-center"
     >
       <div class="flex-1">
         <h2 class="font-semibold text-center mb-5">Loja do vrf</h2>
@@ -125,7 +125,7 @@
           />
         </div>
       </div>
-      <div class="grid flex-1 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-none flex-1 gap-8">
         <div>
           <p class="font-semibold text-center mb-5">Selos de seguranca</p>
           <img
