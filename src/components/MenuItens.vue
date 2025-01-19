@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div
     id="menuItens"
     class="hidden relative h-12 w-full bg-secondary md:flex items-center justify-center text-white"
@@ -8,7 +8,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold">CATEGORIAS</summary>
           <ul
-            class="flex flex-col justify-center items-start top-8 rounded-none"
+            class="flex flex-col justify-center items-start md:top-8 lg:top-10 rounded-none"
           >
             <li class="flex flex-row relative">
               <details class="detailsNav" id="detailfilho ">
@@ -251,7 +251,7 @@
             {{ tipo }}
           </summary>
           <ul
-            class="flex justify-center items-center top-8 rounded-none w-full right-1/2 translate-x-1/2"
+            class="flex justify-center items-center md:top-8 lg:top-10 rounded-none w-full right-1/2 translate-x-1/2"
           >
             <li
               class="flex flex-row"
@@ -273,14 +273,123 @@
       </li>
     </ul>
   </div>
+</template> -->
+
+<template>
+  <div
+    id="menuItens"
+    class="hidden relative w-full bg-secondary lg:flex items-center justify-center text-white"
+  >
+    <ul
+      class="menu static justify-center items-center flex-wrap h-fit gap-3 z-40 menu-horizontal"
+    >
+      <li class="static hidden md:block my-1">
+        <ComponenteCategoria />
+      </li>
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold text-xs">COMPRESSORES</summary>
+          <ul
+            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+          >
+            <div class="flex">
+              <div v-for="index in 4" :key="index">
+                <li class="mx-5" v-for="index in 10" :key="index">
+                  <p class="text-secondary mx-2 font-semibold text-nowrap">
+                    {{ (Math.random() * 9999999999).toFixed(0) }}
+                  </p>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </details>
+      </li>
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold text-xs">
+            INSTALAÇÃO E MANUTENÇÃO
+          </summary>
+          <ul
+            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+          >
+            <div class="flex">
+              <div v-for="index in 4" :key="index">
+                <li class="mx-5" v-for="index in 10" :key="index">
+                  <p class="text-secondary mx-2 font-semibold text-nowrap">
+                    {{ (Math.random() * 9999999999).toFixed(0) }}
+                  </p>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </details>
+      </li>
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold text-xs">VÁLVULAS</summary>
+          <ul
+            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+          >
+            <div class="flex">
+              <div v-for="index in 4" :key="index">
+                <li class="mx-5" v-for="index in 10" :key="index">
+                  <p class="text-secondary mx-2 font-semibold text-nowrap">
+                    {{ (Math.random() * 9999999999).toFixed(0) }}
+                  </p>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </details>
+      </li>
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold text-xs">GÁS REFRIGERANTES</summary>
+          <ul
+            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+          >
+            <div class="flex">
+              <div v-for="index in 4" :key="index">
+                <li class="mx-5" v-for="index in 10" :key="index">
+                  <p class="text-secondary mx-2 font-semibold text-nowrap">
+                    {{ (Math.random() * 9999999999).toFixed(0) }}
+                  </p>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </details>
+      </li>
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold text-xs">LUBRIFICANTES</summary>
+          <ul
+            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+          >
+            <div class="flex">
+              <div v-for="index in 4" :key="index">
+                <li class="mx-5" v-for="index in 10" :key="index">
+                  <p class="text-secondary mx-2 font-semibold text-nowrap">
+                    {{ (Math.random() * 9999999999).toFixed(0) }}
+                  </p>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
 import router from "@/router/router";
 import { storeProdutos } from "@/store/SProdutos";
 import type { DetailsHTMLAttributes } from "vue";
+import ComponenteCategoria from "./ComponenteCategoria.vue";
 
 export default {
+  components: { ComponenteCategoria },
   data() {
     return {
       SProdutos: storeProdutos(),

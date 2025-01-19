@@ -1,27 +1,38 @@
 <template>
   <div class="w-full">
-    <MensagemPix />
     <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-3 bg-secondary">
       <div class="flex gap-3 flex-col">
         <div class="flex items-center justify-between h-12">
           <div class="h-full aspect-square">
             <div
-              class="itens-pc w-60 hidden h-full md:flex justify-center items-center"
+              class="itens-pc md:w-44 lg:w-64 hidden h-full lg:flex justify-center items-center"
             >
-              <RouterLink class="flex lg:justify-center items-center" to="/">
-                <img class="md:w-4/5 lg:w-full" src="/img/logo.png" alt="" />
+              <RouterLink
+                class="flex gap-3 w-fit lg:justify-center items-center"
+                to="/"
+              >
+                <img
+                  class="md:h-6 lg:h-8 aspect-square"
+                  src="/img/simbolo.png"
+                  alt="Iconi VRF"
+                />
+                <img
+                  class="md:w-4/6 lg:w-52"
+                  src="/img/logo.png"
+                  alt="Lodo loja do VRF"
+                />
               </RouterLink>
             </div>
-            <div class="Itens-Celular block md:hidden">
+            <div class="Itens-Celular block lg:hidden">
               <input
                 id="my-drawer-3"
                 type="checkbox"
-                class="drawer-toggle drawers md:hidden"
+                class="drawer-toggle drawers lg:hidden"
               />
               <label
                 for="my-drawer-3"
                 aria-label="open sidebar"
-                class="btn border border-white btn-square md:hidden btn-ghost"
+                class="btn border border-white btn-square lg:hidden btn-ghost"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -213,24 +224,22 @@
               </div>
             </div>
           </div>
-          <div class="h-full md:hidden">
+          <div class="h-full lg:hidden">
             <button
               @click="vaiParaHome"
-              class="h-full w-2/3 flex justify-center items-center gap-2 md:hidden py-2.5 mx-auto"
+              class="h-full w-2/3 flex justify-center items-center gap-2 lg:hidden py-2.5 mx-auto"
             >
               <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
             </button>
           </div>
-          <div class="hidden md:flex justify-center items-center gap-1">
+          <div class="hidden lg:flex justify-center items-center gap-1">
             <InputPesquisaProduto class="md:w-72 lg:w-[32.5rem]" />
-          </div>
-          <div class="flex gap-2 justify-end">
             <details
               id="detailsTelefone"
               class="hidden md:block dropdown dropdown-end m-0"
             >
               <summary
-                class="btn bg-white py-1.5 h-fit btn-sm text-left pl-1 m-1"
+                class="btn bg-secondary hover:bg-secondary border-none py-1.5 h-fit btn-sm text-left pl-1 m-1"
               >
                 <div class="flex items-center justify-center gap-1">
                   <svg
@@ -243,11 +252,11 @@
                     width="30"
                     height="30"
                     stroke-width="1.5"
-                    class="text-secondary"
+                    class="text-white"
                   >
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                  <p class="text-secondary">
+                  <p class="text-white">
                     Central De <span class="block">atendimentos</span>
                   </p>
                 </div>
@@ -349,6 +358,8 @@
                 </li>
               </ul>
             </details>
+          </div>
+          <div class="flex w-24 gap-2 justify-end">
             <div class="dropdown dropdown-end">
               <RouterLink
                 to="/carrinho"
@@ -377,7 +388,7 @@
             </div>
           </div>
         </div>
-        <div class="md:hidden h-12 flex items-center justify-center w-full">
+        <div class="lg:hidden h-12 flex items-center justify-center w-full">
           <InputPesquisaProduto class="w-full" />
         </div>
       </div>
@@ -391,11 +402,10 @@ import InputPesquisaProduto from "./InputPesquisaProduto.vue";
 import { storeProdutos } from "@/store/SProdutos";
 import router from "@/router/router";
 import type { DetailsHTMLAttributes } from "vue";
-import MensagemPix from "./MensagemPix.vue";
 import fechaDrawer from "@/utils/fechaDrawer";
 
 export default {
-  components: { InputPesquisaProduto, MensagemPix },
+  components: { InputPesquisaProduto },
   data() {
     return {
       inputPesquisa: "",

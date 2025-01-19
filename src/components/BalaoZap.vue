@@ -36,7 +36,7 @@
       @click="fechaAlerta"
     >
       <span
-        class="badge border border-white text-xs px-1.5 pb-0.5 text-white badge-secondary"
+        class="badge border border-white text-xs px-1.5 pb-[0.2rem] text-white badge-secondary"
         >x</span
       >
     </button>

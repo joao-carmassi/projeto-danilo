@@ -276,21 +276,21 @@
         </div>
       </div>
       <div
-        class="flex gap-3 md:gap-5 px-3 flex-col items-center md:flex-row md:w-11/12 lg:w-10/12 mx-auto"
+        class="flex gap-3 md:gap-5 px-3 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
       >
-        <div>
+        <div class="md:hover:scale-105 duration-200">
           <img
             src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
             alt=""
           />
         </div>
-        <div>
+        <div class="md:hover:scale-105 duration-200">
           <img
             src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
             alt=""
           />
         </div>
-        <div>
+        <div class="md:hover:scale-105 duration-200">
           <img
             src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
             alt=""
@@ -298,6 +298,7 @@
         </div>
       </div>
     </section>
+    <hr class="my-10 border-secondary" />
     <section
       class="containerCarrosel relative"
       :class="geraPadding(index, categoria)"
@@ -341,13 +342,13 @@
       </div>
       <hr class="mt-5 border-secondary" />
     </section>
-    <section>
-      <div class="text-center pt-10">
+    <section class="bg-[#d4f1fd] mt-10 py-10">
+      <div class="text-center">
         <h2 class="font-semibold text-secondary text-3xl">
           Escolha pela marca
         </h2>
       </div>
-      <div class="relative mt-5">
+      <div class="relative pt-5">
         <swiper
           :slides-per-view="2"
           :loop="true"

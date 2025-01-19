@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .limitaTexto {
   overflow: hidden;
   text-overflow: ellipsis;
