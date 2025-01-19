@@ -66,6 +66,10 @@
       <p class="text-gray-500 text-lg">
         Códigos compatíveis: {{ produto.codigos.join(", ") }}
       </p>
+      <div>
+        <p class="text-green-600 text-sm">PARCELAMENTO EM ATÉ 12 VEZES</p>
+        <p class="text-green-600 text-sm">7% DE DESCONTO NO PIX</p>
+      </div>
       <!-- <ValorProduto
         class="text-xl text-secondary"
         v-if="produto.VALOR !== undefined"
@@ -77,10 +81,10 @@
           @click="enviaProduto"
           class="flex-shrink font-montSerrat text-lg btn btn-secondary w-full min-h-0 h-full text-base-100"
         >
-          Comprar
+          COMPRAR
         </button>
       </div>
-      <p class="text-green-500 lowercase">
+      <p class="text-green-600 lowercase">
         <svg
           class="inline"
           xmlns="http://www.w3.org/2000/svg"
@@ -113,47 +117,29 @@
       <h2 class="text-2xl text-secondary font-semibold">
         Produtos Semelhantes...
       </h2>
-      <swiper
-        :slides-per-view="2"
-        :loop="true"
-        class="swiper-container"
-        space-between="30"
-        :breakpoints="{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 5 },
-        }"
-      >
-        <swiper-slide
-          class="my-auto"
-          v-for="(produto, index) in SProdutos.produtos.MIDEA"
-          :key="index"
+      <div class="relative">
+        <swiper
+          :slides-per-view="2"
+          :loop="true"
+          class="swiper-container swiperPaginaProduto"
+          :navigation="true"
+          :modules="[Navigation]"
+          :breakpoints="{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 5 },
+          }"
         >
-          <CardProduto class="my-5" :produto="produto" />
-        </swiper-slide>
-      </swiper>
-      <!-- <swiper
-        :slides-per-view="2"
-        :loop="true"
-        :navigation="true"
-        :modules="[Navigation]"
-        class="swiper-container w-11/12"
-        :breakpoints="{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 5 },
-        }"
-      >
-        <swiper-slide
-          class="my-auto"
-          v-for="(produto, index) in SProdutos.produtos.MIDEA"
-          :key="index"
-        >
-          <CardProduto class="my-5 mx-3 md:mx-5" :produto="produto" />
-        </swiper-slide>
-      </swiper> -->
+          <swiper-slide
+            class="my-auto px-2 md:px-4"
+            v-for="(produto, index) in produtosSimilares"
+            :key="index"
+          >
+            <CardProduto class="my-5" :produto="produto" />
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
   </section>
 </template>
@@ -164,12 +150,11 @@ import type { IProduto } from "@/interface/IProdutos";
 import { storeCarrinho } from "@/store/SCarrinho";
 import { storeProdutos } from "@/store/SProdutos";
 
-import { Swiper, SwiperSlide } from "swiper/vue";
-
 // Import Swiper styles
+import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import CardProduto from "@/components/CardProduto.vue";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 export default {
   components: { InputQuantitade, Swiper, SwiperSlide, CardProduto },
@@ -184,6 +169,7 @@ export default {
       compressor: false,
       imagemCompressor: "",
       MITSUBISHI: false,
+      produtosSimilares: [] as IProduto[],
     };
   },
   watch: {
@@ -205,6 +191,11 @@ export default {
       if (this.produto.nome.includes("COMPRESSOR")) this.compressor = true;
 
       if (this.produto === undefined) this.$router.push("/404");
+
+      this.produtosSimilares = this.SProdutos.filtraPordutosPorTipo(
+        this.produto.tipo,
+        await this.SProdutos.getProdutos()
+      );
     },
     attQuantidade(valor: number) {
       this.quantidade = valor;
@@ -244,12 +235,10 @@ export default {
       return descricao.replace(/\n/g, "<br>");
     },
   },
-  created() {
-    this.moveTelaTopo();
-  },
   setup() {
     return {
-      modules: [Navigation],
+      Navigation,
+      Autoplay,
     };
   },
 };

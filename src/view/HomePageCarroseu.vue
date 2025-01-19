@@ -140,7 +140,7 @@
           <swiper
             :slides-per-view="1"
             :loop="true"
-            :autoplay="{ delay: 4000 }"
+            :autoplay="{ delay: 3000 }"
             :modules="[Navigation, Autoplay]"
             class="swiper-container w-full"
           >
@@ -339,26 +339,15 @@
           </div>
         </swiper>
       </div>
-    </section>
-    <section class="grid py-12 md:px-10 place-items-center">
-      <a
-        target="_blank"
-        class="w-11/12 grid place-items-center"
-        href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
-      >
-        <img
-          src="/img/naoEncontrou.png"
-          alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
-        />
-      </a>
+      <hr class="mt-5 border-secondary" />
     </section>
     <section>
-      <div class="text-center pb-3">
-        <h2 class="font-semibold text-secondary text-2xl">
+      <div class="text-center pt-10">
+        <h2 class="font-semibold text-secondary text-3xl">
           Escolha pela marca
         </h2>
       </div>
-      <div class="pb-12 relative">
+      <div class="relative mt-5">
         <swiper
           :slides-per-view="2"
           :loop="true"
@@ -374,15 +363,34 @@
           <swiper-slide
             v-for="(marca, index) in marcas"
             :key="index"
-            class="my-auto flex items-center justify-center px-10 filter grayscale"
+            class="my-auto flex items-center justify-center px-5 md:px-10 lg:px-14"
           >
-            <RouterLink :to="`/marca/${marca}`"
-              ><img :src="`./img/marcas/${marca}.png`" :alt="`Logo ${marca}`"
-            /></RouterLink>
+            <div class="md:hover:scale-110 duration-200">
+              <RouterLink class="" :to="`/marca/${marca}`">
+                <img
+                  class="py-1"
+                  :src="`./img/marcas/${marca}.png`"
+                  :alt="`Logo ${marca}`"
+                />
+              </RouterLink>
+            </div>
           </swiper-slide>
         </swiper>
       </div>
     </section>
+    <section class="grid py-12 md:px-10 place-items-center">
+      <a
+        class="w-11/12 grid place-items-center"
+        target="_blank"
+        href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
+      >
+        <img
+          src="/img/naoEncontrou.png"
+          alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
+        />
+      </a>
+    </section>
+
     <section
       class="px-5 bg-secondary pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
     >
@@ -459,6 +467,11 @@ export default {
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 0px !important;
   position: relative !important;
+}
+
+.swiperPaginaProduto {
+  --swiper-navigation-size: 35px !important;
+  --swiper-navigation-sides-offset: 0px !important;
 }
 
 .swiper-container {

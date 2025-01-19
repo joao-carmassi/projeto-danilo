@@ -4,8 +4,249 @@
     class="hidden relative h-12 w-full bg-secondary md:flex items-center justify-center text-white"
   >
     <ul class="menu gap-3 z-40 menu-horizontal">
+      <li class="static">
+        <details class="detailsNav" id="detailpai ">
+          <summary class="font-semibold">CATEGORIAS</summary>
+          <ul
+            class="flex flex-col justify-center items-start top-8 rounded-none"
+          >
+            <li class="flex flex-row relative">
+              <details class="detailsNav" id="detailfilho ">
+                <summary class="font-semibold text-secondary">PLACAS</summary>
+                <ul
+                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
+                >
+                  <li>
+                    <p
+                      class="text-secondary text-lg mx-2 font-semibold text-nowrap"
+                    >
+                      PLACAS:
+                    </p>
+                  </li>
+                  <li
+                    class="p-0 m-0 border-b-2 border-secondary opacity-100 w-full"
+                  ></li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Controle Principal
+                    </p>
+                  </li>
+                  <li class="p-0 m-0 border-b border-gray-900 w-full"></li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Filtro
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Detecção de Corrente
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Alimentação
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Outros tipos de placa
+                    </p>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="p-0 m-0 border-b border-gray-900 w-full"></li>
+            <li class="flex flex-row relative">
+              <details class="detailsNav" id="detailfilho ">
+                <summary class="font-semibold text-secondary">SENSORES</summary>
+                <ul
+                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
+                >
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Controle Principal
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Filtro
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Detecção de Corrente
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Alimentação
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Outros tipos de placa
+                    </p>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="flex flex-row relative">
+              <details class="detailsNav" id="detailfilho ">
+                <summary class="font-semibold text-secondary">
+                  VÁLVULA DE EXPANSÃO
+                </summary>
+                <ul
+                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
+                >
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Controle Principal
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Filtro
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Detecção de Corrente
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Alimentação
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Outros tipos de placa
+                    </p>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="flex flex-row relative">
+              <details class="detailsNav" id="detailfilho ">
+                <summary class="font-semibold text-secondary">
+                  BOMBA DE DRENO
+                </summary>
+                <ul
+                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
+                >
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Controle Principal
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Filtro
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Auxiliar do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Compressor
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Módulo Inverter do Ventilador
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa Detecção de Corrente
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Placa de Alimentação
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-secondary mx-2 font-semibold text-nowrap">
+                      Outros tipos de placa
+                    </p>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </li>
       <li class="static" v-for="(tipo, index) in tipos" :key="index">
-        <details id="detailsNav">
+        <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold" @click="paginaTipos(tipo)">
             {{ tipo }}
           </summary>
@@ -22,7 +263,7 @@
                 class="border-l border-gray-300 w-0 p-0"
               ></span>
               <RouterLink
-                :to="`/404`"
+                :to="`/marca/${marca}`"
                 class="text-secondary mx-2 font-semibold"
                 >{{ marca }}</RouterLink
               >
@@ -58,17 +299,17 @@ export default {
     this.tipos = await this.SProdutos.getTipos();
     this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
 
-    const details = document.querySelectorAll("#detailsNav");
+    const details = document.querySelectorAll(".detailsNav");
     details.forEach((detail) => {
       let alvo: DetailsHTMLAttributes;
       detail.addEventListener("mouseenter", (e) => {
         alvo = e.target as DetailsHTMLAttributes;
-        alvo.open = true;
         details.forEach((detail) => {
-          if (detail != alvo) {
+          if (detail.id === alvo.id) {
             detail.removeAttribute("open");
           }
         });
+        alvo.open = true;
       });
       const navBar = document.getElementById("menuItens") as HTMLElement;
       navBar.addEventListener("mouseleave", () => {

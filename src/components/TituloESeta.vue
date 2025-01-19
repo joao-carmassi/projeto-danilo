@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 px-2">
+  <div class="my-5 px-2">
     <TituloCategoria :categoria="id" id="tituloCategoria" />
     <SetaLink :id="id" />
   </div>

@@ -9,6 +9,7 @@
     </main>
     <FooterMain />
     <ContainerNotificacao />
+    <BalaoZap />
   </section>
 </template>
 
@@ -18,6 +19,7 @@
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">
+import BalaoZap from "./components/BalaoZap.vue";
 import ContainerNotificacao from "./components/ContainerNotificacao.vue";
 import FooterMain from "./components/FooterMain.vue";
 import NavMain from "./components/NavMain.vue";
@@ -27,6 +29,7 @@ export default {
     FooterMain,
     NavMain,
     ContainerNotificacao,
+    BalaoZap,
   },
 };
 </script>

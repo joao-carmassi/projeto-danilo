@@ -16,7 +16,7 @@
               <input
                 id="my-drawer-3"
                 type="checkbox"
-                class="drawer-toggle md:hidden"
+                class="drawer-toggle drawers md:hidden"
               />
               <label
                 for="my-drawer-3"
@@ -198,10 +198,10 @@
                     </div>
                     <div class="collapse-content pl-3 flex flex-col">
                       <RouterLink
-                        @click="fechaDrawer()"
+                        @click="fecharAside"
                         :class="{ 'border-t': index !== 0 }"
                         class="py-2.5 pl-2 border-gray-300 font-semibold"
-                        to="/404"
+                        :to="`/marca/${marca}`"
                         v-for="(marca, index) in tiposDasMarcas[tipo]"
                         :key="index"
                       >
@@ -219,8 +219,6 @@
               class="h-full w-2/3 flex justify-center items-center gap-2 md:hidden py-2.5 mx-auto"
             >
               <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
-              <!-- <img class="h-full" src="/img/simbolo.png" alt="" />
-              <h1 class="text-primary text-xl font-bold">Loja do VRF</h1> -->
             </button>
           </div>
           <div class="hidden md:flex justify-center items-center gap-1">
@@ -314,7 +312,7 @@
                           d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
                         ></path>
                       </svg>
-                      <p>(11) 116918-9244</p>
+                      <p>(11) 6918-9244</p>
                     </div>
                   </a>
                 </li>
@@ -394,6 +392,7 @@ import { storeProdutos } from "@/store/SProdutos";
 import router from "@/router/router";
 import type { DetailsHTMLAttributes } from "vue";
 import MensagemPix from "./MensagemPix.vue";
+import fechaDrawer from "@/utils/fechaDrawer";
 
 export default {
   components: { InputPesquisaProduto, MensagemPix },
@@ -415,12 +414,8 @@ export default {
     paginaMarcas(marca: string) {
       router.push(`/marca/${marca}`);
     },
-    fechaDrawer() {
-      const inputDrawer = document.getElementById(
-        "my-drawer-3"
-      ) as HTMLInputElement;
-      console.log(inputDrawer);
-      inputDrawer.checked = false;
+    fecharAside() {
+      fechaDrawer();
     },
   },
   async mounted() {

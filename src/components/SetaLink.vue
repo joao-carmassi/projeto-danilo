@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumbs text-sm">
+  <div class="breadcrumbs pb-0 text-sm">
     <ul>
       <li><RouterLink to="/">Home</RouterLink></li>
       <li>

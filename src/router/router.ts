@@ -12,12 +12,12 @@ const routes = [
     component: () => import("@/view/DadosProduto.vue"),
   },
   {
-    path: "/marca/:id",
-    component: () => import("@/view/MostraMarca.vue"),
-  },
-  {
     path: "/carrinho",
     component: () => import("@/view/CarrinhoPage.vue"),
+  },
+  {
+    path: "/marca/:id",
+    component: () => import("@/view/MostraMarca.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

@@ -159,24 +159,8 @@ export const storeProdutos = defineStore("counter", {
           resultado = [...resultado, ...produtosCategoria];
         }
       }
+      console.log(resultado);
       return resultado;
-    },
-
-    async filtaPorMarcaETipo(marca: string, tipo: string) {
-      if (!this.produtos[marca]) {
-        console.error(`Marca ${marca} não encontrada.`);
-        return [];
-      }
-
-      const produtos = this.produtos[marca].filter(
-        (produto) => produto.tipo === tipo
-      );
-
-      if (!produtos || produtos.length === 0) {
-        console.warn(`Nenhum produto encontrado para ${marca} e tipo ${tipo}`);
-      }
-
-      return produtos;
     },
 
     async capturaOsTiposDeProdutosDeCadaMarca() {

@@ -7,7 +7,7 @@
       -
     </button>
     <input
-      class="w-12 h-full text-center border-x border-secondary outline-none"
+      class="w-12 h-full text-center outline-none"
       type="number"
       v-model.number="inputQuantidade"
       min="1"
