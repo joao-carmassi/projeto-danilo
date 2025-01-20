@@ -8,16 +8,16 @@
               class="itens-pc md:w-44 lg:w-64 hidden h-full lg:flex justify-center items-center"
             >
               <RouterLink
-                class="flex gap-3 w-fit lg:justify-center items-center"
+                class="flex gap-3 w-fit lg:justify-start items-center"
                 to="/"
               >
                 <img
-                  class="md:h-6 lg:h-8 aspect-square"
+                  class="md:h-6 lg:h-9 rounded-full border-2 p-1.5 border-primary aspect-square"
                   src="/img/simbolo.png"
                   alt="Iconi VRF"
                 />
                 <img
-                  class="md:w-4/6 lg:w-52"
+                  class="md:w-4/6"
                   src="/img/logo.png"
                   alt="Lodo loja do VRF"
                 />
@@ -32,7 +32,7 @@
               <label
                 for="my-drawer-3"
                 aria-label="open sidebar"
-                class="btn border border-white btn-square lg:hidden btn-ghost"
+                class="btn border border-white btn-square z-40 lg:hidden btn-ghost"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@
                             d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"
                           ></path>
                         </svg>
-                        <p class="text-secondary">Central De atendimentos</p>
+                        <p class="text-secondary">Entre em contato</p>
                       </div>
                     </div>
                     <div class="collapse-content flex flex-col">
@@ -154,7 +154,7 @@
                                   d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
                                 ></path>
                               </svg>
-                              <p>(11) 116918-9244</p>
+                              <p>(11) 96918-9244</p>
                             </div>
                           </a>
                         </li>
@@ -185,7 +185,10 @@
                                 <path d="M12 12l3 -2"></path>
                                 <path d="M12 7v5"></path>
                               </svg>
-                              <p>Domingo a Domingo das 07 às 20 horas</p>
+                              <div>
+                                <p>Domingo a Domingo</p>
+                                <p>das 07 às 20 horas</p>
+                              </div>
                             </div>
                           </div>
                         </li>
@@ -257,7 +260,7 @@
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
                   <p class="text-white">
-                    Central De <span class="block">atendimentos</span>
+                    Entre em <span class="block">contato</span>
                   </p>
                 </div>
               </summary>
@@ -321,7 +324,7 @@
                           d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
                         ></path>
                       </svg>
-                      <p>(11) 6918-9244</p>
+                      <p>(11) 96918-9244</p>
                     </div>
                   </a>
                 </li>
@@ -352,7 +355,10 @@
                         <path d="M12 12l3 -2"></path>
                         <path d="M12 7v5"></path>
                       </svg>
-                      <p>Domingo a Domingo das 07 às 20 horas</p>
+                      <div>
+                        <p>Domingo a Domingo</p>
+                        <p>das 07 às 20 horas</p>
+                      </div>
                     </div>
                   </div>
                 </li>

@@ -3,22 +3,11 @@
     class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-56 bg-base-100 pb-14"
   >
     <div
-      v-if="compressor"
       class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
     >
       <div
         class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col h-24 md:w-32 md:h-auto"
       >
-        <button
-          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
-          @click="trocaImage(`compressor-${produto.marca}`)"
-        >
-          <img
-            class="rounded-md aspect-square"
-            :src="`./img/produtos/compressor-${produto.marca}.png`"
-            alt="Imagem do produto"
-          />
-        </button>
         <button
           class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
           @click="trocaImage(produto.id)"
@@ -29,16 +18,24 @@
             alt="Imagem do produto"
           />
         </button>
+        <button
+          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
+          @click="trocaImage(`compressor-${produto.marca}`)"
+        >
+          <img
+            class="rounded-md aspect-square"
+            :src="`./img/produtos/compressor-${produto.marca}.png`"
+            alt="Imagem do produto"
+          />
+        </button>
       </div>
       <img
-        :src="
-          imagemCompressor || `./img/produtos/compressor-${produto.marca}.png`
-        "
+        :src="outraImagens || `./img/produtos/${produto.id}.png`"
         class="w-full md:w-[80%] rounded-xl object-contain aspect-square"
         alt="Imagem do produto"
       />
     </div>
-    <div
+    <!-- <div
       v-else
       class="flex flex-col-reverse md:flex-row items-start gap-5 col-span-5 md:col-span-3 place-items-center"
     >
@@ -47,7 +44,7 @@
         class="w-11/12 rounded-xl object-contain aspect-square"
         alt="Imagem do produto"
       />
-    </div>
+    </div> -->
     <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
       <SetaLink class="text-gray-500 text-xs" :id="`${produto.tipo}`" />
       <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
@@ -57,14 +54,11 @@
       <p class="text-gray-400 text-xs">
         Códigos compatíveis: {{ produto.codigos.join(", ") }}
       </p>
-      <p class="text-green-600 text-xs">PARCELAMENTO EM ATÉ 12 VEZES</p>
-      <p class="text-green-600 text-xs">7% DE DESCONTO NO PIX</p>
+      <p class="text-green-600 text-xs font-semibold">
+        PARCELAMENTO EM ATÉ 12 VEZES
+      </p>
+      <p class="text-green-600 text-xs font-semibold">7% DE DESCONTO NO PIX</p>
 
-      <!-- <ValorProduto
-        class="text-xl text-secondary"
-        v-if="produto.VALOR !== undefined"
-        :valor="produto.VALOR"
-      /> -->
       <div class="flex gap-1.5 h-10">
         <InputQuantitade
           class="h-full"
@@ -78,7 +72,7 @@
           COMPRAR
         </button>
       </div>
-      <p class="text-green-600 text-xs lowercase">
+      <p class="text-green-600 text-xs lowercase font-semibold">
         <svg
           class="inline"
           xmlns="http://www.w3.org/2000/svg"
@@ -99,6 +93,29 @@
         </svg>
         {{ produto.prazo || "Prazo" }}
       </p>
+      <div class="flex-1">
+        <p class="font-semibold text-green-600 mb-5">Formar de envio:</p>
+        <div class="grid gap-y-5 grid-cols-3 place-items-center">
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
+          />
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/kanguenvio.png"
+          />
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/jadlogenvio.png"
+          />
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/transportadoraenvio.png"
+          />
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
+          />
+          <img
+            src="https://cdn.awsli.com.br/1929/1929647/arquivos/agendamentoenvio.png"
+          />
+        </div>
+      </div>
     </div>
     <div class="col-span-5">
       <h3 class="text-ms text-secondary font-semibold">Descrição:</h3>
@@ -111,169 +128,17 @@
       <h2 class="text-2xl text-secondary font-semibold">
         Produtos Semelhantes...
       </h2>
-      <div class="relative">
-        <swiper
-          :slides-per-view="2"
-          :loop="true"
-          class="swiper-container swiperPaginaProduto"
-          :navigation="true"
-          :modules="[Navigation]"
-          :breakpoints="{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-            1280: { slidesPerView: 5 },
-          }"
-        >
-          <swiper-slide
-            class="my-auto px-2 md:px-4"
-            v-for="(produto, index) in produtosSimilares"
-            :key="index"
-          >
-            <CardProduto class="my-5" :produto="produto" />
-          </swiper-slide>
-        </swiper>
+      <div class="flex items-center mt-5 gap-8 justify-between">
+        <CardProduto
+          class="flex-1"
+          v-for="(produto, index) in produtosSimilares"
+          :key="index"
+          :produto="produto"
+        ></CardProduto>
       </div>
     </div>
   </section>
 </template>
-<!-- <template>
-  <section
-    class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-64 bg-base-100 pb-14"
-  >
-    <div
-      v-if="compressor"
-      class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
-    >
-      <div
-        class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col h-24 md:w-32 md:h-auto"
-      >
-        <button
-          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
-          @click="trocaImage(`compressor-${produto.marca}`)"
-        >
-          <img
-            class="rounded-md aspect-square"
-            :src="`./img/produtos/compressor-${produto.marca}.png`"
-            alt="Imagem do produto"
-          />
-        </button>
-        <button
-          class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
-          @click="trocaImage(produto.id)"
-        >
-          <img
-            class="rounded-md aspect-square"
-            :src="`./img/produtos/${produto.id}.png`"
-            alt="Imagem do produto"
-          />
-        </button>
-      </div>
-      <img
-        :src="
-          imagemCompressor || `./img/produtos/compressor-${produto.marca}.png`
-        "
-        class="w-full md:w-[80%] rounded-xl object-contain border-2 border-secondary aspect-square"
-        alt="Imagem do produto"
-      />
-    </div>
-    <div
-      v-else
-      class="flex flex-col-reverse md:flex-row items-start gap-5 col-span-5 md:col-span-3 place-items-center"
-    >
-      <img
-        :src="`./img/produtos/${produto.id}.png`"
-        class="w-full rounded-xl object-contain border-2 border-secondary aspect-square"
-        alt="Imagem do produto"
-      />
-    </div>
-    <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
-      <img
-        class="w-20 mt-1.5"
-        :src="`./img/marcas/${produto.marca}.png`"
-        :alt="`Logo ${produto.marca}`"
-      />
-      <h2
-        class="text-2xl limitaTexto leading-8 break-all text-secondary lg:text-3xl font-semibold"
-      >
-        {{ produto.nome || "Nome" }}
-      </h2>
-      <p class="text-gray-500 text-lg">SKU: {{ produto.sku }}</p>
-      <p class="text-gray-500 text-lg">
-        Códigos compatíveis: {{ produto.codigos.join(", ") }}
-      </p>
-      <div>
-        <p class="text-green-600 text-sm">PARCELAMENTO EM ATÉ 12 VEZES</p>
-        <p class="text-green-600 text-sm">7% DE DESCONTO NO PIX</p>
-      </div>
-      <div class="flex gap-1.5 h-10">
-        <InputQuantitade class="h-full" @update:quantidade="attQuantidade" />
-        <button
-          @click="enviaProduto"
-          class="flex-shrink font-montSerrat text-lg btn btn-secondary w-full min-h-0 h-full text-base-100"
-        >
-          COMPRAR
-        </button>
-      </div>
-      <p class="text-green-600 lowercase">
-        <svg
-          class="inline"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          width="24"
-          height="24"
-          stroke-width="1.25"
-          stroke-linejoin="round"
-          stroke-linecap="round"
-          stroke="currentColor"
-        >
-          <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-          <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-          <path
-            d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-          ></path>
-        </svg>
-        {{ produto.prazo || "Prazo" }}
-      </p>
-    </div>
-    <div class="col-span-5">
-      <h3 class="text-lg text-secondary font-semibold">Descrição:</h3>
-      <p
-        v-html="descricaoFormatada || 'Descrição'"
-        class="text-lg text-gray-600"
-      ></p>
-    </div>
-    <div class="w-full col-span-full">
-      <h2 class="text-2xl text-secondary font-semibold">
-        Produtos Semelhantes...
-      </h2>
-      <div class="relative">
-        <swiper
-          :slides-per-view="2"
-          :loop="true"
-          class="swiper-container swiperPaginaProduto"
-          :navigation="true"
-          :modules="[Navigation]"
-          :breakpoints="{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-            1280: { slidesPerView: 5 },
-          }"
-        >
-          <swiper-slide
-            class="my-auto px-2 md:px-4"
-            v-for="(produto, index) in produtosSimilares"
-            :key="index"
-          >
-            <CardProduto class="my-5" :produto="produto" />
-          </swiper-slide>
-        </swiper>
-      </div>
-    </div>
-  </section>
-</template> -->
 
 <script lang="ts">
 import InputQuantitade from "@/components/InputQuantitade.vue";
@@ -282,14 +147,11 @@ import { storeCarrinho } from "@/store/SCarrinho";
 import { storeProdutos } from "@/store/SProdutos";
 
 // Import Swiper styles
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
 import CardProduto from "@/components/CardProduto.vue";
-import { Autoplay, Navigation } from "swiper/modules";
 import SetaLink from "@/components/SetaLink.vue";
 
 export default {
-  components: { InputQuantitade, Swiper, SwiperSlide, CardProduto, SetaLink },
+  components: { InputQuantitade, CardProduto, SetaLink },
   data() {
     return {
       id: this.$route.params.id as string,
@@ -299,7 +161,7 @@ export default {
       inputQuantidade: 1 as number,
       quantidade: 1 as number,
       compressor: false,
-      imagemCompressor: "",
+      outraImagens: "",
       MITSUBISHI: false,
       produtosSimilares: [] as IProduto[],
       quantidadeInput: 0,
@@ -330,6 +192,10 @@ export default {
         this.produto.tipo,
         await this.SProdutos.getProdutos()
       );
+
+      this.produtosSimilares = this.produtosSimilares
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 4);
     },
     attQuantidade(valor: number) {
       this.quantidade = valor;
@@ -342,7 +208,7 @@ export default {
       window.scrollTo(0, 0);
     },
     trocaImage(img: string | number) {
-      this.imagemCompressor = `./img/produtos/${img}.png`;
+      this.outraImagens = `./img/produtos/${img}.png`;
     },
   },
   computed: {
@@ -367,12 +233,6 @@ export default {
       });
       return descricao.replace(/\n/g, "<br>");
     },
-  },
-  setup() {
-    return {
-      Navigation,
-      Autoplay,
-    };
   },
 };
 </script>

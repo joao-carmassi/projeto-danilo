@@ -8,7 +8,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold">CATEGORIAS</summary>
           <ul
-            class="flex flex-col justify-center items-start md:top-8 lg:top-10 rounded-none"
+            class="flex flex-col justify-center items-start md:top-8 lg:top-6 rounded-none"
           >
             <li class="flex flex-row relative">
               <details class="detailsNav" id="detailfilho ">
@@ -251,7 +251,7 @@
             {{ tipo }}
           </summary>
           <ul
-            class="flex justify-center items-center md:top-8 lg:top-10 rounded-none w-full right-1/2 translate-x-1/2"
+            class="flex justify-center items-center md:top-8 lg:top-6 rounded-none w-full right-1/2 translate-x-1/2"
           >
             <li
               class="flex flex-row"
@@ -281,7 +281,7 @@
     class="hidden relative w-full bg-secondary lg:flex items-center justify-center text-white"
   >
     <ul
-      class="menu static justify-center items-center flex-wrap h-fit gap-3 z-40 menu-horizontal"
+      class="menu p-0 static justify-center items-center flex-wrap h-fit gap-3 z-40 menu-horizontal"
     >
       <li class="static hidden md:block my-1">
         <ComponenteCategoria />
@@ -290,7 +290,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold text-xs">COMPRESSORES</summary>
           <ul
-            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
             <div class="flex">
               <div v-for="index in 4" :key="index">
@@ -310,7 +310,7 @@
             INSTALAÇÃO E MANUTENÇÃO
           </summary>
           <ul
-            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
             <div class="flex">
               <div v-for="index in 4" :key="index">
@@ -328,7 +328,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold text-xs">VÁLVULAS</summary>
           <ul
-            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
             <div class="flex">
               <div v-for="index in 4" :key="index">
@@ -346,7 +346,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold text-xs">GÁS REFRIGERANTES</summary>
           <ul
-            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
             <div class="flex">
               <div v-for="index in 4" :key="index">
@@ -364,7 +364,7 @@
         <details class="detailsNav" id="detailpai ">
           <summary class="font-semibold text-xs">LUBRIFICANTES</summary>
           <ul
-            class="flex justify-start items-center md:top-8 lg:top-10 rounded-none right-1/2 translate-x-1/2"
+            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
             <div class="flex">
               <div v-for="index in 4" :key="index">

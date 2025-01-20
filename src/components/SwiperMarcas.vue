@@ -3,12 +3,11 @@
     :slides-per-view="1"
     :loop="true"
     :navigation="true"
-    :pagination="true"
     :autoplay="{ delay: 7500 }"
     :effect="'fade'"
     :fadeEffect="{ crossFade: true }"
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
-    class="swiper-container swiperMarcas"
+    class="swiper-container relative swiperMarcas"
     data-teste="a"
   >
     <swiper-slide class="my-auto">
@@ -47,6 +46,11 @@
         alt="Imagem produto"
       />
     </swiper-slide>
+    <p
+      class="left-1/2 transform -translate-x-1/2 text-white absolute bottom-3 z-10 font-semibold tracking-widest"
+    >
+      V R F
+    </p>
   </swiper>
 </template>
 

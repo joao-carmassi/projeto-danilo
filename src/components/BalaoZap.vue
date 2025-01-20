@@ -27,7 +27,7 @@
         ></path>
       </svg>
       <div v-if="classeAtiva" class="items-center hidden md:flex gap-2">
-        <span>Encontre a Peça Ideal com Nossos Especialistas</span>
+        <span>Fale com um especialista</span>
       </div>
     </a>
     <button

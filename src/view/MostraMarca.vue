@@ -18,7 +18,9 @@
         </li>
       </ul>
     </aside>
-    <div class="ml-0 md:block w-full px-5 border-l pb-6 border-gray-400">
+    <div
+      class="ml-0 md:block w-full px-4 md:px-8 md:py-4 border-l pb-6 border-gray-400"
+    >
       <TituloESeta :id="id" />
       <div class="w-full">
         <div class="drawer md:hidden flex items-end justify-end">

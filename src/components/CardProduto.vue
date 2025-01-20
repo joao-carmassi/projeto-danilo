@@ -1,7 +1,7 @@
 <template>
   <div
     id="animacaoScroll"
-    class="bg-base-100 border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg shadow-gray-300 flex flex-col gap-2 rounded-lg p-3 md:p-4"
+    class="bg-base-100 group relative border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg shadow-gray-300 flex flex-col gap-2 rounded-lg p-3 md:p-4"
   >
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <img
@@ -18,9 +18,7 @@
         alt="Imagem do produto"
         loading="lazy"
       />
-      <!-- <p class="text-secondary mt-2 text-sm font-semibold">
-        {{ produto.marca }}
-      </p> -->
+
       <img
         class="w-12 mt-1.5"
         :src="`./img/marcas/${produto.marca}.png`"
@@ -35,15 +33,21 @@
         <p class="text-xs limitaTexto text-gray-500">
           {{ produto.codigos.join(", ") }}
         </p>
+        <p class="text-xs limitaTexto text-gray-500">SKU: {{ produto.sku }}</p>
       </div>
-      <!-- <ValorProduto class="text-secondary" :valor="produto.VALOR" /> -->
     </RouterLink>
     <button
+      @click="adicionarAoCarrinho"
+      class="bg-secondary hidden font-semibold md:group-hover:block p-2 px-4 top-1/2 rounded-md active:scale-90 duration-200 absolute right-1/2 translate-x-1/2 translate-y-1/2 mt-1.5 text-base-100"
+    >
+      Comprar
+    </button>
+    <!-- <button
       @click="adicionarAoCarrinho"
       class="btn btn-secondary mt-1.5 text-base-100"
     >
       Comprar
-    </button>
+    </button> -->
   </div>
 </template>
 

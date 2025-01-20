@@ -9,6 +9,7 @@
         <MensagemPix class="opacity-0" />
         <NavMain class="max-w-[2000px] opacity-0 top-0 z-50" />
       </div>
+      <MenuItens />
       <RouterView class="mx-auto min-h-[70vh]" />
     </main>
     <FooterMain />
@@ -17,9 +18,10 @@
   </section>
 </template>
 
+<!-- TODO: arrumar espacamento 3 imagens celular -->
+<!-- TODO: arrumar bug input quntidade -->
 <!-- TODO: pagina produtos, marcas, tipos -->
 <!-- TODO: menu -->
-<!-- TODO: footer -->
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">
@@ -27,6 +29,7 @@ import BalaoZap from "./components/BalaoZap.vue";
 import ContainerNotificacao from "./components/ContainerNotificacao.vue";
 import FooterMain from "./components/FooterMain.vue";
 import MensagemPix from "./components/MensagemPix.vue";
+import MenuItens from "./components/MenuItens.vue";
 import NavMain from "./components/NavMain.vue";
 
 export default {
@@ -36,6 +39,7 @@ export default {
     ContainerNotificacao,
     BalaoZap,
     MensagemPix,
+    MenuItens,
   },
 };
 </script>

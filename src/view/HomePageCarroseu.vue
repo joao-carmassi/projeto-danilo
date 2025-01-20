@@ -1,8 +1,8 @@
 <template>
   <main class="bg-base-100">
-    <section>
+    <!-- <section>
       <MenuItens />
-    </section>
+    </section> -->
     <section>
       <SwiperMarcas />
       <hr class="border-secondary border-b-2" />
@@ -107,7 +107,7 @@
             </p>
           </div>
           <div
-            class="flex justify-center lg:border-r border-gray-400 items-center h-full w-full gap-2"
+            class="flex justify-center border-gray-400 items-center h-full w-full gap-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +276,7 @@
         </div>
       </div>
       <div
-        class="flex gap-3 md:gap-5 px-3 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
+        class="flex px-3 md:px-0 gap-3 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
       >
         <div class="md:hover:scale-105 duration-200">
           <img
@@ -298,15 +298,14 @@
         </div>
       </div>
     </section>
-    <hr class="my-10 border-secondary" />
+    <hr class="mt-5 md:mt-10 border-secondary" />
     <section
-      class="containerCarrosel relative"
-      :class="geraPadding(index, categoria)"
+      class="containerCarrosel px-3 md:px-0 relative"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
-      <div class="md:px-10">
-        <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-4">
+      <div class="">
+        <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-5">
           <TituloCategoria :categoria="categoria" />
           <hr class="border-secondary border-b-2 rounded-xl w-16 mx-auto" />
         </div>
@@ -315,7 +314,8 @@
           :loop="true"
           :navigation="true"
           :modules="[Navigation]"
-          class="swiper-container w-11/12"
+          class="swiper-container md:w-11/12 lg:w-10/12"
+          :space-between="40"
           :breakpoints="{
             640: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
@@ -328,9 +328,9 @@
             v-for="(produto, index) in produtos[categoria]"
             :key="index"
           >
-            <CardProduto class="my-5 mx-3 md:mx-5" :produto="produto" />
+            <CardProduto class="my-5" :produto="produto" />
           </swiper-slide>
-          <div class="w-full pr-3 md:pr-0 flex justify-end">
+          <div class="w-full flex justify-end">
             <RouterLink
               :to="`/marca/${categoria}`"
               class="btn btn-secondary uppercase text-base-100"
@@ -342,13 +342,13 @@
       </div>
       <hr class="mt-5 border-secondary" />
     </section>
-    <section class="bg-[#d4f1fd] mt-10 py-10">
+    <section class="bg-[#d4f1fd] py-10">
       <div class="text-center">
         <h2 class="font-semibold text-secondary text-3xl">
           Escolha pela marca
         </h2>
       </div>
-      <div class="relative pt-5">
+      <div class="relative w-10/12 md:w-full mx-auto pt-5">
         <swiper
           :slides-per-view="2"
           :loop="true"
@@ -364,12 +364,17 @@
           <swiper-slide
             v-for="(marca, index) in marcas"
             :key="index"
-            class="my-auto flex items-center justify-center px-5 md:px-10 lg:px-14"
+            class="my-auto"
           >
-            <div class="md:hover:scale-110 duration-200">
-              <RouterLink class="" :to="`/marca/${marca}`">
+            <div
+              class="md:hover:scale-105 flex justify-center items-center duration-200 py-2"
+            >
+              <RouterLink
+                class="bg-white shadow-md relative w-8/12 rounded-full aspect-square"
+                :to="`/marca/${marca}`"
+              >
                 <img
-                  class="py-1"
+                  class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
                   :src="`./img/marcas/${marca}.png`"
                   :alt="`Logo ${marca}`"
                 />
@@ -379,13 +384,14 @@
         </swiper>
       </div>
     </section>
-    <section class="grid py-12 md:px-10 place-items-center">
+    <section class="grid place-items-center">
       <a
-        class="w-11/12 grid place-items-center"
+        class="w-full grid place-items-center"
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
         <img
+          class="w-full"
           src="/img/naoEncontrou.png"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
         />
@@ -417,7 +423,6 @@ import { storeProdutos } from "@/store/SProdutos";
 import CardProduto from "@/components/CardProduto.vue";
 import TituloCategoria from "@/components/TituloCategoria.vue";
 import SwiperMarcas from "@/components/SwiperMarcas.vue";
-import MenuItens from "@/components/MenuItens.vue";
 
 export default {
   components: {
@@ -426,7 +431,6 @@ export default {
     CardProduto,
     TituloCategoria,
     SwiperMarcas,
-    MenuItens,
   },
   data() {
     return {
@@ -440,6 +444,9 @@ export default {
   async created() {
     this.produtos = await this.SProdutos.getProdutos();
     this.categorias = await this.SProdutos.getCategorias();
+    this.categorias = this.categorias.filter(
+      (item) => item === "MIDEA" || item === "TOSHIBA" || item === "HITACHI"
+    );
     this.marcas = await this.SProdutos.getCategorias();
     window.scrollTo(0, 0);
   },
@@ -448,16 +455,6 @@ export default {
       Navigation,
       Autoplay,
     };
-  },
-  methods: {
-    geraPadding(index: number, categoria: string) {
-      if (index == 0) return "pr-0";
-      if (categoria == "MITSUBISHI") return "hidden";
-      return "pt-5 md:pt-7 ";
-    },
-    eMitsubushi(categoria: string) {
-      return categoria !== "MITSUBISHI";
-    },
   },
 };
 </script>

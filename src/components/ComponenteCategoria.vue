@@ -2,7 +2,7 @@
   <details class="detailsNav" id="detailpai ">
     <summary class="font-semibold text-xs">CATEGORIAS</summary>
     <ul
-      class="flex flex-col py-4 flex-wrap justify-center items-start top-10 rounded-none"
+      class="flex flex-col h-64 py-4 flex-wrap justify-start items-start top-6 rounded-none"
     >
       <li class="flex static flex-row">
         <details class="detailsNav static" id="detailfilho ">
