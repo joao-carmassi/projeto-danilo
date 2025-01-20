@@ -2,25 +2,26 @@
   <section class="bg-base-100 flex gap-7">
     <aside class="hidden md:block w-fit top-0 left-0 p-7 pr-0 h-full">
       <h2 class="text-secondary text-nowrap text-lg font-semibold">
-        Filtrar por produtos:
+        Categorias:
       </h2>
 
-      <ul class="my-3 flex flex-col gap-3">
+      <ul class="my-3 flex items-start justify-start flex-col gap-3">
         <li>
-          <button class="link-hover" @click="filtraPorTipo('')">
+          <button class="link-hover text-start" @click="filtraPorTipo('')">
             TODOS ({{ ItemsPesquisados.length }})
           </button>
         </li>
         <li v-for="(marca, index) in tipoasDeCadaMarca[id]" :key="index">
-          <button class="link-hover" @click="filtraPorTipo(marca)">
+          <button
+            class="link-hover text-nowrap text-start"
+            @click="filtraPorTipo(marca)"
+          >
             {{ marca }} ({{ quatidadeDeCadaProduto[marca] }})
           </button>
         </li>
       </ul>
     </aside>
-    <div
-      class="ml-0 md:block w-full px-4 md:px-8 md:py-4 border-l pb-6 border-gray-400"
-    >
+    <div class="ml-0 md:block w-full px-4 md:px-8 md:py-4 pb-6 border-gray-400">
       <TituloESeta :id="id" />
       <div class="w-full">
         <div class="drawer md:hidden flex items-end justify-end">
@@ -131,7 +132,9 @@ export default {
       await this.baixaProdutos();
       fechaDrawer();
       if (tipo === "") return;
-      this.produtos = this.produtos.filter((produto) => produto.tipo === tipo);
+      this.produtos = this.produtos.filter(
+        (produto) => produto.categoria === tipo
+      );
     },
   },
   async mounted() {
@@ -139,10 +142,10 @@ export default {
       await this.SProdutos.capturaOsTiposDeProdutosDeCadaMarca();
 
     this.quatidadeDeCadaProduto = this.produtos.reduce((acc, produto) => {
-      if (acc[produto.tipo]) {
-        acc[produto.tipo]++;
+      if (acc[produto.categoria]) {
+        acc[produto.categoria]++;
       } else {
-        acc[produto.tipo] = 1;
+        acc[produto.categoria] = 1;
       }
       return acc;
     }, {} as Record<string, number>);

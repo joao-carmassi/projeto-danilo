@@ -3,13 +3,12 @@ export interface IProdutos {
 }
 
 export interface IProduto {
-  nome: string;
   sku: string;
-  descricao: string;
-  prazo: string;
+  nome: string;
   marca: string;
-  equipamento: string;
+  categoria: string;
+  prazo: string;
   id: string | number;
-  tipo: string;
+  descricao: string;
   codigos: string[];
 }

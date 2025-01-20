@@ -6,43 +6,83 @@ export const storeProdutos = defineStore("counter", {
   state: () => {
     return {
       produtos: {} as IProdutos,
-      categorias: [] as string[],
-      tipos: [] as string[],
+      marcas: [] as string[],
+      categoria: [] as string[],
+      loadingPromise: null as Promise<void> | null,
     };
   },
   actions: {
     async baixaProdutos() {
+      if (this.loadingPromise) {
+        return this.loadingPromise;
+      }
+
       const estaVazio = Object.keys(this.produtos).length === 0;
       if (estaVazio) {
-        this.produtos = await baixaProdutosJson();
-        this.produtos = this.separaProdutosPorMarcas();
-        this.categorias = Object.keys(this.produtos);
-        this.ordenaCategorias();
-        this.transformaIdString();
-        this.adicionaIdProdutos();
-        this.dicionaTipo();
-        this.salvaTipos();
-      } else {
-        return;
+        this.loadingPromise = (async () => {
+          this.produtos = await baixaProdutosJson();
+          this.produtos = this.separaProdutosPorMarcas();
+          this.marcas = Object.keys(this.produtos);
+          this.ordenaMarcas();
+          this.transformaIdString();
+          this.adicionaIdProdutos();
+          this.salvaCategorias();
+        })();
+
+        await this.loadingPromise;
+        this.loadingPromise = null;
       }
     },
 
     async getProdutos() {
       await this.baixaProdutos();
-
       return this.produtos;
     },
 
-    async getCategorias() {
+    async getMarcas() {
       await this.baixaProdutos();
-
-      return this.categorias;
+      return this.marcas;
     },
 
     async getTipos() {
       await this.baixaProdutos();
+      return this.categoria;
+    },
 
-      return this.tipos;
+    async getCategorias() {
+      await this.baixaProdutos();
+      return this.categoria;
+    },
+
+    async getProduto(id: string) {
+      await this.baixaProdutos();
+      const produtos = this.produtos;
+      for (const categoria in produtos) {
+        const produto = produtos[categoria].find(
+          (produto) => produto.id === id
+        );
+        if (produto) {
+          return produto;
+        }
+      }
+    },
+
+    async pesquisaProduto(pesquisa: string) {
+      await this.baixaProdutos();
+      const produtos = this.produtos;
+      let resultado: IProduto[] = [];
+      for (const categoria in produtos) {
+        const produtosCategoria = produtos[categoria].filter((produto) => {
+          const nome = produto.nome.toLowerCase();
+          const codigo = produto.codigos.join(" ").toLowerCase();
+          const pesquisaLower = pesquisa.toLowerCase();
+          return nome.includes(pesquisaLower) || codigo.includes(pesquisaLower);
+        });
+        if (produtosCategoria.length > 0) {
+          resultado = [...resultado, ...produtosCategoria];
+        }
+      }
+      return resultado;
     },
 
     adicionaIdProdutos() {
@@ -68,42 +108,8 @@ export const storeProdutos = defineStore("counter", {
       return produtosPorMarca;
     },
 
-    async getProduto(id: string) {
-      await this.baixaProdutos();
-
-      const produtos = this.produtos;
-      for (const categoria in produtos) {
-        const produto = produtos[categoria].find(
-          (produto) => produto.id === id
-        );
-        if (produto) {
-          return produto;
-        }
-      }
-    },
-
-    async pesquisaProduto(pesquisa: string) {
-      await this.baixaProdutos();
-
-      const produtos = this.produtos;
-      let resultado: IProduto[] = [];
-      for (const categoria in produtos) {
-        const produtosCategoria = produtos[categoria].filter((produto) => {
-          const nome = produto.nome.toLowerCase();
-          const codigo = produto.codigos.join(" ").toLowerCase();
-          const pesquisaLower = pesquisa.toLowerCase();
-          return nome.includes(pesquisaLower) || codigo.includes(pesquisaLower);
-        });
-        if (produtosCategoria.length > 0) {
-          resultado = [...resultado, ...produtosCategoria];
-        }
-      }
-      return resultado;
-    },
-
     geraCodigos(codigo: string | number) {
       const codigoX = codigo.toString();
-
       return codigoX.split("_");
     },
 
@@ -117,9 +123,9 @@ export const storeProdutos = defineStore("counter", {
       }
     },
 
-    ordenaCategorias() {
+    ordenaMarcas() {
       const orderm = ["MIDEA", "TOSHIBA", "HITACHI"];
-      this.categorias.sort((a, b) => {
+      this.marcas.sort((a, b) => {
         const indexA = orderm.indexOf(a);
         const indexB = orderm.indexOf(b);
         if (indexA === -1) return 1;
@@ -128,56 +134,27 @@ export const storeProdutos = defineStore("counter", {
       });
     },
 
-    dicionaTipo() {
-      for (const categoria in this.produtos) {
-        this.produtos[categoria].forEach((produto) => {
-          produto.tipo = produto.nome.split(" ")[0];
-        });
-      }
-    },
-
-    salvaTipos() {
+    salvaCategorias() {
       const tipos = new Set<string>();
-      for (const categoria in this.produtos) {
-        this.produtos[categoria].forEach((produto) => {
-          tipos.add(produto.tipo);
+      for (const marca in this.produtos) {
+        this.produtos[marca].forEach((produto) => {
+          tipos.add(produto.categoria);
         });
       }
-      this.tipos = Array.from(tipos);
-    },
-
-    filtraPordutosPorTipo(tipo: string, produtos: IProdutos) {
-      const produtosAFiltrar = produtos;
-      let resultado: IProduto[] = [];
-      for (const categoria in produtosAFiltrar) {
-        const produtosCategoria = produtosAFiltrar[categoria].filter(
-          (produto) => {
-            return produto.tipo === tipo;
-          }
-        );
-        if (produtosCategoria.length > 0) {
-          resultado = [...resultado, ...produtosCategoria];
-        }
-      }
-      console.log(resultado);
-      return resultado;
+      this.categoria = Array.from(tipos);
     },
 
     async capturaOsTiposDeProdutosDeCadaMarca() {
-      await this.getCategorias();
-
+      await this.getMarcas();
       const categoriasComTipos: Record<string, string[]> = {};
-
-      this.categorias.forEach((categoria) => {
+      this.marcas.forEach((categoria) => {
         const produtos = this.produtos[categoria];
         const tipos = new Set<string>();
         produtos.forEach((produto) => {
-          tipos.add(produto.tipo);
+          tipos.add(produto.categoria);
         });
-
         categoriasComTipos[categoria] = Array.from(tipos);
       });
-      // {} as Record<string, string[]>,
       return categoriasComTipos;
     },
 
@@ -187,19 +164,36 @@ export const storeProdutos = defineStore("counter", {
       for (const categoria in produtos) {
         const produtosCategoria = produtos[categoria];
         produtosCategoria.forEach((produto) => {
-          const tipo = produto.tipo;
+          const tipo = produto.categoria;
           const marca = produto.marca;
-
           if (!marcasPorTipo[tipo]) {
             marcasPorTipo[tipo] = [];
           }
-
           if (!marcasPorTipo[tipo].includes(marca)) {
             marcasPorTipo[tipo].push(marca);
           }
         });
       }
       return marcasPorTipo;
+    },
+
+    async salvaSubcategorias() {
+      const produtos = await this.getProdutos();
+      const subcategorias: Record<string, string[]> = {};
+      for (const marca in produtos) {
+        const produtosMarca = produtos[marca];
+        produtosMarca.forEach((produto) => {
+          const tipo = produto.categoria;
+          const nome = produto.nome;
+          if (!subcategorias[tipo]) {
+            subcategorias[tipo] = [];
+          }
+          if (!subcategorias[tipo].includes(nome)) {
+            subcategorias[tipo].push(nome);
+          }
+        });
+      }
+      return subcategorias;
     },
   },
 });

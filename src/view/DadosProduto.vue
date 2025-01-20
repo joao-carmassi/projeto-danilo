@@ -35,18 +35,13 @@
         alt="Imagem do produto"
       />
     </div>
-    <!-- <div
-      v-else
-      class="flex flex-col-reverse md:flex-row items-start gap-5 col-span-5 md:col-span-3 place-items-center"
-    >
-      <img
-        :src="`./img/produtos/${produto.id}.png`"
-        class="w-11/12 rounded-xl object-contain aspect-square"
-        alt="Imagem do produto"
-      />
-    </div> -->
     <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
-      <SetaLink class="text-gray-500 text-xs" :id="`${produto.tipo}`" />
+      <SetaLink class="text-gray-500 text-xs" :id="`${produto.categoria}`" />
+      <img
+        class="w-28"
+        :src="`./img/marcas/${produto.marca}.png`"
+        :alt="`Logo marca ${produto.marca}`"
+      />
       <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
         {{ produto.nome || "Nome" }}
       </h2>
@@ -189,7 +184,7 @@ export default {
       if (this.produto === undefined) this.$router.push("/404");
 
       this.produtosSimilares = this.SProdutos.filtraPordutosPorTipo(
-        this.produto.tipo,
+        this.produto.categoria,
         await this.SProdutos.getProdutos()
       );
 

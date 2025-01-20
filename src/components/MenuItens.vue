@@ -292,14 +292,12 @@
           <ul
             class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
           >
-            <div class="flex">
-              <div v-for="index in 4" :key="index">
-                <li class="mx-5" v-for="index in 10" :key="index">
-                  <p class="text-secondary mx-2 font-semibold text-nowrap">
-                    {{ (Math.random() * 9999999999).toFixed(0) }}
-                  </p>
-                </li>
-              </div>
+            <div class="flex flex-col flex-wrap h-96">
+              <li class="mx-5" v-for="index in 50" :key="index">
+                <p class="text-secondary mx-2 font-semibold text-nowrap">
+                  {{ (Math.random() * 9999999999).toFixed(0) }}
+                </p>
+              </li>
             </div>
           </ul>
         </details>

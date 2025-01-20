@@ -443,11 +443,11 @@ export default {
   },
   async created() {
     this.produtos = await this.SProdutos.getProdutos();
-    this.categorias = await this.SProdutos.getCategorias();
+    this.categorias = await this.SProdutos.getMarcas();
     this.categorias = this.categorias.filter(
       (item) => item === "MIDEA" || item === "TOSHIBA" || item === "HITACHI"
     );
-    this.marcas = await this.SProdutos.getCategorias();
+    this.marcas = await this.SProdutos.getMarcas();
     window.scrollTo(0, 0);
   },
   setup() {

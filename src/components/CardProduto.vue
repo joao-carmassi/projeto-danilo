@@ -25,15 +25,13 @@
         :alt="`Logo ${produto.marca}`"
       />
       <div>
-        <h2
-          class="text-secondary font-semibold text-sm md:text-base limitaTexto"
-        >
+        <h2 class="text-secondary font-semibold text-sm md:text-base">
           {{ produto.nome }}
         </h2>
+        <p class="text-xs limitaTexto text-gray-500">SKU: {{ produto.sku }}</p>
         <p class="text-xs limitaTexto text-gray-500">
           {{ produto.codigos.join(", ") }}
         </p>
-        <p class="text-xs limitaTexto text-gray-500">SKU: {{ produto.sku }}</p>
       </div>
     </RouterLink>
     <button
