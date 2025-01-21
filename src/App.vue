@@ -1,15 +1,16 @@
 <template>
   <section class="bg-base-100 max-w-[2000px] mx-auto">
     <header class="fixed top-0 z-50 w-full">
-      <MensagemPix />
+      <MensagemPix class="max-w-[2000px]" />
       <NavMain class="max-w-[2000px]" />
+      <MenuItens class="max-w-[2000px]" />
     </header>
     <main>
-      <div class="bg-secondary">
+      <div class="bg-base-100">
         <MensagemPix class="opacity-0" />
         <NavMain class="max-w-[2000px] opacity-0 top-0 z-50" />
+        <MenuItens class="opacity-0" />
       </div>
-      <MenuItens />
       <RouterView class="mx-auto min-h-[70vh]" />
     </main>
     <FooterMain />

@@ -177,23 +177,56 @@ export const storeProdutos = defineStore("counter", {
       return marcasPorTipo;
     },
 
-    async salvaSubcategorias() {
+    filtraPordutosPorTipo(tipo: string, produtos: IProdutos) {
+      const produtosAFiltrar = produtos;
+      let resultado: IProduto[] = [];
+      for (const categoria in produtosAFiltrar) {
+        const produtosCategoria = produtosAFiltrar[categoria].filter(
+          (produto) => {
+            return produto.categoria === tipo;
+          }
+        );
+        if (produtosCategoria.length > 0) {
+          resultado = [...resultado, ...produtosCategoria];
+        }
+      }
+      return resultado;
+    },
+
+    async getSubcategorias() {
       const produtos = await this.getProdutos();
       const subcategorias: Record<string, string[]> = {};
       for (const marca in produtos) {
         const produtosMarca = produtos[marca];
         produtosMarca.forEach((produto) => {
           const tipo = produto.categoria;
-          const nome = produto.nome;
+          const subcategoria = produto.subcategoria;
           if (!subcategorias[tipo]) {
             subcategorias[tipo] = [];
           }
-          if (!subcategorias[tipo].includes(nome)) {
-            subcategorias[tipo].push(nome);
+          if (!subcategorias[tipo].includes(subcategoria)) {
+            subcategorias[tipo].push(subcategoria);
           }
         });
       }
       return subcategorias;
+    },
+
+    async getProdutosPorCategoria() {
+      // Retornar um objeto {categoria: produtos[]}
+      const produtos = await this.getProdutos();
+      const produtosPorCategoria: Record<string, IProduto[]> = {};
+      for (const marca in produtos) {
+        const produtosMarca = produtos[marca];
+        produtosMarca.forEach((produto) => {
+          const categoria = produto.categoria;
+          if (!produtosPorCategoria[categoria]) {
+            produtosPorCategoria[categoria] = [];
+          }
+          produtosPorCategoria[categoria].push(produto);
+        });
+      }
+      return produtosPorCategoria;
     },
   },
 });

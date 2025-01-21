@@ -7,6 +7,7 @@ export interface IProduto {
   nome: string;
   marca: string;
   categoria: string;
+  subcategoria: string;
   prazo: string;
   id: string | number;
   descricao: string;

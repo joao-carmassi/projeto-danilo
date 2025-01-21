@@ -1,7 +1,7 @@
 <template>
-  <div class="my-5 px-2">
+  <div class="mb-8 px-2">
+    <SetaLink class="pb-4" :id="id" />
     <TituloCategoria :categoria="id" id="tituloCategoria" />
-    <SetaLink :id="id" />
   </div>
 </template>
 

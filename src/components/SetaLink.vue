@@ -1,9 +1,11 @@
 <template>
   <div class="breadcrumbs pb-0 text-sm">
     <ul>
-      <li><RouterLink to="/">Home</RouterLink></li>
       <li>
-        {{ id }}
+        <RouterLink class="" to="/">Pagina inicial</RouterLink>
+      </li>
+      <li class="">
+        <p class="break-all w-fit">{{ id }}</p>
       </li>
     </ul>
   </div>

@@ -12,6 +12,14 @@ const routes = [
     component: () => import("@/view/DadosProduto.vue"),
   },
   {
+    path: "/produtos/:id",
+    component: () => import("@/view/MostraProdutos.vue"),
+  },
+  {
+    path: "/produtos/:id/:filtroSubcategoria",
+    component: () => import("@/view/MostraProdutos.vue"),
+  },
+  {
     path: "/carrinho",
     component: () => import("@/view/CarrinhoPage.vue"),
   },

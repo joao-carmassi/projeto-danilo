@@ -4,9 +4,9 @@
     :loop="true"
     :navigation="true"
     :autoplay="{ delay: 7500 }"
+    :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     :effect="'fade'"
     :fadeEffect="{ crossFade: true }"
-    :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     class="swiper-container relative swiperMarcas"
     data-teste="a"
   >
@@ -18,7 +18,7 @@
       />
       <img
         class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2-znd01gao77.png"
+        src="/img/home/homeCarrosel.jpg"
         alt="Imagem produto"
       />
     </swiper-slide>

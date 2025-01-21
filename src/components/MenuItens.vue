@@ -1,428 +1,234 @@
-<!-- <template>
-  <div
-    id="menuItens"
-    class="hidden relative h-12 w-full bg-secondary md:flex items-center justify-center text-white"
-  >
-    <ul class="menu gap-3 z-40 menu-horizontal">
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold">CATEGORIAS</summary>
-          <ul
-            class="flex flex-col justify-center items-start md:top-8 lg:top-6 rounded-none"
-          >
-            <li class="flex flex-row relative">
-              <details class="detailsNav" id="detailfilho ">
-                <summary class="font-semibold text-secondary">PLACAS</summary>
-                <ul
-                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
-                >
-                  <li>
-                    <p
-                      class="text-secondary text-lg mx-2 font-semibold text-nowrap"
-                    >
-                      PLACAS:
-                    </p>
-                  </li>
-                  <li
-                    class="p-0 m-0 border-b-2 border-secondary opacity-100 w-full"
-                  ></li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Controle Principal
-                    </p>
-                  </li>
-                  <li class="p-0 m-0 border-b border-gray-900 w-full"></li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Filtro
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Detecção de Corrente
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Alimentação
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Outros tipos de placa
-                    </p>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li class="p-0 m-0 border-b border-gray-900 w-full"></li>
-            <li class="flex flex-row relative">
-              <details class="detailsNav" id="detailfilho ">
-                <summary class="font-semibold text-secondary">SENSORES</summary>
-                <ul
-                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
-                >
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Controle Principal
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Filtro
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Detecção de Corrente
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Alimentação
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Outros tipos de placa
-                    </p>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li class="flex flex-row relative">
-              <details class="detailsNav" id="detailfilho ">
-                <summary class="font-semibold text-secondary">
-                  VÁLVULA DE EXPANSÃO
-                </summary>
-                <ul
-                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
-                >
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Controle Principal
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Filtro
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Detecção de Corrente
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Alimentação
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Outros tipos de placa
-                    </p>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li class="flex flex-row relative">
-              <details class="detailsNav" id="detailfilho ">
-                <summary class="font-semibold text-secondary">
-                  BOMBA DE DRENO
-                </summary>
-                <ul
-                  class="flex absolute w-fit py-2 bg-base-100 flex-col justify-center items-start top-0 left-[12.2rem] rounded-none shadow-lg"
-                >
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Controle Principal
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Filtro
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Auxiliar do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Compressor
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Módulo Inverter do Ventilador
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa Detecção de Corrente
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Placa de Alimentação
-                    </p>
-                  </li>
-                  <li>
-                    <p class="text-secondary mx-2 font-semibold text-nowrap">
-                      Outros tipos de placa
-                    </p>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </details>
-      </li>
-      <li class="static" v-for="(tipo, index) in tipos" :key="index">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold" @click="paginaTipos(tipo)">
-            {{ tipo }}
-          </summary>
-          <ul
-            class="flex justify-center items-center md:top-8 lg:top-6 rounded-none w-full right-1/2 translate-x-1/2"
-          >
-            <li
-              class="flex flex-row"
-              v-for="(marca, index) in tiposDasMarcas[tipo]"
-              :key="index"
-            >
-              <span
-                v-if="index > 0"
-                class="border-l border-gray-300 w-0 p-0"
-              ></span>
-              <RouterLink
-                :to="`/marca/${marca}`"
-                class="text-secondary mx-2 font-semibold"
-                >{{ marca }}</RouterLink
-              >
-            </li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
-</template> -->
-
 <template>
-  <div
-    id="menuItens"
-    class="hidden relative w-full bg-secondary lg:flex items-center justify-center text-white"
+  <nav
+    class="bg-base-100 hidden lg:block ContainerCategoriaNav text-white py-1"
   >
-    <ul
-      class="menu p-0 static justify-center items-center flex-wrap h-fit gap-3 z-40 menu-horizontal"
-    >
-      <li class="static hidden md:block my-1">
-        <ComponenteCategoria />
-      </li>
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold text-xs">COMPRESSORES</summary>
-          <ul
-            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
-          >
-            <div class="flex flex-col flex-wrap h-96">
-              <li class="mx-5" v-for="index in 50" :key="index">
-                <p class="text-secondary mx-2 font-semibold text-nowrap">
-                  {{ (Math.random() * 9999999999).toFixed(0) }}
-                </p>
-              </li>
-            </div>
-          </ul>
-        </details>
-      </li>
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold text-xs">
-            INSTALAÇÃO E MANUTENÇÃO
-          </summary>
-          <ul
-            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
-          >
-            <div class="flex">
-              <div v-for="index in 4" :key="index">
-                <li class="mx-5" v-for="index in 10" :key="index">
-                  <p class="text-secondary mx-2 font-semibold text-nowrap">
-                    {{ (Math.random() * 9999999999).toFixed(0) }}
-                  </p>
+    <div class="relative">
+      <ul class="flex items-center text-secondary justify-center py-0.5 gap-10">
+        <li class="categoriaNav relative" id="categoria">
+          <div>
+            <p
+              class="font-semibold tracking-wide flex justify-center items-center gap-1"
+            >
+              <img class="inline h-4" src="/img/nav/categoria.png" />CATEGORIAS
+            </p>
+            <div
+              id="filhoNav"
+              class="bg-white hidden FilhoCategoriaNav right-1/2 translate-x-1/2 shadow-md absolute z-10 top-[1.9rem]"
+            >
+              <ul class="flex relative flex-col py-2 h-fit">
+                <li
+                  class="categoriaNav"
+                  v-for="(categoria, index) in categorias"
+                  :key="index"
+                >
+                  <RouterLink :to="`/produtos/${categoria}`">
+                    <p
+                      class="text-nowrap link-hover font-semibold px-5 py-2 bg-base-100"
+                    >
+                      {{ categoria }}
+                    </p>
+                  </RouterLink>
+                  <div
+                    id="filhoCategoria"
+                    class="absolute hidden FilhoCategoriaNav top-0 left-[13.5rem] bg-base-100"
+                  >
+                    <div
+                      v-if="
+                        subcategorias[categoria] &&
+                        subcategorias[categoria][0] !== ''
+                      "
+                      class="h-[21rem] shadow-md px-5 py-3"
+                    >
+                      <RouterLink
+                        :to="`/produtos/${categoria}`"
+                        class="font-semibold text-nowrap text-lg"
+                      >
+                        <h3 class="pb-3">{{ categoria }}:</h3>
+                      </RouterLink>
+                      <hr class="border-secondary pb-3" />
+                      <ul
+                        class="grid grid-rows-7 grid-flow-col gap-x-16 gap-y-3"
+                      >
+                        <li
+                          v-for="(subcategoria, index) in subcategorias[
+                            categoria
+                          ]"
+                          class="w-fit"
+                          :key="index"
+                        >
+                          <RouterLink
+                            :to="`/produtos/${categoria}/${subcategoria}`"
+                            class="text-nowrap font-semibold link-hover"
+                            >{{ subcategoria }}</RouterLink
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="categoriaNav" v-for="(item, index) in itemsNav" :key="index">
+          <RouterLink
+            :to="`/produtos/${item.nome}`"
+            class="font-semibold flex justify-center items-center gap-1 tracking-wide"
+            ><img class="inline h-6" :src="`./img/nav/${item.foto}.png`" />
+            {{ item.foto }}</RouterLink
+          >
+          <div
+            id="filhoNav"
+            class="absolute bg-white FilhoCategoriaNav hidden right-1/2 translate-x-1/2 text-secondary z-10 top-8 min-w-[55rem] w-[55vw]"
+            v-if="
+              item.nome !== 'MOTOR VENTILADOR' && item.nome !== 'COMPRESSOR'
+            "
+          >
+            <div class="flex shadow-md justify-between">
+              <ul class="grid grid-rows-7 grid-flow-col gap-y-5 gap-x-9 p-5">
+                <li
+                  class="flex justify-center h-fit items-center"
+                  v-for="(subcategoria, index) in subcategorias[item.nome]"
+                  :key="index"
+                >
+                  <RouterLink
+                    :to="`/produtos/${item}/${subcategoria}`"
+                    class="text-nowrap font-semibold"
+                  >
+                    {{ subcategoria }}
+                  </RouterLink>
+                </li>
+              </ul>
+              <div class="min-w-96 relative w-96 p-10">
+                <swiper
+                  :slides-per-view="1"
+                  :loop="true"
+                  :navigation="true"
+                  :autoplay="{ delay: 5000 }"
+                  :modules="[Navigation, Autoplay]"
+                  class="swiper-container h-full w-full"
+                >
+                  <swiper-slide
+                    v-for="(produto, index) in produtosPorCategoria[item.nome]"
+                    :key="index"
+                    class="my-auto"
+                  >
+                    <CardProduto
+                      class="border-gray-400 my-5 mx-5"
+                      :produto="produto"
+                    />
+                  </swiper-slide>
+                </swiper>
               </div>
             </div>
-          </ul>
-        </details>
-      </li>
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold text-xs">VÁLVULAS</summary>
-          <ul
-            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
-          >
-            <div class="flex">
-              <div v-for="index in 4" :key="index">
-                <li class="mx-5" v-for="index in 10" :key="index">
-                  <p class="text-secondary mx-2 font-semibold text-nowrap">
-                    {{ (Math.random() * 9999999999).toFixed(0) }}
-                  </p>
-                </li>
-              </div>
-            </div>
-          </ul>
-        </details>
-      </li>
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold text-xs">GÁS REFRIGERANTES</summary>
-          <ul
-            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
-          >
-            <div class="flex">
-              <div v-for="index in 4" :key="index">
-                <li class="mx-5" v-for="index in 10" :key="index">
-                  <p class="text-secondary mx-2 font-semibold text-nowrap">
-                    {{ (Math.random() * 9999999999).toFixed(0) }}
-                  </p>
-                </li>
-              </div>
-            </div>
-          </ul>
-        </details>
-      </li>
-      <li class="static">
-        <details class="detailsNav" id="detailpai ">
-          <summary class="font-semibold text-xs">LUBRIFICANTES</summary>
-          <ul
-            class="flex justify-start items-center md:top-8 lg:top-6 rounded-none right-1/2 translate-x-1/2"
-          >
-            <div class="flex">
-              <div v-for="index in 4" :key="index">
-                <li class="mx-5" v-for="index in 10" :key="index">
-                  <p class="text-secondary mx-2 font-semibold text-nowrap">
-                    {{ (Math.random() * 9999999999).toFixed(0) }}
-                  </p>
-                </li>
-              </div>
-            </div>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
 import router from "@/router/router";
 import { storeProdutos } from "@/store/SProdutos";
-import type { DetailsHTMLAttributes } from "vue";
-import ComponenteCategoria from "./ComponenteCategoria.vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import type { IProduto } from "@/interface/IProdutos";
+import CardProduto from "./CardProduto.vue";
 
 export default {
-  components: { ComponenteCategoria },
+  components: { Swiper, SwiperSlide, CardProduto },
   data() {
     return {
       SProdutos: storeProdutos(),
-      tipos: [] as string[],
-      tiposDasMarcas: {} as {
-        [key: string]: string[];
-      },
+      categorias: [] as string[],
+      subcategorias: {} as Record<string, string[]>,
+      produtosPorCategoria: {} as Record<string, IProduto[]>,
+      itemsNav: [
+        {
+          nome: "PLACA",
+          foto: "PLACAS",
+        },
+        {
+          nome: "MOTOR VENTILADOR",
+          foto: "MOTORES VENTILADORES",
+        },
+        {
+          nome: "COMPRESSOR",
+          foto: "COMPRESSORES",
+        },
+        {
+          nome: "SENSOR",
+          foto: "SENSORES",
+        },
+      ],
     };
   },
   methods: {
     paginaTipos(tipo: string) {
       router.push(`/produtos/${tipo}`);
     },
+    async getProdutosTipo(tipo: string) {
+      const produtosPorTipo = await this.SProdutos.filtraPordutosPorTipo(
+        tipo,
+        this.SProdutos.produtos
+      );
+      return produtosPorTipo;
+    },
   },
   async mounted() {
-    this.tipos = await this.SProdutos.getTipos();
-    this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
+    this.categorias = await this.SProdutos.getCategorias();
+    this.subcategorias = await this.SProdutos.getSubcategorias();
+    this.produtosPorCategoria = await this.SProdutos.getProdutosPorCategoria();
 
-    const details = document.querySelectorAll(".detailsNav");
-    details.forEach((detail) => {
-      let alvo: DetailsHTMLAttributes;
-      detail.addEventListener("mouseenter", (e) => {
-        alvo = e.target as DetailsHTMLAttributes;
-        details.forEach((detail) => {
-          if (detail.id === alvo.id) {
-            detail.removeAttribute("open");
+    const categoriaNav = document.querySelectorAll(".categoriaNav");
+    const ContainerCategoriaNav = document.querySelector(
+      ".ContainerCategoriaNav"
+    ) as HTMLElement;
+    const FilhoCategoriaNav = document.querySelectorAll(".FilhoCategoriaNav");
+
+    categoriaNav.forEach((categoria) => {
+      categoria.addEventListener("mouseover", (e) => {
+        const pai = e.currentTarget as HTMLDivElement;
+        const filho = pai.querySelector(
+          ".FilhoCategoriaNav"
+        ) as HTMLElement | null;
+
+        if (!filho) {
+          return;
+        }
+
+        FilhoCategoriaNav.forEach((filhoNav) => {
+          if (filhoNav.id === filho.id) {
+            filhoNav.classList.add("hidden");
           }
+          filho.classList.remove("hidden");
         });
-        alvo.open = true;
-      });
-      const navBar = document.getElementById("menuItens") as HTMLElement;
-      navBar.addEventListener("mouseleave", () => {
-        detail.removeAttribute("open");
       });
     });
+
+    ContainerCategoriaNav.addEventListener("mouseleave", () => {
+      FilhoCategoriaNav.forEach((filho) => {
+        filho.classList.add("hidden");
+      });
+    });
+
+    const nav = document.querySelector(".ContainerCategoriaNav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY === 0) {
+        nav?.classList.add("lg:block");
+      } else {
+        nav?.classList.remove("lg:block");
+      }
+    });
+  },
+  setup() {
+    return {
+      Navigation,
+      Autoplay,
+    };
   },
 };
 </script>

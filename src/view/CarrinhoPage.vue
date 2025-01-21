@@ -2,7 +2,7 @@
   <section class="md:px-12 lg:px-52 bg-base-100">
     <div class="breadcrumbs px-4 pt-5 text-sm">
       <ul>
-        <li><RouterLink to="/">Home</RouterLink></li>
+        <li><RouterLink to="/">Pagina inicial</RouterLink></li>
         <li>carrinho</li>
       </ul>
     </div>

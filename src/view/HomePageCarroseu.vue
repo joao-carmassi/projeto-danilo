@@ -330,71 +330,67 @@
           >
             <CardProduto class="my-5" :produto="produto" />
           </swiper-slide>
-          <div class="w-full flex justify-end">
-            <RouterLink
-              :to="`/marca/${categoria}`"
-              class="btn btn-secondary uppercase text-base-100"
-            >
-              <span class="font-semibold text-lg">+</span> {{ categoria }}
-            </RouterLink>
-          </div>
         </swiper>
       </div>
-      <hr class="mt-5 border-secondary" />
+      <hr class="border-secondary mt-5" />
     </section>
-    <section class="bg-[#d4f1fd] py-10">
-      <div class="text-center">
-        <h2 class="font-semibold text-secondary text-3xl">
-          Escolha pela marca
-        </h2>
-      </div>
-      <div class="relative w-10/12 md:w-full mx-auto pt-5">
-        <swiper
-          :slides-per-view="2"
-          :loop="true"
-          :navigation="true"
-          :modules="[Navigation]"
-          class="swiper-container swiper-marcas w-10/12"
-          :breakpoints="{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-          }"
-        >
-          <swiper-slide
-            v-for="(marca, index) in marcas"
-            :key="index"
-            class="my-auto"
+    <section>
+      <div
+        class="md:w-11/12 mt-10 bg-[#d4f1fd] md:rounded-lg py-10 lg:w-10/12 mx-auto"
+      >
+        <div class="text-center">
+          <h2 class="font-semibold text-secondary text-3xl">
+            Escolha pela marca
+          </h2>
+        </div>
+        <div class="relative w-10/12 md:w-full mx-auto pt-5">
+          <swiper
+            :slides-per-view="2"
+            :loop="true"
+            :navigation="true"
+            :modules="[Navigation]"
+            class="swiper-container swiper-marcas w-10/12"
+            :breakpoints="{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }"
           >
-            <div
-              class="md:hover:scale-105 flex justify-center items-center duration-200 py-2"
+            <swiper-slide
+              v-for="(marca, index) in marcas"
+              :key="index"
+              class="my-auto"
             >
-              <RouterLink
-                class="bg-white shadow-md relative w-8/12 rounded-full aspect-square"
-                :to="`/marca/${marca}`"
+              <div
+                class="md:hover:scale-105 flex justify-center items-center duration-200 py-2"
               >
-                <img
-                  class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
-                  :src="`./img/marcas/${marca}.png`"
-                  :alt="`Logo ${marca}`"
-                />
-              </RouterLink>
-            </div>
-          </swiper-slide>
-        </swiper>
+                <RouterLink
+                  class="bg-white shadow-md relative w-8/12 rounded-full aspect-square"
+                  :to="`/marca/${marca}`"
+                >
+                  <img
+                    class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
+                    :src="`./img/marcas/${marca}.png`"
+                    :alt="`Logo ${marca}`"
+                  />
+                </RouterLink>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </section>
     <section class="grid place-items-center">
       <a
-        class="w-full grid place-items-center"
+        class="w-full md:w-11/12 lg:w-10/12 mx-auto md:my-10 grid place-items-center"
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
-        <img
+        <!-- <img
           class="w-full"
           src="/img/naoEncontrou.png"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
-        />
+        /> -->
       </a>
     </section>
 
@@ -415,14 +411,14 @@
 <script lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation } from "swiper/modules";
+import CardProduto from "@/components/CardProduto.vue";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import SwiperMarcas from "@/components/SwiperMarcas.vue";
 import type { IProdutos } from "@/interface/IProdutos";
 import { storeProdutos } from "@/store/SProdutos";
-import CardProduto from "@/components/CardProduto.vue";
 import TituloCategoria from "@/components/TituloCategoria.vue";
-import SwiperMarcas from "@/components/SwiperMarcas.vue";
 
 export default {
   components: {

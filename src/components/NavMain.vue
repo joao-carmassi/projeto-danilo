@@ -215,11 +215,11 @@
                         @click="fecharAside"
                         :class="{ 'border-t': index !== 0 }"
                         class="py-2.5 pl-2 border-gray-300 font-semibold"
-                        :to="`/marca/${marca}`"
-                        v-for="(marca, index) in tiposDasMarcas[tipo]"
+                        :to="`/produtos/${tipo}/${subcategoria}`"
+                        v-for="(subcategoria, index) in subcategorias[tipo]"
                         :key="index"
                       >
-                        - {{ marca }}
+                        - {{ subcategoria }}
                       </RouterLink>
                     </div>
                   </div>
@@ -421,6 +421,7 @@ export default {
       tiposDasMarcas: {} as {
         [key: string]: string[];
       },
+      subcategorias: {} as Record<string, string[]>,
     };
   },
   methods: {
@@ -437,6 +438,7 @@ export default {
   async mounted() {
     this.tipos = await this.SProdutos.getTipos();
     this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
+    this.subcategorias = await this.SProdutos.getSubcategorias();
 
     const details = document.querySelectorAll("#detailsTelefone");
     details.forEach((detail) => {

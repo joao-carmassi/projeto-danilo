@@ -4,8 +4,18 @@
     class="bg-base-100 group relative border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg shadow-gray-300 flex flex-col gap-2 rounded-lg p-3 md:p-4"
   >
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
-      <img
+      <!-- <img
         v-if="testeECompressor"
+        :src="`./img/produtos/compressor-${produto.marca}.png`"
+        class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
+        alt="Imagem do produto"
+        loading="lazy"
+      /> -->
+      <img
+        v-if="
+          (produto.categoria === 'COMPRESSOR' && produto.marca === 'HITACHI') ||
+          (produto.categoria === 'COMPRESSOR' && produto.marca === 'TOSHIBA')
+        "
         :src="`./img/produtos/compressor-${produto.marca}.png`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
@@ -18,7 +28,6 @@
         alt="Imagem do produto"
         loading="lazy"
       />
-
       <img
         class="w-12 mt-1.5"
         :src="`./img/marcas/${produto.marca}.png`"
