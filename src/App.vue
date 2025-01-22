@@ -22,7 +22,6 @@
 <!-- TODO: Paginas do maual tecnico -->
 <!-- TODO: arrumar bug input quntidade -->
 
-<!-- TODO: imagens nav canto -->
 <!-- TODO: baixa planilia -->
 <!-- TODO: Colocar fotos novas -->
 <!-- TODO: Deploy na vercel -->

@@ -7,7 +7,7 @@
       class="grid grid-rows-auto gap-x-6 gap-y-9 mt-10 grid-cols-5 px-10 lg:px-40 xl:px-56 bg-base-100 pb-14"
     >
       <div
-        class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
+        class="col-span-5 flex-col-reverse md:flex-row flex items-start md:col-span-3 place-items-center"
       >
         <div class="h-24">
           <div
@@ -223,10 +223,12 @@ export default {
     "$route.params.id": {
       immediate: true,
       handler() {
+        this.quantidade = 1;
         this.id = this.$route.params.id as string;
         this.baixaProduto();
         this.moveTelaTopo();
-        this.quantidadeInput = 0;
+        this.quantidadeInput = this.quantidade;
+        this.inputQuantidade = this.quantidade;
       },
     },
   },
@@ -287,6 +289,9 @@ export default {
     return {
       Navigation,
     };
+  },
+  created() {
+    this.baixaProduto();
   },
 };
 </script>
