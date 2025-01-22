@@ -1,6 +1,7 @@
 <template>
   <nav
-    class="bg-base-100 hidden lg:block ContainerCategoriaNav text-white py-1"
+    class="bg-base-100 hidden ContainerCategoriaNav text-white py-1"
+    :class="{ 'lg:block': botaoAbreMenu || enventoScrowll }"
   >
     <div class="relative">
       <ul class="flex items-center text-secondary justify-center py-0.5 gap-10">
@@ -79,12 +80,12 @@
           >
           <div
             id="filhoNav"
-            class="absolute bg-white FilhoCategoriaNav hidden right-1/2 translate-x-1/2 text-secondary z-10 top-8 min-w-[55rem] w-[55vw]"
+            class="absolute bg-base-100 FilhoCategoriaNav hidden right-1/2 translate-x-1/2 text-secondary z-10 top-8 min-w-[55rem] w-[55vw]"
             v-if="
               item.nome !== 'MOTOR VENTILADOR' && item.nome !== 'COMPRESSOR'
             "
           >
-            <div class="flex shadow-md justify-between">
+            <div class="flex h-[21rem] shadow-md justify-between">
               <ul class="grid grid-rows-7 grid-flow-col gap-y-5 gap-x-9 p-5">
                 <li
                   class="flex justify-center h-fit items-center"
@@ -92,33 +93,38 @@
                   :key="index"
                 >
                   <RouterLink
-                    :to="`/produtos/${item}/${subcategoria}`"
+                    :to="`/produtos/${item.nome}/${subcategoria}`"
                     class="text-nowrap font-semibold"
                   >
                     {{ subcategoria }}
                   </RouterLink>
                 </li>
               </ul>
-              <div class="min-w-96 relative w-96 p-10">
-                <swiper
-                  :slides-per-view="1"
-                  :loop="true"
-                  :navigation="true"
-                  :autoplay="{ delay: 5000 }"
-                  :modules="[Navigation, Autoplay]"
-                  class="swiper-container h-full w-full"
+              <div class="w-[30rem] flex justify-center items-center">
+                <div
+                  class="w-[29rem] relative flex justify-center items-center px-10"
                 >
-                  <swiper-slide
-                    v-for="(produto, index) in produtosPorCategoria[item.nome]"
-                    :key="index"
-                    class="my-auto"
+                  <swiper
+                    :slides-per-view="2"
+                    :loop="true"
+                    :navigation="true"
+                    :autoplay="{ delay: 5000 }"
+                    :modules="[Navigation, Autoplay]"
+                    class="swiper-container swiperNav"
                   >
-                    <CardProduto
-                      class="border-gray-400 my-5 mx-5"
-                      :produto="produto"
-                    />
-                  </swiper-slide>
-                </swiper>
+                    <swiper-slide
+                      v-for="(produto, index) in produtosPorCategoria[
+                        item.nome
+                      ]"
+                      :key="index"
+                    >
+                      <CardProduto
+                        class="border-gray-400 mx-2"
+                        :produto="produto"
+                      />
+                    </swiper-slide>
+                  </swiper>
+                </div>
               </div>
             </div>
           </div>
@@ -146,6 +152,8 @@ export default {
       categorias: [] as string[],
       subcategorias: {} as Record<string, string[]>,
       produtosPorCategoria: {} as Record<string, IProduto[]>,
+      enventoScrowll: true,
+      botaoAbreMenu: false,
       itemsNav: [
         {
           nome: "PLACA",
@@ -215,15 +223,24 @@ export default {
       });
     });
 
-    const nav = document.querySelector(".ContainerCategoriaNav");
     window.addEventListener("scroll", () => {
       if (window.scrollY === 0) {
-        nav?.classList.add("lg:block");
+        this.enventoScrowll = true;
       } else {
-        nav?.classList.remove("lg:block");
+        this.enventoScrowll = false;
+      }
+    });
+
+    const toggleNav = document.getElementById("check-icon") as HTMLInputElement;
+    toggleNav.addEventListener("change", () => {
+      if (toggleNav.checked) {
+        this.botaoAbreMenu = true;
+      } else {
+        this.botaoAbreMenu = false;
       }
     });
   },
+  emits: ["scrowll"],
   setup() {
     return {
       Navigation,

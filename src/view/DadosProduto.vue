@@ -9,7 +9,7 @@
       <div
         class="flex flex-col-reverse md:flex-row items-start gap-3 col-span-5 md:col-span-3 place-items-center"
       >
-        <div>
+        <div class="h-24">
           <div
             v-if="
               (produto.categoria === 'COMPRESSOR' &&
@@ -17,10 +17,10 @@
               (produto.categoria === 'COMPRESSOR' &&
                 produto.marca === 'TOSHIBA')
             "
-            class="flex justify-center mx-auto md:mx-0 items-center gap-3 md:flex-col md:h-auto"
+            class="flex justify-center md:flex-col gap-3"
           >
             <button
-              class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
+              class="rounded-md duration-200 h-24 md:h-32 border border-gray-400 hover:border-secondary aspect-square"
               @click="trocaImage(`compressor-${produto.marca}`)"
             >
               <img
@@ -30,7 +30,7 @@
               />
             </button>
             <button
-              class="rounded-md duration-200 h-full md:w-full border border-gray-400 hover:border-secondary aspect-square"
+              class="rounded-md duration-200 h-24 md:h-32 border border-gray-400 hover:border-secondary aspect-square"
               @click="trocaImage(produto.id)"
             >
               <img
@@ -40,7 +40,18 @@
               />
             </button>
           </div>
-          <div class="hidden md:block h-24 md:w-32"></div>
+          <div v-else class="flex justify-center md:flex-col gap-3">
+            <button
+              class="rounded-md duration-200 h-24 md:h-32 border border-gray-400 hover:border-secondary aspect-square"
+              @click="trocaImage(produto.id)"
+            >
+              <img
+                class="rounded-md aspect-square"
+                :src="`./img/produtos/${produto.id}.png`"
+                alt="Imagem do produto"
+              />
+            </button>
+          </div>
         </div>
         <img
           v-if="
@@ -62,11 +73,13 @@
         />
       </div>
       <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
-        <img
-          class="w-28"
-          :src="`./img/marcas/${produto.marca}.png`"
-          :alt="`Logo marca ${produto.marca}`"
-        />
+        <RouterLink :to="`/marca/${produto.marca}`">
+          <img
+            class="w-28"
+            :src="`./img/marcas/${produto.marca}.png`"
+            :alt="`Logo marca ${produto.marca}`"
+          />
+        </RouterLink>
         <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
           {{ produto.nome || "Nome" }}
         </h2>

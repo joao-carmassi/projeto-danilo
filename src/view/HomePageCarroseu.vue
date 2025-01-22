@@ -463,6 +463,11 @@ export default {
   position: relative !important;
 }
 
+.swiperNav {
+  --swiper-navigation-size: 35px !important;
+  --swiper-navigation-sides-offset: 0px !important;
+}
+
 .swiperPaginaProduto {
   --swiper-navigation-size: 35px !important;
   --swiper-navigation-sides-offset: 0px !important;

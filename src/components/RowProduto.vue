@@ -5,7 +5,7 @@
     :class="classes"
   >
     <img
-      v-if="testeECompressor"
+      v-if="produto.categoria === 'COMPRESSOR'"
       :src="`./img/produtos/compressor-${produto.marca}.png`"
       alt="Imagem do produto"
       class="block object-contain aspect-square border border-secondary rounded-sm"
@@ -80,9 +80,6 @@ export default {
         );
       }
       return codigo;
-    },
-    testeECompressor() {
-      return this.produto.nome.includes("COMPRESSOR");
     },
   },
 };

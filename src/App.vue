@@ -19,10 +19,14 @@
   </section>
 </template>
 
-<!-- TODO: arrumar espacamento 3 imagens celular -->
+<!-- TODO: baixa planilia -->
+
+<!-- TODO: Paginas do maual tecnico -->
+<!-- TODO: Container carrocel main bordar -->
 <!-- TODO: arrumar bug input quntidade -->
-<!-- TODO: pagina produtos, marcas, tipos -->
-<!-- TODO: menu -->
+
+<!-- TODO: imagens nav canto -->
+<!-- TODO: Colocar fotos novas -->
 <!-- TODO: Deploy na vercel -->
 
 <script lang="ts">

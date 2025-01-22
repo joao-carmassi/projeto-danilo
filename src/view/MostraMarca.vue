@@ -7,13 +7,16 @@
 
       <ul class="my-3 flex items-start justify-start flex-col gap-3">
         <li>
-          <button class="link-hover text-start" @click="filtraPorTipo('')">
+          <button
+            class="link-hover btnFiltro font-semibold text-start"
+            @click="filtraPorTipo('')"
+          >
             TODOS ({{ ItemsPesquisados.length }})
           </button>
         </li>
         <li v-for="(marca, index) in tipoasDeCadaMarca[id]" :key="index">
           <button
-            class="link-hover text-nowrap text-start"
+            class="link-hover text-nowrap btnFiltro text-start"
             @click="filtraPorTipo(marca)"
           >
             {{ marca }} ({{ quatidadeDeCadaProduto[marca] }})
@@ -149,6 +152,20 @@ export default {
       }
       return acc;
     }, {} as Record<string, number>);
+    setInterval(() => {
+      const botoesFiltro = document.querySelectorAll(".btnFiltro");
+      botoesFiltro.forEach((botao) => {
+        botao.addEventListener("click", (e) => {
+          botoesFiltro.forEach((b) => {
+            if (b.id === botao.id) {
+              b.classList.remove("font-semibold");
+            }
+          });
+          const botaoClicado = e.target as HTMLButtonElement;
+          botaoClicado.classList.add("font-semibold");
+        });
+      });
+    }, 500);
   },
 };
 </script>

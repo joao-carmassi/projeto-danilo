@@ -2,6 +2,7 @@
   <swiper
     :slides-per-view="1"
     :loop="true"
+    :pagination="true"
     :navigation="true"
     :autoplay="{ delay: 7500 }"
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
@@ -46,11 +47,6 @@
         alt="Imagem produto"
       />
     </swiper-slide>
-    <p
-      class="left-1/2 transform -translate-x-1/2 text-white absolute bottom-3 z-10 font-semibold tracking-widest"
-    >
-      V R F
-    </p>
   </swiper>
 </template>
 

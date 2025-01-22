@@ -28,13 +28,17 @@
         alt="Imagem do produto"
         loading="lazy"
       />
-      <img
-        class="w-12 mt-1.5"
-        :src="`./img/marcas/${produto.marca}.png`"
-        :alt="`Logo ${produto.marca}`"
-      />
+      <RouterLink :to="`/marca/${produto.marca}`">
+        <img
+          class="w-12 mt-1.5"
+          :src="`./img/marcas/${produto.marca}.png`"
+          :alt="`Logo ${produto.marca}`"
+        />
+      </RouterLink>
       <div>
-        <h2 class="text-secondary font-semibold text-sm md:text-base">
+        <h2
+          class="text-secondary limitaTexto2Linhas font-semibold text-sm md:text-base"
+        >
           {{ produto.nome }}
         </h2>
         <p class="text-xs limitaTexto text-gray-500">SKU: {{ produto.sku }}</p>
@@ -99,6 +103,14 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.limitaTexto2Linhas {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 </style>
