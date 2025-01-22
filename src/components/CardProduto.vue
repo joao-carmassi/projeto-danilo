@@ -1,7 +1,7 @@
 <template>
   <div
     id="animacaoScroll"
-    class="bg-base-100 group relative border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg shadow-gray-300 flex flex-col gap-2 rounded-lg p-3 md:p-4"
+    class="bg-base-100 group relative border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg [--tw-shadow-color:rgba(17, 17, 17, 0.9)] flex flex-col gap-2 rounded-lg p-3 md:p-4"
   >
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <!-- <img

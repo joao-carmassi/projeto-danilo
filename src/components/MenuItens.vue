@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-base-100 hidden ContainerCategoriaNav text-white py-1"
+    class="bg-base-100 shadow-sm hidden ContainerCategoriaNav text-white py-1"
     :class="{ 'lg:block': botaoAbreMenu || enventoScrowll }"
   >
     <div class="relative">

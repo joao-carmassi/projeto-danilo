@@ -19,13 +19,11 @@
   </section>
 </template>
 
-<!-- TODO: baixa planilia -->
-
 <!-- TODO: Paginas do maual tecnico -->
-<!-- TODO: Container carrocel main bordar -->
 <!-- TODO: arrumar bug input quntidade -->
 
 <!-- TODO: imagens nav canto -->
+<!-- TODO: baixa planilia -->
 <!-- TODO: Colocar fotos novas -->
 <!-- TODO: Deploy na vercel -->
 

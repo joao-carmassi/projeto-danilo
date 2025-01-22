@@ -68,7 +68,7 @@
         <img
           v-else
           :src="outraImagens || `./img/produtos/${produto.id}.png`"
-          class="w-full md:w-[80%] rounded-xl object-contain aspect-square"
+          class="w-full md:w-[75%] rounded-xl object-contain aspect-square"
           alt="Imagem do produto"
         />
       </div>

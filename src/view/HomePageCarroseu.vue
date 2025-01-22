@@ -298,13 +298,15 @@
         </div>
       </div>
     </section>
-    <hr class="mt-5 md:mt-10 border-secondary" />
+    <hr class="border-secondary block md:hidden mt-5" />
     <section
-      class="containerCarrosel px-3 md:px-0 relative"
+      class="containerCarrosel relative"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
-      <div class="">
+      <div
+        class="md:w-11/12 px-3 md:px-0 lg:w-10/12 md:relative mx-auto rounded-lg md:bg-[#d4f1fd] md:my-16"
+      >
         <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-5">
           <TituloCategoria :categoria="categoria" />
           <hr class="border-secondary border-b-2 rounded-xl w-16 mx-auto" />
@@ -332,7 +334,7 @@
           </swiper-slide>
         </swiper>
       </div>
-      <hr class="border-secondary mt-5" />
+      <hr class="border-secondary block md:hidden" />
     </section>
     <section>
       <div
