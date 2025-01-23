@@ -247,7 +247,7 @@
                     class="collapse rounded-none join-item border-gray-400 border"
                   >
                     <div
-                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                      class="collapse-title bg-secondary flex items-center px-4 min-h-14 text-md font-semibold"
                     >
                       <RouterLink
                         @click="fecharAside"
@@ -256,7 +256,7 @@
                       >
                         <img class="h-8" src="/img/nav/manuais.png" />
                         <p
-                          class="text-secondary group-hover:underline font-semibold"
+                          class="text-white group-hover:underline font-semibold"
                         >
                           MANUAIS
                         </p>
