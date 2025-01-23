@@ -1,5 +1,5 @@
 export default interface IPdf {
-  mraca: string;
+  marca: string;
   modelo: string;
   tipo: string;
   documento: string;

@@ -8,7 +8,7 @@
       <hr class="border-secondary border-b-2" />
     </section>
     <section>
-      <div class="mb-5 md:mb-10 border-b border-gray-300">
+      <div class="md:mb-10 border-b border-gray-300">
         <div
           class="hidden lg:w-10/12 mx-auto md:grid grid-cols-2 gap-y-3 lg:grid-cols-4 py-3"
         >
@@ -276,7 +276,7 @@
         </div>
       </div>
       <div
-        class="flex px-3 md:px-0 gap-3 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
+        class="flex px-0 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
       >
         <div class="md:hover:scale-105 duration-200">
           <img src="/img/home/MINI BANNER 1.png" />
@@ -289,14 +289,14 @@
         </div>
       </div>
     </section>
-    <hr class="border-secondary block md:hidden mt-5" />
     <section
       class="containerCarrosel relative"
       v-for="(categoria, index) in categorias"
       :key="index"
     >
+      <hr class="border-secondary block md:hidden" />
       <div
-        class="md:w-11/12 px-3 md:px-0 lg:w-10/12 md:relative mx-auto rounded-lg md:bg-[#d4f1fd] md:my-16"
+        class="md:w-11/12 px-5 md:px-0 lg:w-10/12 md:relative mx-auto rounded-lg md:bg-[#d4f1fd] md:my-16"
       >
         <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-5">
           <TituloCategoria :categoria="categoria" />
@@ -325,11 +325,10 @@
           </swiper-slide>
         </swiper>
       </div>
-      <hr class="border-secondary block md:hidden" />
     </section>
     <section>
       <div
-        class="md:w-11/12 mt-10 bg-[#d4f1fd] md:rounded-lg py-10 lg:w-10/12 mx-auto"
+        class="md:w-11/12 md:mt-10 bg-[#d4f1fd] md:rounded-lg py-10 lg:w-10/12 mx-auto"
       >
         <div class="text-center">
           <h2 class="font-semibold text-secondary text-3xl">

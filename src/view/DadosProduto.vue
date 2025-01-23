@@ -88,7 +88,6 @@
             {{ produto.nome || "Nome" }}
           </h2>
           <p class="text-gray-400 text-xs">SKU: {{ produto.sku }}</p>
-          <p class="text-gray-400 text-xs">SKU: {{ produto.id }}</p>
           <p class="text-gray-400 text-xs">
             Códigos compatíveis: {{ produto.codigos.join(", ") }}
           </p>

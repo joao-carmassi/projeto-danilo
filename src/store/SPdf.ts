@@ -5,29 +5,29 @@ import { defineStore } from "pinia";
 export const storePdf = defineStore("pdf", {
   state: () => {
     return {
-      pdf: [] as IPdf[],
-      marcas: {} as Record<string, IPdf[]>,
+      marcas: [] as string[],
+      pdfs: {} as Record<string, IPdf[]>,
     };
   },
 
   actions: {
     async getPdf() {
-      this.pdf = await baixaPdfJson();
-      this.agrupaPdfPorMarca();
-      console.log(this.marcas);
-      return this.marcas;
+      const listaPdfs = await baixaPdfJson();
+      this.agrupaPdfPorMarca(listaPdfs);
+      return this.pdfs;
     },
-    async agrupaPdfPorMarca() {
+    async agrupaPdfPorMarca(listaPdfs: IPdf[]) {
       const marcas = new Set<string>();
-      this.pdf.forEach((pdf) => {
-        marcas.add(pdf.mraca);
+      listaPdfs.forEach((pdf) => {
+        marcas.add(pdf.marca);
       });
-      this.pdf.forEach((pdf) => {
-        const marca = pdf.mraca;
-        if (!this.marcas[marca]) {
-          this.marcas[marca] = [];
+      listaPdfs.forEach((pdf) => {
+        const marca = pdf.marca;
+        if (!this.pdfs[marca]) {
+          this.pdfs[marca] = [];
         }
-        this.marcas[marca].push(pdf);
+        this.pdfs[marca].push(pdf);
+        this.marcas = Array.from(marcas);
       });
     },
   },

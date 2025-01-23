@@ -195,32 +195,52 @@
                       </ul>
                     </div>
                   </div>
-                  <div
-                    v-for="(tipo, index) in tipos"
-                    :key="index"
-                    class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
-                  >
-                    <input
-                      class="px-4 min-h-14"
-                      type="checkbox"
-                      name="my-accordion-4"
-                    />
+                  <div v-for="(tipo, index) in tipos" :key="index">
                     <div
-                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                      v-if="
+                        tipo === 'PLACA' ||
+                        tipo === 'MOTOR VENTILADOR' ||
+                        tipo === 'VALVULA DE EXPANSÃO' ||
+                        tipo === 'SENSOR'
+                      "
+                      class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
                     >
-                      {{ tipo }}
-                    </div>
-                    <div class="collapse-content pl-3 flex flex-col">
-                      <RouterLink
-                        @click="fecharAside"
-                        :class="{ 'border-t': index !== 0 }"
-                        class="py-2.5 pl-2 border-gray-300 font-semibold"
-                        :to="`/produtos/${tipo}/${subcategoria}`"
-                        v-for="(subcategoria, index) in subcategorias[tipo]"
-                        :key="index"
+                      <input
+                        class="px-4 min-h-14"
+                        type="checkbox"
+                        name="my-accordion-4"
+                      />
+                      <div
+                        class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
                       >
-                        - {{ subcategoria }}
-                      </RouterLink>
+                        {{ tipo }}
+                      </div>
+                      <div class="collapse-content pl-3 flex flex-col">
+                        <RouterLink
+                          @click="fecharAside"
+                          :class="{ 'border-t': index !== 0 }"
+                          class="py-2.5 pl-2 border-gray-300 font-semibold"
+                          :to="`/produtos/${tipo}/${subcategoria}`"
+                          v-for="(subcategoria, index) in subcategorias[tipo]"
+                          :key="index"
+                        >
+                          - {{ subcategoria }}
+                        </RouterLink>
+                      </div>
+                    </div>
+                    <div
+                      v-else
+                      class="collapse rounded-none join-item border-gray-400 border"
+                    >
+                      <div
+                        class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                      >
+                        <RouterLink
+                          @click="fecharAside"
+                          :to="`/produtos/${tipo}/`"
+                          >{{ tipo }}</RouterLink
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -453,6 +473,11 @@ export default {
     this.tipos = await this.SProdutos.getTipos();
     this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
     this.subcategorias = await this.SProdutos.getSubcategorias();
+    for (const tipo in this.subcategorias) {
+      this.subcategorias[tipo] = this.subcategorias[tipo].filter(
+        (subcategoria) => subcategoria !== ""
+      );
+    }
 
     const details = document.querySelectorAll("#detailsTelefone");
     details.forEach((detail) => {
