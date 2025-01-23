@@ -224,7 +224,7 @@
                           v-for="(subcategoria, index) in subcategorias[tipo]"
                           :key="index"
                         >
-                          - {{ subcategoria }}
+                          • {{ subcategoria }}
                         </RouterLink>
                       </div>
                     </div>
@@ -241,6 +241,26 @@
                           >{{ tipo }}</RouterLink
                         >
                       </div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse rounded-none join-item border-gray-400 border"
+                  >
+                    <div
+                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                    >
+                      <RouterLink
+                        @click="fecharAside"
+                        to="/manuais"
+                        class="flex group items-center"
+                      >
+                        <img class="h-8" src="/img/nav/manuais.png" />
+                        <p
+                          class="text-secondary group-hover:underline font-semibold"
+                        >
+                          MANUAIS
+                        </p>
+                      </RouterLink>
                     </div>
                   </div>
                 </div>
@@ -399,7 +419,15 @@
               </ul>
             </details>
           </div>
-          <div class="flex w-24 gap-2 justify-end">
+          <div class="flex items-center lg:gap-5 justify-end">
+            <RouterLink to="/manuais" class="flex group items-center">
+              <img class="h-8" src="/img/nav/manuais.png" />
+              <p
+                class="text-white hidden lg:block group-hover:underline font-semibold"
+              >
+                Manuais
+              </p>
+            </RouterLink>
             <div class="dropdown dropdown-end">
               <RouterLink
                 to="/carrinho"

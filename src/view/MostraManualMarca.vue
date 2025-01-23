@@ -8,7 +8,9 @@
         class="flex flex-col-reverse gap-y-5 py-5 md:flex-row items-start justify-center"
       >
         <div class="w-full flex flex-col justify-center items-start">
-          <h2 class="w-full text-lg font-semibold text-secondary text-center">
+          <h2
+            class="w-full text-xl py-3 md:py-5 font-semibold text-secondary text-center"
+          >
             Condensadora:
           </h2>
           <ul class="w-3/5 flex flex-col items-start mt-5 mx-auto">
@@ -22,13 +24,18 @@
                   :download="`${manual.documento}.pdf`"
                   >{{ manual.documento }}.pdf</a
                 >
+                <p class="text-gray-400 font-normal lowercase">
+                  {{ manual.tipo }} • {{ manual.marca }}
+                </p>
               </li>
             </div>
           </ul>
         </div>
         <hr class="border-secondary md:hidden w-full" />
         <div class="w-full flex flex-col justify-center items-start">
-          <h2 class="w-full text-lg font-semibold text-secondary text-center">
+          <h2
+            class="w-full text-xl py-3 md:py-5 font-semibold text-secondary text-center"
+          >
             Evaporadora:
           </h2>
           <ul class="w-3/5 flex flex-col mt-5 mx-auto">
@@ -42,6 +49,9 @@
                   :download="`${manual.documento}.pdf`"
                   >{{ manual.documento }}.pdf</a
                 >
+                <p class="text-gray-400 font-normal lowercase">
+                  {{ manual.tipo }} • {{ manual.marca }}
+                </p>
               </li>
             </div>
           </ul>

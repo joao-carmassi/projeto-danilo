@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div
-      class="md:w-11/12 flex items-center justify-center flex-wrap gap-x-7 gap-y-20 lg:w-10/12 mb-10"
+      class="md:w-11/12 flex items-center justify-center flex-wrap gap-x-7 gap-y-10 md:gap-y-20 lg:w-10/12 mb-10"
     >
       <div
         v-for="(marca, index) in SPdf.marcas"

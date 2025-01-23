@@ -12,6 +12,9 @@ export const storePdf = defineStore("pdf", {
 
   actions: {
     async getPdf() {
+      if (this.marcas.length > 0) {
+        return this.pdfs;
+      }
       const listaPdfs = await baixaPdfJson();
       this.agrupaPdfPorMarca(listaPdfs);
       return this.pdfs;
