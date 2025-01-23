@@ -1,10 +1,10 @@
 <template>
   <section>
     <div class="hidden md:block">
-      <SetaLink class="mt-5 px-10 lg:px-40 xl:px-64" :id="produto.nome" />
+      <SetaLink class="mt-5 px-10 lg:px-40 xl:px-52" :id="produto.nome" />
     </div>
     <div
-      class="mt-5 md:mt-10 flex flex-col gap-5 px-10 lg:px-40 xl:px-64 bg-base-100 pb-14"
+      class="mt-5 md:mt-10 flex flex-col gap-5 px-10 lg:px-40 xl:px-52 bg-base-100 pb-14"
     >
       <div class="flex flex-col gap-y-10 gap-5 lg:gap-10 md:flex-row">
         <div
@@ -65,13 +65,13 @@
               :src="
                 outraImagens || `./img/produtos/compressor-${produto.marca}.png`
               "
-              class="w-full max-w-[50rem] rounded-xl object-contain aspect-square"
+              class="w-[50rem] rounded-xl object-contain aspect-square"
               alt="Imagem do produto"
             />
             <img
               v-else
               :src="outraImagens || `./img/produtos/${produto.id}.png`"
-              class="w-full max-w-[50rem] rounded-xl object-contain aspect-square"
+              class="w-[50rem] rounded-xl object-contain aspect-square"
               alt="Imagem do produto"
             />
           </div>
@@ -101,7 +101,6 @@
           <div class="flex gap-1.5 h-10">
             <InputQuantitade
               class="h-full"
-              :quantidade="quantidadeInput"
               @update:quantidade="attQuantidade"
             />
             <button
@@ -220,7 +219,6 @@ export default {
       outraImagens: "",
       MITSUBISHI: false,
       produtosSimilares: [] as IProduto[],
-      quantidadeInput: 0,
     };
   },
   watch: {
@@ -230,8 +228,6 @@ export default {
         this.id = this.$route.params.id as string;
         this.baixaProduto();
         this.moveTelaTopo();
-        this.quantidadeInput = this.quantidade;
-        this.inputQuantidade = this.quantidade;
       },
     },
   },

@@ -51,6 +51,12 @@ export default {
     },
     limpaPesquisa() {
       this.$emit("limpaPesquisa");
+      const input = document.getElementById(
+        "inputQuantidade"
+      ) as HTMLInputElement | null;
+      if (input) {
+        input.value = "1";
+      }
     },
   },
   watch: {

@@ -7,6 +7,7 @@
       -
     </button>
     <input
+      id="inputQuantidade"
       class="w-12 h-full text-center outline-none"
       type="number"
       v-model.number="inputQuantidade"
@@ -42,13 +43,6 @@ export default {
     };
   },
   watch: {
-    "$route.params": {
-      handler() {
-        this.inputQuantidade = 1;
-      },
-      immediate: true,
-      deep: true,
-    },
     quantidade(newQuantidade) {
       this.inputQuantidade = newQuantidade;
     },
