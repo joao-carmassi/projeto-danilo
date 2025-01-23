@@ -236,7 +236,7 @@
             </button>
           </div>
           <div class="hidden lg:flex items-center">
-            <div>
+            <div id="idMenuBotao" class="hidden">
               <input
                 hidden=""
                 class="check-icon"

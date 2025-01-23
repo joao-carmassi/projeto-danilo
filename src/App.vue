@@ -33,6 +33,7 @@ import FooterMain from "./components/FooterMain.vue";
 import MensagemPix from "./components/MensagemPix.vue";
 import MenuItens from "./components/MenuItens.vue";
 import NavMain from "./components/NavMain.vue";
+import { storePdf } from "./store/SPdf";
 
 export default {
   components: {
@@ -42,6 +43,14 @@ export default {
     BalaoZap,
     MensagemPix,
     MenuItens,
+  },
+  data() {
+    return {
+      SPdf: storePdf(),
+    };
+  },
+  created() {
+    this.SPdf.getPdf();
   },
 };
 </script>

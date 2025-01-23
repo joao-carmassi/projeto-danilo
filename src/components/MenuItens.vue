@@ -36,7 +36,8 @@
                     <div
                       v-if="
                         subcategorias[categoria] &&
-                        subcategorias[categoria][0] !== ''
+                        subcategorias[categoria][0] !== '' &&
+                        categoria !== 'COMPRESSOR'
                       "
                       class="h-[21rem] shadow-md px-5 py-3"
                     >
@@ -94,7 +95,7 @@
                 >
                   <RouterLink
                     :to="`/produtos/${item.nome}/${subcategoria}`"
-                    class="text-nowrap font-semibold"
+                    class="text-nowrap link-hover font-semibold"
                   >
                     {{ subcategoria }}
                   </RouterLink>
@@ -204,16 +205,15 @@ export default {
           ".FilhoCategoriaNav"
         ) as HTMLElement | null;
 
-        if (!filho) {
-          return;
-        }
-
         FilhoCategoriaNav.forEach((filhoNav) => {
-          if (filhoNav.id === filho.id) {
+          if (filhoNav.id === filho?.id || filho === null) {
             filhoNav.classList.add("hidden");
           }
-          filho.classList.remove("hidden");
         });
+
+        if (filho) {
+          filho.classList.remove("hidden");
+        }
       });
     });
 
@@ -223,11 +223,14 @@ export default {
       });
     });
 
+    const divInput = document.getElementById("idMenuBotao") as HTMLElement;
     window.addEventListener("scroll", () => {
       if (window.scrollY === 0) {
         this.enventoScrowll = true;
+        divInput.classList.add("hidden");
       } else {
         this.enventoScrowll = false;
+        divInput.classList.remove("hidden");
       }
     });
 

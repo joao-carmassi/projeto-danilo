@@ -117,31 +117,29 @@
         </ul>
       </div>
       <div class="flex-1">
-        <p class="font-semibold text-center mb-5">Formar de envio</p>
-        <div class="grid gap-y-5 grid-cols-2 place-items-center">
+        <p class="font-semibold text-center mb-5">Meios de envio</p>
+        <div class="grid gap-5 grid-cols-2 place-items-center">
           <img
+            class="w-32"
             src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
           />
           <img
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/kanguenvio.png"
-          />
-          <img
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/jadlogenvio.png"
-          />
-          <img
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/transportadoraenvio.png"
-          />
-          <img
+            class="w-32"
             src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
           />
           <img
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/agendamentoenvio.png"
+            class="w-32"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Azul_Cargo_Express_logo.png"
+          />
+          <img
+            class="w-32"
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LATAM_Cargo_logo.svg/2560px-LATAM_Cargo_logo.svg.png"
           />
         </div>
       </div>
       <div class="flex flex-col flex-1">
         <div>
-          <p class="font-semibold text-center mb-5">Meios de envio</p>
+          <p class="font-semibold text-center mb-5">Formas de pagamento</p>
           <img
             class="mx-auto"
             src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/pix-logo.png?v=2c71ac9"

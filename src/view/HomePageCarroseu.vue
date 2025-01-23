@@ -279,22 +279,13 @@
         class="flex px-3 md:px-0 gap-3 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
       >
         <div class="md:hover:scale-105 duration-200">
-          <img
-            src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
-            alt=""
-          />
+          <img src="/img/home/MINI BANNER 1.png" />
         </div>
         <div class="md:hover:scale-105 duration-200">
-          <img
-            src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
-            alt=""
-          />
+          <img src="/img/home/MINI BANNER 2.png" />
         </div>
         <div class="md:hover:scale-105 duration-200">
-          <img
-            src="https://cdn.awsli.com.br/1140x850/2651/2651700/banner/minibanner1-j5cvlq8kyy.png"
-            alt=""
-          />
+          <img src="/img/home/MINI BANNER 3.png" />
         </div>
       </div>
     </section>
@@ -388,11 +379,16 @@
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
-        <!-- <img
-          class="w-full"
-          src="/img/naoEncontrou.png"
+        <img
+          class="w-full hidden md:block"
+          src="/img/home/final.png"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
-        /> -->
+        />
+        <img
+          class="w-full md:hidden"
+          src="/img/home/mobile 4.png"
+          alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
+        />
       </a>
     </section>
 

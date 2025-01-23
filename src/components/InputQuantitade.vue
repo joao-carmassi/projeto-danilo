@@ -42,6 +42,13 @@ export default {
     };
   },
   watch: {
+    "$route.params": {
+      handler() {
+        this.inputQuantidade = 1;
+      },
+      immediate: true,
+      deep: true,
+    },
     quantidade(newQuantidade) {
       this.inputQuantidade = newQuantidade;
     },

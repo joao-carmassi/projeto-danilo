@@ -28,6 +28,14 @@ const routes = [
     component: () => import("@/view/MostraMarca.vue"),
   },
   {
+    path: "/manuais",
+    component: () => import("@/view/PaginaManuais.vue"),
+  },
+  {
+    path: "/manuais/:id",
+    component: () => import("@/view/MostraManualMarca.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     redirect: "/404",
   },

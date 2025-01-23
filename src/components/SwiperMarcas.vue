@@ -13,37 +13,37 @@
   >
     <swiper-slide class="my-auto">
       <img
-        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2mobile-geyf9qthbl.png"
+        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        src="/img/home/mobile 2.png"
         alt="Imagem produto"
       />
       <img
         class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="/img/home/homeCarrosel.jpg"
+        src="/img/home/web.png"
         alt="Imagem produto"
       />
     </swiper-slide>
     <swiper-slide class="my-auto">
       <img
-        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner1mobile---placas-eletr-nicas-chiller-brasil-xq8cs6nktw.png"
+        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        src="/img/home/mobile 1.png"
         alt="Imagem produto"
       />
       <img
         class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner1---placas-eletr-nicas-chiller-brasil-rjsipvl1fj.png"
+        src="/img/home/web 2.png"
         alt="Imagem produto"
       />
     </swiper-slide>
     <swiper-slide class="my-auto">
       <img
-        class="h-64 md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2mobile---uni-refrigeracao-chillerbrasil-rlf8ad0367.png"
+        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
+        src="/img/home/mobile 3.png"
         alt="Imagem produto"
       />
       <img
         class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="https://cdn.awsli.com.br/1920x1920/2651/2651700/banner/fullbanner2---uni-refrigeracao-chillerbrasil--1--y7i3rfb4f1.png"
+        src="/img/home/web3.png"
         alt="Imagem produto"
       />
     </swiper-slide>
