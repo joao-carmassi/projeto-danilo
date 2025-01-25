@@ -1,6 +1,8 @@
 <template>
-  <div ref="container" class="relative">
-    <label class="input rounded-full flex items-center gap-2">
+  <div ref="container" class="relative flex join">
+    <label
+      class="input w-full rounded-l-lg rounded-r-none flex items-center gap-2"
+    >
       <input
         type="text"
         v-model="inputPesquisa"
@@ -8,11 +10,13 @@
         class="grow font-semibold placeholder:font-normal"
         placeholder="Digite o nome ou código da peça"
       />
+    </label>
+    <div class="bg-primary grid place-items-center w-14 rounded-r-lg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         fill="currentColor"
-        class="h-4 w-4 opacity-70 text-secondary"
+        class="h-4 w-4 opacity-70 text-white"
       >
         <path
           fill-rule="evenodd"
@@ -20,7 +24,7 @@
           clip-rule="evenodd"
         />
       </svg>
-    </label>
+    </div>
     <DisplayProduto
       v-if="mostrarResultados"
       @limpaPesquisa="limparInput"
