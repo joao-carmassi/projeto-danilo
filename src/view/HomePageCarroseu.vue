@@ -278,15 +278,22 @@
       <div
         class="flex px-0 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
       >
-        <div class="md:hover:scale-105 duration-200">
-          <img src="/img/home/MINI BANNER 1.png" />
-        </div>
-        <div class="md:hover:scale-105 duration-200">
-          <img src="/img/home/MINI BANNER 2.png" />
-        </div>
-        <div class="md:hover:scale-105 duration-200">
-          <img src="/img/home/MINI BANNER 3.png" />
-        </div>
+        <RouterLink
+          to="/produtos/DIAGNÓSTICO"
+          class="md:hover:scale-105 duration-200"
+        >
+          <img loading="lazy" src="/img/home/MINI BANNER 1.png" />
+        </RouterLink>
+        <a
+          target="_blank"
+          href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
+          class="md:hover:scale-105 duration-200"
+        >
+          <img loading="lazy" src="/img/home/MINI BANNER 2.png" />
+        </a>
+        <RouterLink to="/manuais" class="md:hover:scale-105 duration-200">
+          <img loading="lazy" src="/img/home/MINI BANNER 3.png" />
+        </RouterLink>
       </div>
     </section>
     <section
@@ -361,6 +368,7 @@
                   :to="`/marca/${marca}`"
                 >
                   <img
+                    loading="lazy"
                     class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
                     :src="`./img/marcas/${marca}.png`"
                     :alt="`Logo ${marca}`"
@@ -374,16 +382,18 @@
     </section>
     <section class="grid place-items-center">
       <a
-        class="w-full md:w-11/12 lg:w-10/12 mx-auto md:my-10 grid place-items-center"
+        class="w-full md:w-11/12 lg:w-10/12 mx-auto md:my-16 grid place-items-center"
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
         <img
-          class="w-full hidden md:block"
+          loading="lazy"
+          class="w-full rounded-lg hidden md:block"
           src="/img/home/final.png"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
         />
         <img
+          loading="lazy"
           class="w-full md:hidden"
           src="/img/home/mobile 4.png"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
@@ -392,15 +402,19 @@
     </section>
 
     <section
-      class="px-5 bg-secondary pb-11 pt-8 md:pb-20 md:pt-14 w-full flex justify-center items-center gap-5 flex-col"
+      class="md:pb-16 w-full flex justify-center items-center gap-5 flex-col"
     >
-      <p class="text-lg text-white">Estamos no instagram:</p>
-      <a
-        href="https://www.instagram.com/lojadovrf/"
-        target="_blank"
-        class="text-4xl md:text-5xl font-semibold text-white"
-        >@lojadovrf</a
+      <div
+        class="w-full md:rounded-lg flex flex-col py-14 md:py-20 justify-center items-center bg-secondary md:w-11/12 lg:w-10/12 mx-auto"
       >
+        <p class="text-lg text-white">Estamos no instagram:</p>
+        <a
+          href="https://www.instagram.com/lojadovrf/"
+          target="_blank"
+          class="text-4xl md:text-5xl font-semibold text-white"
+          >@lojadovrf</a
+        >
+      </div>
     </section>
   </main>
 </template>

@@ -1,22 +1,26 @@
 <template>
   <footer>
-    <hr class="border-secondary" />
+    <hr class="md:hidden w-full border-secondary" />
     <div
-      class="grid grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-8 w-10/12 mx-auto justify-between items-center"
+      class="grid border-secondary md:border md:rounded-lg md:mb-16 grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-8 w-10/12 mx-auto justify-between items-center"
     >
       <div class="col-span-full">
         <p class="font-semibold text-center mb-5">Selos de segurança</p>
         <img
           class="mx-auto"
           src="https://cdn.awsli.com.br/production/static/img/struct/stamp_encryptssl.png"
+          loading="lazy"
         />
       </div>
       <div class="flex-1 flex flex-col gap-4">
-        <img
-          class="w-20 mx-auto"
-          src="/img/favicon.png"
-          alt="Logo Loja do vrf"
-        />
+        <button @click="sobeTopoTela">
+          <img
+            class="w-20 mx-auto"
+            src="/img/favicon.png"
+            alt="Logo Loja do vrf"
+            loading="lazy"
+          />
+        </button>
         <p class="text-center">
           Peças e acessórios para ar condicionado, Loja do vrf resfriadores de
           líquido, equipamentos comerciais e industriais. Todos os produtos à
@@ -120,20 +124,24 @@
         <p class="font-semibold text-center mb-5">Meios de envio</p>
         <div class="grid gap-5 grid-cols-2 place-items-center">
           <img
-            class="w-32"
+            class="w-36"
             src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
+            loading="lazy"
           />
           <img
-            class="w-32"
+            class="w-28"
             src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
+            loading="lazy"
           />
           <img
             class="w-32"
             src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Azul_Cargo_Express_logo.png"
+            loading="lazy"
           />
           <img
             class="w-32"
             src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LATAM_Cargo_logo.svg/2560px-LATAM_Cargo_logo.svg.png"
+            loading="lazy"
           />
         </div>
       </div>
@@ -143,9 +151,10 @@
           <img
             class="mx-auto"
             src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/pix-logo.png?v=2c71ac9"
+            loading="lazy"
           />
         </div>
-        <img class="p-5" src="/img/footer/pagamentos.png" />
+        <img class="p-5" src="/img/footer/pagamentos.png" loading="lazy" />
       </div>
     </div>
     <div class="footer bg-base-200 text-base-content p-5 px-10">
@@ -157,5 +166,14 @@
 </template>
 
 <script lang="ts">
-export default {};
+export default {
+  methods: {
+    sobeTopoTela() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>

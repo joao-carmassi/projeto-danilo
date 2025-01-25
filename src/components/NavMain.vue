@@ -2,21 +2,23 @@
   <div class="w-full">
     <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-3 bg-secondary">
       <div class="flex gap-3 flex-col">
-        <div class="flex items-center justify-between h-12">
+        <div class="flex items-center justify-center h-12">
           <div class="h-full aspect-square">
             <div
               class="itens-pc md:w-44 lg:w-64 hidden h-full lg:flex justify-center items-center"
             >
               <RouterLink
-                class="flex gap-3 w-fit lg:justify-start items-center"
+                class="flex gap-3 w-fit lg:justify-center items-center"
                 to="/"
               >
                 <img
+                  loading="lazy"
                   class="md:h-6 lg:h-9 rounded-full border-2 p-1.5 border-primary aspect-square"
                   src="/img/simbolo.png"
                   alt="Iconi VRF"
                 />
                 <img
+                  loading="lazy"
                   class="md:w-4/6"
                   src="/img/logo.png"
                   alt="Lodo loja do VRF"
@@ -55,7 +57,7 @@
                   class="drawer-overlay"
                 ></label>
                 <div
-                  class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full"
+                  class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full overflow-auto"
                 >
                   <div
                     class="h-5 bg-secondary text-white flex items-center justify-end px-5"
@@ -88,7 +90,7 @@
                             d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"
                           ></path>
                         </svg>
-                        <p class="text-secondary">Entre em contato</p>
+                        <p class="text-secondary">Contato</p>
                       </div>
                     </div>
                     <div class="collapse-content flex flex-col">
@@ -247,16 +249,20 @@
                     class="collapse rounded-none join-item border-gray-400 border"
                   >
                     <div
-                      class="collapse-title bg-secondary flex items-center px-4 min-h-14 text-md font-semibold"
+                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold"
                     >
                       <RouterLink
                         @click="fecharAside"
                         to="/manuais"
-                        class="flex group items-center"
+                        class="flex gap-2 group items-center"
                       >
-                        <img class="h-8" src="/img/nav/manuais.png" />
+                        <img
+                          loading="lazy"
+                          class="h-7"
+                          src="/img/nav/logoManualCelular.png"
+                        />
                         <p
-                          class="text-white group-hover:underline font-semibold"
+                          class="text-secondary group-hover:underline font-semibold"
                         >
                           MANUAIS
                         </p>
@@ -272,10 +278,15 @@
               @click="vaiParaHome"
               class="h-full w-2/3 flex justify-center items-center gap-2 lg:hidden py-2.5 mx-auto"
             >
-              <img class="w-full" src="/img/logo.png" alt="Loja Do VRF" />
+              <img
+                loading="lazy"
+                class="w-full"
+                src="/img/logo.png"
+                alt="Loja Do VRF"
+              />
             </button>
           </div>
-          <div class="hidden lg:flex items-center">
+          <div class="hidden lg:flex gap-1 items-center">
             <div id="idMenuBotao" class="hidden">
               <input
                 hidden=""
@@ -313,9 +324,7 @@
                   >
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                  <p class="text-white text-nowrap">
-                    Entre em <span class="block text-nowrap">contato</span>
-                  </p>
+                  <p class="text-white text-nowrap">Contato</p>
                 </div>
               </summary>
               <ul
@@ -421,7 +430,7 @@
           </div>
           <div class="flex items-center lg:gap-5 justify-end">
             <RouterLink to="/manuais" class="flex group items-center">
-              <img class="h-8" src="/img/nav/manuais.png" />
+              <img loading="lazy" class="h-8" src="/img/nav/manuais.png" />
               <p
                 class="text-white hidden lg:block group-hover:underline font-semibold"
               >

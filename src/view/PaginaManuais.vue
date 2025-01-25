@@ -16,6 +16,7 @@
         <RouterLink class="flex flex-col gap-4" :to="`/manuais/${marca}`">
           <div class="mx-auto h-12 grid place-items-center">
             <img
+              loading="lazy"
               class="w-32"
               :src="`./img/marcas/${marca}.png`"
               :alt="`Logo ${marca}`"
@@ -23,6 +24,7 @@
           </div>
           <div class="w-52 h-full grid place-items-center">
             <img
+              loading="lazy"
               class="aspect-square object-cover rounded-md"
               :src="`./manuais/icons/${marca}.png`"
               :alt="`Capa marca`"
@@ -48,8 +50,6 @@ export default {
   async mounted() {
     window.scrollTo(0, 0);
     this.pdfs = await this.SPdf.getPdf();
-    console.log(this.pdfs);
-    console.log(this.SPdf.marcas);
   },
 };
 </script>

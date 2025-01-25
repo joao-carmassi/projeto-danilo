@@ -7,20 +7,27 @@
 
       <ul class="my-3 flex items-start justify-start flex-col gap-3">
         <li>
-          <button
-            class="link-hover btnFiltro font-semibold text-start"
-            @click="filtraPorTipo('')"
-          >
+          <label class="flex text-nowrap items-center gap-1.5" for="todos">
+            <input
+              type="checkbox"
+              id="todos"
+              checked
+              class="checkbox checkbox-xs rounded-sm link-hover checkboxFiltro"
+              @click="filtraPorTipo('')"
+            />
             TODOS ({{ ItemsPesquisados.length }})
-          </button>
+          </label>
         </li>
         <li v-for="(marca, index) in tipoasDeCadaMarca[id]" :key="index">
-          <button
-            class="link-hover text-nowrap btnFiltro text-start"
-            @click="filtraPorTipo(marca)"
-          >
+          <label class="flex text-nowrap items-center gap-1.5" :for="marca">
+            <input
+              type="checkbox"
+              :id="marca"
+              class="checkbox checkbox-xs rounded-sm link-hover checkboxFiltro"
+              @click="filtraPorTipo(marca)"
+            />
             {{ marca }} ({{ quatidadeDeCadaProduto[marca] }})
-          </button>
+          </label>
         </li>
       </ul>
     </aside>
@@ -62,23 +69,44 @@
               aria-label="close sidebar"
               class="drawer-overlay"
             ></label>
-            <div class="bg-base-200 text-base-content min-h-full w-fit p-7">
+            <div
+              class="bg-base-200 overflow-auto text-base-content min-h-full w-fit p-7"
+            >
               <h2 class="text-secondary text-nowrap text-lg font-semibold">
                 Filtrar por produtos:
               </h2>
               <ul class="my-5 flex flex-col gap-5">
                 <li>
-                  <button class="link-hover" @click="filtraPorTipo('')">
+                  <label
+                    class="flex text-nowrap items-center gap-1.5"
+                    for="todosCelular"
+                  >
+                    <input
+                      type="checkbox"
+                      id="todosCelular"
+                      checked
+                      class="checkbox checkbox-xs rounded-sm link-hover checkboxFiltro"
+                      @click="filtraPorTipo('')"
+                    />
                     TODOS ({{ ItemsPesquisados.length }})
-                  </button>
+                  </label>
                 </li>
                 <li
                   v-for="(marca, index) in tipoasDeCadaMarca[id]"
                   :key="index"
                 >
-                  <button class="link-hover" @click="filtraPorTipo(marca)">
+                  <label
+                    class="flex text-nowrap items-center gap-1.5"
+                    :for="`${marca}Celular`"
+                  >
+                    <input
+                      type="checkbox"
+                      :id="`${marca}Celular`"
+                      class="checkbox checkbox-xs rounded-sm link-hover checkboxFiltro"
+                      @click="filtraPorTipo(marca)"
+                    />
                     {{ marca }} ({{ quatidadeDeCadaProduto[marca] }})
-                  </button>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -152,20 +180,24 @@ export default {
       }
       return acc;
     }, {} as Record<string, number>);
-    setInterval(() => {
-      const botoesFiltro = document.querySelectorAll(".btnFiltro");
-      botoesFiltro.forEach((botao) => {
-        botao.addEventListener("click", (e) => {
-          botoesFiltro.forEach((b) => {
-            if (b.id === botao.id) {
-              b.classList.remove("font-semibold");
-            }
+
+    const intervalo = setInterval(() => {
+      const checkboxFiltro = document.querySelectorAll(".checkboxFiltro");
+
+      if (checkboxFiltro.length > 0) {
+        checkboxFiltro.forEach((checkbox) => {
+          const checkboxX = checkbox as HTMLInputElement;
+          checkboxX.addEventListener("click", () => {
+            checkboxFiltro.forEach((checkbox) => {
+              const checkboxY = checkbox as HTMLInputElement;
+              checkboxY.checked = false;
+            });
+            checkboxX.checked = true;
           });
-          const botaoClicado = e.target as HTMLButtonElement;
-          botaoClicado.classList.add("font-semibold");
         });
-      });
-    }, 500);
+        clearInterval(intervalo);
+      }
+    }, 100);
   },
 };
 </script>

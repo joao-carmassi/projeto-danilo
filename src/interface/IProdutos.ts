@@ -9,7 +9,7 @@ export interface IProduto {
   categoria: string;
   subcategoria: string;
   prazo: string;
-  id: string | number;
   descricao: string;
+  id: string | number;
   codigos: string[];
 }

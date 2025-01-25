@@ -25,6 +25,7 @@
                 @click="trocaImage(`compressor-${produto.marca}`)"
               >
                 <img
+                  loading="lazy"
                   class="rounded-md aspect-square"
                   :src="`./img/produtos/compressor-${produto.marca}.png`"
                   alt="Imagem do produto"
@@ -35,6 +36,7 @@
                 @click="trocaImage(produto.id)"
               >
                 <img
+                  loading="lazy"
                   class="rounded-md aspect-square"
                   :src="`./img/produtos/${produto.id}.png`"
                   alt="Imagem do produto"
@@ -47,6 +49,7 @@
                 @click="trocaImage(produto.id)"
               >
                 <img
+                  loading="lazy"
                   class="rounded-md aspect-square"
                   :src="`./img/produtos/${produto.id}.png`"
                   alt="Imagem do produto"
@@ -56,6 +59,7 @@
           </div>
           <div>
             <img
+              loading="lazy"
               v-if="
                 (produto.categoria === 'COMPRESSOR' &&
                   produto.marca === 'HITACHI') ||
@@ -69,6 +73,7 @@
               alt="Imagem do produto"
             />
             <img
+              loading="lazy"
               v-else
               :src="outraImagens || `./img/produtos/${produto.id}.png`"
               class="w-[50rem] rounded-xl object-contain aspect-square"
@@ -79,6 +84,7 @@
         <div class="flex col-span-5 md:col-span-2 flex-col gap-4">
           <RouterLink :to="`/marca/${produto.marca}`">
             <img
+              loading="lazy"
               class="w-28"
               :src="`./img/marcas/${produto.marca}.png`"
               :alt="`Logo marca ${produto.marca}`"
@@ -132,21 +138,25 @@
           </p>
           <div class="flex-1">
             <p class="font-semibold text-green-600 mb-5">Formar de envio:</p>
-            <div class="grid gap-5 grid-cols-3 place-items-center">
+            <div class="grid gap-5 grid-cols-2 place-items-center">
               <img
+                loading="lazy"
                 class="w-32"
                 src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
               />
               <img
-                class="w-32"
+                loading="lazy"
+                class="w-28"
                 src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
               />
               <img
-                class="w-32"
+                loading="lazy"
+                class="w-28"
                 src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Azul_Cargo_Express_logo.png"
               />
               <img
-                class="w-32 col-span-full"
+                loading="lazy"
+                class="w-28"
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LATAM_Cargo_logo.svg/2560px-LATAM_Cargo_logo.svg.png"
               />
             </div>
@@ -266,7 +276,7 @@ export default {
       const negrito = [
         "Por que escolher a nossa loja?",
         "COMPATIBILIDADE GARANTIDA:",
-        "prazo:",
+        "PRAZO DE ENTREGA:",
         "ENVIO RÁPIDO E SEGURO!",
         "loja",
       ];

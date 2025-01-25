@@ -1,6 +1,7 @@
 <template>
   <RouterLink :to="`/marca/${categoria}`">
     <img
+      loading="lazy"
       class="w-36 md:w-56 mix-blend-normal my-2"
       :src="`./img/marcas/${categoria}.png`"
       :alt="`Logo da ${categoria}`"

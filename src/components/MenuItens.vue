@@ -10,7 +10,11 @@
             <p
               class="font-semibold tracking-wide flex justify-center items-center gap-1"
             >
-              <img class="inline h-4" src="/img/nav/categoria.png" />CATEGORIAS
+              <img
+                class="inline h-4"
+                src="/img/nav/categoria.png"
+                loading="lazy"
+              />CATEGORIAS
             </p>
             <div
               id="filhoNav"
@@ -76,7 +80,11 @@
           <RouterLink
             :to="`/produtos/${item.nome}`"
             class="font-semibold flex justify-center items-center gap-1 tracking-wide"
-            ><img class="inline h-6" :src="`./img/nav/${item.foto}.png`" />
+            ><img
+              loading="lazy"
+              class="inline h-6"
+              :src="`./img/nav/${item.foto}.png`"
+            />
             {{ item.foto }}</RouterLink
           >
           <div

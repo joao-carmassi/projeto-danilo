@@ -9,22 +9,33 @@
         </h2>
         <ul class="mt-3 flex items-start justify-start flex-col gap-3">
           <li>
-            <button
-              id="filtroMarca"
-              class="link-hover btnFiltro"
-              @click="filtraProdutosMarca('')"
+            <label
+              class="flex text-nowrap items-center gap-1.5"
+              for="todosMarcas"
             >
+              <input
+                checked
+                type="checkbox"
+                id="todosMarcas"
+                class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroMarcas"
+                @click="filtraProdutosMarca('')"
+              />
               TODOS
-            </button>
+            </label>
           </li>
           <li v-for="(marca, index) in marcas" :key="index">
-            <button
-              id="filtroMarca"
-              class="link-hover text-nowrap btnFiltro"
-              @click="filtraProdutosMarca(marca)"
+            <label
+              class="flex text-nowrap items-center gap-1.5"
+              :for="`${marca}`"
             >
+              <input
+                type="checkbox"
+                :id="`${marca}`"
+                class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroMarcas"
+                @click="filtraProdutosMarca(marca)"
+              />
               {{ marca }}
-            </button>
+            </label>
           </li>
         </ul>
       </div>
@@ -35,22 +46,33 @@
         </h2>
         <ul class="my-3 flex items-start justify-start flex-col gap-3">
           <li>
-            <button
-              id="filtroCategoria"
-              class="link-hover btnFiltro text-start"
-              @click="filtraProdutosCategoria('')"
+            <label
+              class="flex text-nowrap items-center gap-1.5"
+              for="todosCategoria"
             >
+              <input
+                checked
+                type="checkbox"
+                id="todosCategoria"
+                class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroCategoria todosCategoria"
+                @click="filtraProdutosCategoria('')"
+              />
               TODOS
-            </button>
+            </label>
           </li>
           <li v-for="(categoria, index) in subcategorias[id]" :key="index">
-            <button
-              id="filtroCategoria"
-              class="link-hover btnFiltro text-nowrap text-start"
-              @click="filtraProdutosCategoria(categoria)"
+            <label
+              class="flex text-nowrap items-center gap-1.5"
+              :for="`${categoria}`"
             >
+              <input
+                type="checkbox"
+                :id="`${categoria}`"
+                class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroCategoria"
+                @click="filtraProdutosCategoria(categoria)"
+              />
               {{ categoria }}
-            </button>
+            </label>
           </li>
         </ul>
       </div>
@@ -87,14 +109,14 @@
           </label>
           <input id="my-drawer" type="checkbox" class="drawer-toggle drawers" />
           <div class="drawer-content z-50"></div>
-          <div class="drawer-side z-50">
+          <div class="drawer-side overflow-auto z-50">
             <label
               for="my-drawer"
               aria-label="close sidebar"
               class="drawer-overlay"
             ></label>
             <div
-              class="flex md:hidden bg-base-100 flex-col gap-5 w-fit top-0 left-0 p-7 h-full"
+              class="flex md:hidden bg-base-100 flex-col gap-5 w-fit top-0 left-0 p-7 h-full overflow-auto"
             >
               <div>
                 <h2 class="text-secondary text-nowrap text-lg font-semibold">
@@ -102,22 +124,33 @@
                 </h2>
                 <ul class="mt-3 flex items-start justify-start flex-col gap-3">
                   <li>
-                    <button
-                      id="filtroMarca"
-                      class="link-hover btnFiltro"
-                      @click="filtraProdutosMarca('')"
+                    <label
+                      class="flex text-nowrap items-center gap-1.5"
+                      for="todosMarcasCelular"
                     >
+                      <input
+                        checked
+                        type="checkbox"
+                        id="todosMarcasCelular"
+                        class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroMarcas"
+                        @click="filtraProdutosMarca('')"
+                      />
                       TODOS
-                    </button>
+                    </label>
                   </li>
                   <li v-for="(marca, index) in marcas" :key="index">
-                    <button
-                      id="filtroMarca"
-                      class="link-hover text-nowrap btnFiltro"
-                      @click="filtraProdutosMarca(marca)"
+                    <label
+                      class="flex text-nowrap items-center gap-1.5"
+                      :for="`${marca}Celular`"
                     >
+                      <input
+                        type="checkbox"
+                        :id="`${marca}Celular`"
+                        class="checkbox link-hover rounded-sm checkbox-xs checkboxFiltroMarcas"
+                        @click="filtraProdutosMarca(marca)"
+                      />
                       {{ marca }}
-                    </button>
+                    </label>
                   </li>
                 </ul>
               </div>
@@ -128,25 +161,36 @@
                 </h2>
                 <ul class="my-3 flex items-start justify-start flex-col gap-3">
                   <li>
-                    <button
-                      id="filtroCategoria"
-                      class="link-hover btnFiltro text-start"
-                      @click="filtraProdutosCategoria('')"
+                    <label
+                      class="flex text-nowrap items-center gap-1.5"
+                      for="todosCategoriaCelular"
                     >
+                      <input
+                        checked
+                        type="checkbox"
+                        id="todosCategoriaCelular"
+                        class="checkboxFiltroCategoria checkbox link-hover rounded-sm todosCategoria checkbox-xs"
+                        @click="filtraProdutosCategoria('')"
+                      />
                       TODOS
-                    </button>
+                    </label>
                   </li>
                   <li
                     v-for="(categoria, index) in subcategorias[id]"
                     :key="index"
                   >
-                    <button
-                      id="filtroCategoria"
-                      class="link-hover btnFiltro text-nowrap text-start"
-                      @click="filtraProdutosCategoria(categoria)"
+                    <label
+                      class="flex text-nowrap items-center gap-1.5"
+                      :for="`${categoria}Celular`"
                     >
+                      <input
+                        type="checkbox"
+                        :id="`${categoria}Celular`"
+                        class="checkboxFiltroCategoria checkbox link-hover rounded-sm checkbox-xs"
+                        @click="filtraProdutosCategoria(categoria)"
+                      />
                       {{ categoria }}
-                    </button>
+                    </label>
                   </li>
                 </ul>
               </div>
@@ -195,14 +239,19 @@ export default {
       immediate: true,
       handler() {
         this.id = this.$route.params.id as string;
-        this.colocaProdutos();
+        this.filtroSubcategoria = this.$route.params
+          .filtroSubcategoria as string;
+
         this.resetaFiltros();
+        this.colocaProdutos();
+        this.filtroDaNav();
       },
       deep: true,
     },
     "$route.params.filtroSubcategoria": {
       immediate: true,
       handler() {
+        this.resetaFiltros();
         this.filtroSubcategoria = this.$route.params
           .filtroSubcategoria as string;
         this.filtroDaNav();
@@ -222,11 +271,64 @@ export default {
     resetaFiltros() {
       this.marcaAFiltrar = "";
       this.SubcategoriaAFiltrar = "";
+      const labels = document.querySelectorAll("label");
+
+      labels.forEach((label) => {
+        const input = label.querySelector("input");
+        if (input) {
+          input.checked = false;
+        }
+        if (label.textContent?.includes("TODOS")) {
+          input!.checked = true;
+        }
+      });
+      if (this.filtroSubcategoria) {
+        const intervalor = setInterval(() => {
+          const labels = document.querySelectorAll("label");
+          let encontrou = false;
+
+          labels.forEach((label) => {
+            const input = label.querySelector("input");
+            if (label.textContent?.includes(this.filtroSubcategoria) && input) {
+              input.checked = true;
+              encontrou = true;
+              document
+                .querySelectorAll(".todosCategoria")
+                .forEach((chechbox) => {
+                  const chechboxX = chechbox as HTMLInputElement;
+                  chechboxX.checked = false;
+                });
+            }
+          });
+
+          if (encontrou) {
+            clearInterval(intervalor);
+          }
+        }, 250);
+      }
     },
     filtroDaNav() {
       if (this.filtroSubcategoria) {
         this.SubcategoriaAFiltrar = this.filtroSubcategoria;
       }
+    },
+    resetaFiltrosPagina() {
+      this.marcaAFiltrar = "";
+      this.SubcategoriaAFiltrar = "";
+
+      const checkboxesMarcas = document.querySelectorAll<HTMLInputElement>(
+        ".checkboxFiltroMarcas"
+      );
+      checkboxesMarcas.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+
+      const checkboxesCategorias = document.querySelectorAll<HTMLInputElement>(
+        ".checkboxFiltroCategoria"
+      );
+      checkboxesCategorias.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
     },
     quantidadeDeCadaMarca(marca: string) {
       if (marca === "") return this.produtos.length;
@@ -253,26 +355,56 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() {
+    const intervalo = setInterval(() => {
+      const checkboxFiltro = document.querySelectorAll(".checkboxFiltroMarcas");
+
+      if (checkboxFiltro.length > 0) {
+        checkboxFiltro.forEach((checkbox) => {
+          const checkboxX = checkbox as HTMLInputElement;
+          checkboxX.addEventListener("click", () => {
+            checkboxFiltro.forEach((box) => {
+              const boxX = box as HTMLInputElement;
+              boxX.checked = false;
+            });
+            checkboxX.checked = true;
+          });
+        });
+        clearInterval(intervalo);
+      }
+    }, 250);
+
+    const intervalo2 = setInterval(() => {
+      const checkboxFiltro = document.querySelectorAll(
+        ".checkboxFiltroCategoria"
+      );
+
+      if (checkboxFiltro.length > 0) {
+        checkboxFiltro.forEach((checkbox) => {
+          const checkboxX = checkbox as HTMLInputElement;
+          checkboxX.addEventListener("click", () => {
+            checkboxFiltro.forEach((box) => {
+              const boxX = box as HTMLInputElement;
+              boxX.checked = false;
+            });
+            checkboxX.checked = true;
+          });
+        });
+        this.resetaFiltros();
+        clearInterval(intervalo2);
+      }
+    }, 250);
+  },
   async created() {
     this.marcas = await this.SProdutos.getMarcas();
     this.subcategorias = await this.SProdutos.getSubcategorias();
-    this.filtroDaNav();
+    Object.keys(this.subcategorias).forEach((key) => {
+      this.subcategorias[key] = this.subcategorias[key].filter(
+        (subcategoria: string) => subcategoria !== ""
+      );
+    });
 
-    setInterval(() => {
-      const botoesFiltro = document.querySelectorAll(".btnFiltro");
-      botoesFiltro.forEach((botao) => {
-        botao.addEventListener("click", (e) => {
-          botoesFiltro.forEach((b) => {
-            if (b.id === botao.id) {
-              b.classList.remove("font-semibold");
-            }
-          });
-          const botaoClicado = e.target as HTMLButtonElement;
-          botaoClicado.classList.add("font-semibold");
-        });
-      });
-    }, 500);
+    this.filtroDaNav();
   },
   computed: {
     filtraMarcaESubcategoria() {

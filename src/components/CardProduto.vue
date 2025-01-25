@@ -33,6 +33,7 @@
           class="w-12 mt-1.5"
           :src="`./img/marcas/${produto.marca}.png`"
           :alt="`Logo ${produto.marca}`"
+          loading="lazy"
         />
       </RouterLink>
       <div>
