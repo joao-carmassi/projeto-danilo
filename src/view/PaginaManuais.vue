@@ -11,10 +11,10 @@
       <div
         v-for="(marca, index) in SPdf.marcas"
         :key="index"
-        class="shadow-lg md:hover:scale-105 duration-300 [--tw-shadow-color:rgba(17, 17, 17, 0.9)] p-5 rounded-md border border-gray-200"
+        class="shadow-lg md:hover:scale-105 duration-300 [--tw-shadow-color:rgba(17, 17, 17, 0.9)] p-5 rounded-lg border border-gray-200"
       >
         <RouterLink class="flex flex-col gap-4" :to="`/manuais/${marca}`">
-          <div class="mx-auto h-12 grid place-items-center">
+          <div class="mx-auto h-20 w-52 grid place-items-center">
             <img
               loading="lazy"
               class="w-32"
@@ -22,10 +22,10 @@
               :alt="`Logo ${marca}`"
             />
           </div>
-          <div class="w-52 h-full grid place-items-center">
+          <div class="h-40 w-40 flex mx-auto justify-center items-center">
             <img
               loading="lazy"
-              class="aspect-square object-cover rounded-md"
+              class="aspect-square mx-auto object-cover rounded-md"
               :src="`./manuais/icons/${marca}.png`"
               :alt="`Capa marca`"
             />
