@@ -69,7 +69,7 @@
                   {{ manual.documento }}
                 </a>
                 <p class="text-gray-500 font-normal">
-                  Modelo: {{ manual.modelo }}
+                  {{ manual.modelo }}
                 </p>
               </li>
             </div>

@@ -1,7 +1,7 @@
 <template>
   <div ref="container" class="relative flex join">
     <label
-      class="input w-full rounded-l-lg rounded-r-none flex items-center gap-2"
+      class="input h-11 px-3 w-full rounded-l-lg rounded-r-none flex items-center gap-2"
     >
       <input
         type="text"
@@ -11,7 +11,7 @@
         placeholder="Digite o nome ou código da peça"
       />
     </label>
-    <div class="bg-primary grid place-items-center w-14 rounded-r-lg">
+    <div class="bg-primary grid place-items-center w-12 rounded-r-lg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"

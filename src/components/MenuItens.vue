@@ -4,7 +4,7 @@
     :class="{ 'lg:block': botaoAbreMenu || enventoScrowll }"
   >
     <div class="relative">
-      <ul class="flex items-center text-secondary justify-center py-0.5 gap-10">
+      <ul class="flex items-center text-secondary justify-center gap-10">
         <li class="categoriaNav relative" id="categoria">
           <div>
             <p
@@ -82,7 +82,7 @@
             class="font-semibold flex justify-center items-center gap-1 tracking-wide"
             ><img
               loading="lazy"
-              class="inline h-6"
+              class="inline h-5"
               :src="`./img/nav/${item.foto}.png`"
             />
             {{ item.foto }}</RouterLink

@@ -2,7 +2,7 @@
   <footer>
     <hr class="md:hidden w-full border-secondary" />
     <div
-      class="grid border-secondary md:border md:rounded-lg md:mb-16 grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-8 w-10/12 mx-auto justify-between items-center"
+      class="grid border-secondary md:border px-5 md:rounded-lg md:mb-16 grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-8 w-10/12 mx-auto justify-between items-center"
     >
       <div class="col-span-full">
         <p class="font-semibold text-center mb-5">Selos de segurança</p>
@@ -22,9 +22,13 @@
           />
         </button>
         <p class="text-center">
-          Peças e acessórios para ar condicionado, Loja do vrf resfriadores de
-          líquido, equipamentos comerciais e industriais. Todos os produtos à
-          pronta entrega. As melhores formas de pagamento.
+          A Loja do VRF é um e-commerce especializado em oferecer uma ampla
+          linha de peças e componentes para sistemas VRF. Nossa missão é
+          proporcionar aos nossos clientes um atendimento ágil, eficiente e de
+          excelência. Nosso diferencial está em oferecer preços competitivos e o
+          prazo de entrega mais curto do mercado, garantindo que nossos clientes
+          tenham acesso rápido às soluções que precisam, com
+          qualidade e economia.
         </p>
       </div>
       <div class="flex-1">

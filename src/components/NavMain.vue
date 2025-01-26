@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-3 bg-secondary">
+    <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-2.5 bg-secondary">
       <div class="flex gap-3 flex-col">
         <div class="flex items-center justify-center h-12">
           <div class="h-full aspect-square">
@@ -8,6 +8,7 @@
               class="itens-pc md:w-44 lg:w-64 hidden h-full lg:flex justify-center items-center"
             >
               <RouterLink
+                @click="vaiParaHome"
                 class="flex gap-3 w-fit lg:justify-center items-center"
                 to="/"
               >
@@ -324,7 +325,11 @@
                   >
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                  <p class="text-white text-nowrap">Contato</p>
+                  <p class="text-white leading-4 text-nowrap">
+                    Contato<span class="font-semibold block"
+                      >(11) 96918-9244</span
+                    >
+                  </p>
                 </div>
               </summary>
               <ul
@@ -432,9 +437,9 @@
             <RouterLink to="/manuais" class="flex group items-center">
               <img loading="lazy" class="h-8" src="/img/nav/manuais.png" />
               <p
-                class="text-white hidden lg:block group-hover:underline font-semibold"
+                class="text-white hidden leading-5 lg:block group-hover:underline"
               >
-                Manuais
+                Manuais <span class="block font-semibold">Técnico</span>
               </p>
             </RouterLink>
             <div class="dropdown dropdown-end">
@@ -498,6 +503,8 @@ export default {
   methods: {
     vaiParaHome() {
       this.$router.push("/");
+      // window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     paginaMarcas(marca: string) {
       router.push(`/marca/${marca}`);

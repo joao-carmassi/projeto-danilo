@@ -1,7 +1,7 @@
 <template>
   <div
     id="headerPix"
-    class="bg-black z-10 text-white py-2 duration-200 px-5 w-full"
+    class="bg-black z-10 py-1 text-white duration-200 px-5 w-full"
   >
     <p
       id="textoPix"
@@ -89,11 +89,11 @@ export default {
     const textoPix = document.getElementById("textoPix");
     window.addEventListener("scroll", () => {
       if (window.scrollY === 0) {
-        headerPix?.classList.add("py-2");
+        headerPix?.classList.add("py-1");
         headerPix?.classList.remove("h-0");
         textoPix?.classList.remove("hidden");
       } else {
-        headerPix?.classList.remove("py-2");
+        headerPix?.classList.remove("py-1");
         headerPix?.classList.add("h-0");
         textoPix?.classList.add("hidden");
       }

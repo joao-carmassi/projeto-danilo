@@ -93,10 +93,12 @@
           <h2 class="text-2xl text-secondary lg:text-3xl font-semibold">
             {{ produto.nome || "Nome" }}
           </h2>
-          <p class="text-gray-400 text-xs">SKU: {{ produto.sku }}</p>
-          <p class="text-gray-400 text-xs">
+          <p
+            class="text-secondary border-secondary border rounded-md w-fit px-2 py-2 text-xs"
+          >
             Códigos compatíveis: {{ produto.codigos.join(", ") }}
           </p>
+          <p class="text-gray-400 text-xs">SKU: {{ produto.sku }}</p>
           <p class="text-green-600 text-xs font-semibold">
             PARCELAMENTO EM ATÉ 12 VEZES
           </p>
@@ -163,7 +165,7 @@
           </div>
         </div>
       </div>
-      <div class="col-span-5">
+      <div class="col-span-5 border-y-2 py-10 border-secondary">
         <h3 class="text-ms text-secondary font-semibold">Descrição:</h3>
         <p
           v-html="descricaoFormatada || 'Descrição'"

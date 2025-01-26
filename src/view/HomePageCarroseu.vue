@@ -33,7 +33,7 @@
             </svg>
             <p>
               <span class="block text-secondary font-semibold"
-                >ESPECIALISTA TÉCNICOS</span
+                >ESPECIALISTAS TÉCNICOS</span
               >
               EM VRF
             </p>
