@@ -18,7 +18,7 @@
             </p>
             <div
               id="filhoNav"
-              class="bg-white hidden FilhoCategoriaNav right-1/2 translate-x-1/2 shadow-md absolute z-10 top-[1.9rem]"
+              class="bg-white hidden FilhoCategoriaNav right-1/2 translate-x-1/2 shadow-md absolute z-10 top-[1.7rem]"
             >
               <ul class="flex relative flex-col py-2 h-fit">
                 <li
@@ -89,7 +89,7 @@
           >
           <div
             id="filhoNav"
-            class="absolute bg-base-100 FilhoCategoriaNav hidden right-1/2 translate-x-1/2 text-secondary z-10 top-8 min-w-[55rem] w-[55vw]"
+            class="absolute bg-base-100 FilhoCategoriaNav hidden right-1/2 translate-x-1/2 text-secondary z-10 top-[1.79rem] min-w-[55rem] w-[55vw]"
             v-if="
               item.nome !== 'MOTOR VENTILADOR' && item.nome !== 'COMPRESSOR'
             "

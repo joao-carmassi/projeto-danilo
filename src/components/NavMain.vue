@@ -302,7 +302,9 @@
                 <div class="bar bar--3"></div>
               </label>
             </div>
-            <InputPesquisaProduto class="md:w-72 ml-3 lg:w-[32.5rem]" />
+            <InputPesquisaProduto
+              class="md:w-72 ml-3 lg:w-[25rem] xl:w-[38rem]"
+            />
             <details
               id="detailsTelefone"
               class="hidden md:block dropdown dropdown-end m-0"

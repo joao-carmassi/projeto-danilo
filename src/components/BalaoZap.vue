@@ -1,7 +1,7 @@
 <template>
   <div
     role="alert"
-    class="rounded-full border-none indicator p-2.5 alert bg-green-600 text-white fixed w-fit bottom-3 left-3 z-40"
+    class="rounded-full border-none indicator p-2.5 alert bg-green-600 text-white fixed w-fit bottom-3 right-3 z-40"
     :class="{ 'md:rounded-xl': classeAtiva }"
   >
     <a
@@ -31,7 +31,7 @@
       </div>
     </a>
     <button
-      class="indicator-item hidden md:block"
+      class="indicator-item indicator-start hidden md:block"
       v-if="classeAtiva"
       @click="fechaAlerta"
     >
