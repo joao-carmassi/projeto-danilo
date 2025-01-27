@@ -505,7 +505,6 @@ export default {
   methods: {
     vaiParaHome() {
       this.$router.push("/");
-      // window.scrollTo(0, 0);
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
     paginaMarcas(marca: string) {
@@ -516,6 +515,8 @@ export default {
     },
   },
   async mounted() {
+    this.SCarrinho.carregaDados();
+
     this.tipos = await this.SProdutos.getTipos();
     this.tiposDasMarcas = await this.SProdutos.separaMarcasDeUmProduto();
     this.subcategorias = await this.SProdutos.getSubcategorias();

@@ -27,7 +27,7 @@
         ></path>
       </svg>
       <div v-if="classeAtiva" class="items-center hidden md:flex gap-2">
-        <span>Fale com um especialista</span>
+        <span class="font-semibold italic">Fale com um especialista</span>
       </div>
     </a>
     <button

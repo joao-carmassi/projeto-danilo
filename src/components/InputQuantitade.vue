@@ -12,6 +12,7 @@
       type="number"
       v-model.number="inputQuantidade"
       min="1"
+      @blur="verificarInput"
     />
     <button
       @click="alterarQuantidade(1)"
@@ -24,13 +25,6 @@
 
 <script lang="ts">
 export default {
-  methods: {
-    alterarQuantidade(valor: number) {
-      if (this.inputQuantidade + valor < 1) return;
-      this.inputQuantidade += valor;
-      this.$emit("update:quantidade", this.inputQuantidade);
-    },
-  },
   props: {
     quantidade: {
       type: Number,
@@ -41,6 +35,35 @@ export default {
     return {
       inputQuantidade: this.quantidade,
     };
+  },
+  methods: {
+    alterarQuantidade(valor: number) {
+      if (isNaN(this.inputQuantidade) || this.inputQuantidade === null) {
+        this.inputQuantidade = 0;
+      }
+
+      const novaQuantidade = this.inputQuantidade + valor;
+
+      if (novaQuantidade < 1) {
+        this.inputQuantidade = 1;
+      } else if (novaQuantidade > 99) {
+        this.inputQuantidade = 99;
+      } else {
+        this.inputQuantidade = novaQuantidade;
+      }
+
+      this.$emit("update:quantidade", this.inputQuantidade);
+    },
+    verificarInput() {
+      if (!this.inputQuantidade || isNaN(this.inputQuantidade)) {
+        this.inputQuantidade = 1;
+      }
+      if (this.inputQuantidade < 1) {
+        this.inputQuantidade = 1;
+      } else if (this.inputQuantidade > 99) {
+        this.inputQuantidade = 99;
+      }
+    },
   },
   watch: {
     quantidade(newQuantidade) {
