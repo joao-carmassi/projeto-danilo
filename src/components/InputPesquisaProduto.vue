@@ -14,15 +14,18 @@
     <div class="bg-primary grid place-items-center w-12 rounded-r-lg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-        class="h-5 w-5 opacity-70 text-white"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        width="16"
+        height="16"
+        stroke-width="2"
+        class="text-white"
       >
-        <path
-          fill-rule="evenodd"
-          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1-7 0Z"
-          clip-rule="evenodd"
-        />
+        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+        <path d="M21 21l-6 -6"></path>
       </svg>
     </div>
     <DisplayProduto
