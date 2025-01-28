@@ -139,7 +139,7 @@
             {{ produto.prazo || "Prazo" }}
           </p>
           <div class="flex-1">
-            <p class="font-semibold text-green-600 mb-5">Formar de envio:</p>
+            <p class="font-semibold text-green-600 mb-5">Formas de envio:</p>
             <div class="grid gap-5 grid-cols-2 place-items-center">
               <img
                 loading="lazy"

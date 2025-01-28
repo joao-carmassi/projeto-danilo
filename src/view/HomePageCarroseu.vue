@@ -5,7 +5,7 @@
     </section> -->
     <section>
       <SwiperMarcas />
-      <hr class="border-secondary border-b-2" />
+      <hr class="border-secondary hidden md:block border-b-2" />
     </section>
     <section>
       <div class="md:mb-10 border-b border-gray-300">
