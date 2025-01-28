@@ -1,7 +1,7 @@
 <template>
   <div
     id="headerPix"
-    class="bg-black z-10 py-1 text-white duration-200 px-5 w-full"
+    class="bg-black hidden md:block z-10 py-1 text-white duration-200 px-5 w-full"
   >
     <p
       id="textoPix"
