@@ -8,7 +8,7 @@
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     :effect="'fade'"
     :fadeEffect="{ crossFade: true }"
-    class="swiper-container relative swiperMarcas"
+    class="swiper-container relative swiperMarcas swiper-marcas"
     data-teste="a"
   >
     <swiper-slide class="my-auto">
@@ -80,8 +80,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.swiper-container {
+<style>
+.swiper-marcas {
   --swiper-navigation-size: 25px !important;
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 20px !important;
