@@ -116,8 +116,8 @@
                   <path d="M12 7v5"></path>
                 </svg>
                 <div>
-                  <p>Domingo a Domingo</p>
-                  <p>das 07 às 20 horas</p>
+                  <p>Todos os dias</p>
+                  <p>7 às 20 horas</p>
                 </div>
               </div>
             </div>

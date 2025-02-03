@@ -242,23 +242,29 @@ export default {
         this.filtroSubcategoria = this.$route.params
           .filtroSubcategoria as string;
 
-        this.resetaFiltros();
-        this.colocaProdutos();
-        this.filtroDaNav();
+        this.colocaProdutos().then(() => {
+          this.filtroDaNav();
+          this.$nextTick(() => {
+            this.resetaFiltros(); // Garante que os checkboxes sejam atualizados após o DOM renderizar
+          });
+        });
       },
       deep: true,
     },
     "$route.params.filtroSubcategoria": {
       immediate: true,
       handler() {
-        this.resetaFiltros();
         this.filtroSubcategoria = this.$route.params
           .filtroSubcategoria as string;
         this.filtroDaNav();
+        this.$nextTick(() => {
+          this.resetaFiltros(); // Garante que os checkboxes sejam atualizados após o DOM renderizar
+        });
       },
       deep: true,
     },
   },
+
   methods: {
     filtraProdutosMarca(marca: string) {
       fechaDrawer();
@@ -270,9 +276,11 @@ export default {
     },
     resetaFiltros() {
       this.marcaAFiltrar = "";
-      this.SubcategoriaAFiltrar = "";
-      const labels = document.querySelectorAll("label");
+      if (!this.filtroSubcategoria) {
+        this.SubcategoriaAFiltrar = "";
+      }
 
+      const labels = document.querySelectorAll("label");
       labels.forEach((label) => {
         const input = label.querySelector("input");
         if (input) {
@@ -282,6 +290,7 @@ export default {
           input!.checked = true;
         }
       });
+
       if (this.filtroSubcategoria) {
         const intervalor = setInterval(() => {
           const labels = document.querySelectorAll("label");
@@ -292,11 +301,12 @@ export default {
             if (label.textContent?.includes(this.filtroSubcategoria) && input) {
               input.checked = true;
               encontrou = true;
+
               document
                 .querySelectorAll(".todosCategoria")
-                .forEach((chechbox) => {
-                  const chechboxX = chechbox as HTMLInputElement;
-                  chechboxX.checked = false;
+                .forEach((checkbox) => {
+                  const checkboxX = checkbox as HTMLInputElement;
+                  checkboxX.checked = false;
                 });
             }
           });
@@ -305,8 +315,11 @@ export default {
             clearInterval(intervalor);
           }
         }, 250);
+
+        this.SubcategoriaAFiltrar = this.filtroSubcategoria;
       }
     },
+
     filtroDaNav() {
       if (this.filtroSubcategoria) {
         this.SubcategoriaAFiltrar = this.filtroSubcategoria;
@@ -408,21 +421,14 @@ export default {
   },
   computed: {
     filtraMarcaESubcategoria() {
-      let produtosFiltrados = this.produtos;
-
-      if (this.marcaAFiltrar !== "") {
-        produtosFiltrados = produtosFiltrados.filter((produto: IProduto) => {
-          return produto.marca === this.marcaAFiltrar;
-        });
-      }
-
-      if (this.SubcategoriaAFiltrar !== "") {
-        produtosFiltrados = produtosFiltrados.filter((produto: IProduto) => {
-          return produto.subcategoria === this.SubcategoriaAFiltrar;
-        });
-      }
-
-      return produtosFiltrados;
+      return this.produtos.filter((produto) => {
+        return (
+          (this.marcaAFiltrar ? produto.marca === this.marcaAFiltrar : true) &&
+          (this.SubcategoriaAFiltrar
+            ? produto.subcategoria === this.SubcategoriaAFiltrar
+            : true)
+        );
+      });
     },
   },
 };

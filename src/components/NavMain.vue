@@ -189,8 +189,8 @@
                                 <path d="M12 7v5"></path>
                               </svg>
                               <div>
-                                <p>Domingo a Domingo</p>
-                                <p>das 07 às 20 horas</p>
+                                <p>Todos os dias</p>
+                                <p>7 às 20 horas</p>
                               </div>
                             </div>
                           </div>
@@ -327,7 +327,7 @@
                   >
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                  <p class="text-white leading-4 text-nowrap">
+                  <p class="text-white leading-4 font-normal text-nowrap">
                     Contato<span class="font-semibold block"
                       >(11) 96918-9244</span
                     >
@@ -426,8 +426,8 @@
                         <path d="M12 7v5"></path>
                       </svg>
                       <div>
-                        <p>Domingo a Domingo</p>
-                        <p>das 07 às 20 horas</p>
+                        <p>Todos os dias</p>
+                        <p>7 às 20 horas</p>
                       </div>
                     </div>
                   </div>

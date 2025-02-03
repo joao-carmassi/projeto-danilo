@@ -5,7 +5,7 @@
   >
     <p
       id="textoPix"
-      class="w-full items-center text-center justify-center text-sm"
+      class="w-full italic font-semibold items-center text-center justify-center text-sm"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
         stroke-linejoin="round"
         width="18"
         height="18"
-        stroke-width="1.5"
+        stroke-width="2"
         class="inline"
       >
         <path
@@ -34,7 +34,7 @@
         stroke-linejoin="round"
         width="18"
         height="18"
-        stroke-width="1.5"
+        stroke-width="2"
         class="inline"
       >
         <path
