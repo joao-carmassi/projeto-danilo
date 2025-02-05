@@ -141,7 +141,7 @@
             :slides-per-view="1"
             :loop="true"
             :autoplay="{ delay: 3000 }"
-            :modules="[Navigation, Autoplay]"
+            :modules="[Navigation, Autoplay, Virtual]"
             class="swiper-container w-full"
           >
             <swiper-slide>
@@ -313,7 +313,7 @@
           :slides-per-view="2"
           :loop="true"
           :navigation="true"
-          :modules="[Navigation]"
+          :modules="[Navigation, Virtual]"
           class="swiper-container md:w-11/12 lg:w-10/12"
           :space-between="40"
           :breakpoints="{
@@ -327,6 +327,7 @@
             class="my-auto"
             v-for="(produto, index) in produtos[categoria]"
             :key="index"
+            :virtualIndex="index"
           >
             <CardProduto class="my-5" :produto="produto" />
           </swiper-slide>
@@ -347,7 +348,8 @@
             :slides-per-view="2"
             :loop="true"
             :navigation="true"
-            :modules="[Navigation]"
+            :modules="[Navigation, Virtual]"
+            :virtual="true"
             class="swiper-container swiper-marcas w-10/12"
             :breakpoints="{
               640: { slidesPerView: 2 },
@@ -359,6 +361,7 @@
               v-for="(marca, index) in marcas"
               :key="index"
               class="my-auto"
+              :virtualIndex="index"
             >
               <div
                 class="md:hover:scale-105 flex justify-center items-center duration-200 py-2"
@@ -421,7 +424,7 @@
 
 <script lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Virtual } from "swiper/modules";
 import CardProduto from "@/components/CardProduto.vue";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -461,6 +464,7 @@ export default {
     return {
       Navigation,
       Autoplay,
+      Virtual,
     };
   },
 };

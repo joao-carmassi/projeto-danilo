@@ -144,22 +144,18 @@
               <img
                 loading="lazy"
                 class="w-32"
-                src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
+                src="/img/footer/correiosEnvio.png"
+              />
+              <img loading="lazy" class="w-28" src="/img/footer/loggi.png" />
+              <img
+                loading="lazy"
+                class="w-28"
+                src="/img/footer/Azul_Cargo_Express_logo.png"
               />
               <img
                 loading="lazy"
                 class="w-28"
-                src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
-              />
-              <img
-                loading="lazy"
-                class="w-28"
-                src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Azul_Cargo_Express_logo.png"
-              />
-              <img
-                loading="lazy"
-                class="w-28"
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LATAM_Cargo_logo.svg/2560px-LATAM_Cargo_logo.svg.png"
+                src="/img/footer/LATAM_Cargo_logo.svg.png"
               />
             </div>
           </div>

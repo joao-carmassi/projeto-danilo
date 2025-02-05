@@ -118,7 +118,7 @@
                     :loop="true"
                     :navigation="true"
                     :autoplay="{ delay: 5000 }"
-                    :modules="[Navigation, Autoplay]"
+                    :modules="[Navigation, Autoplay, Virtual]"
                     class="swiper-container swiperNav"
                   >
                     <swiper-slide
@@ -126,6 +126,7 @@
                         item.nome
                       ]"
                       :key="index"
+                      :virtualIndex="index"
                     >
                       <CardProduto
                         class="border-gray-400 mx-2"
@@ -147,7 +148,7 @@
 import router from "@/router/router";
 import { storeProdutos } from "@/store/SProdutos";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Virtual } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import type { IProduto } from "@/interface/IProdutos";
@@ -256,6 +257,7 @@ export default {
     return {
       Navigation,
       Autoplay,
+      Virtual,
     };
   },
 };

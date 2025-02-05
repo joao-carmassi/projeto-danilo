@@ -1,16 +1,15 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueDevTools from "vite-plugin-vue-devtools";
 import { createHtmlPlugin } from "vite-plugin-html";
 
-export default defineConfig(({ mode }) => ({
-  base: "/", // Ajuste conforme o host
+// https://vite.dev/config/
+export default defineConfig({
+  base: "/",
   plugins: [
     vue(),
-    ...(mode === "development"
-      ? // eslint-disable-next-line @typescript-eslint/no-require-imports
-        [require("vite-plugin-vue-devtools").default()]
-      : []),
+    vueDevTools(),
     createHtmlPlugin({
       minify: true,
     }),
@@ -20,4 +19,4 @@ export default defineConfig(({ mode }) => ({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-}));
+});

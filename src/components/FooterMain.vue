@@ -6,11 +6,7 @@
     >
       <div class="col-span-full">
         <p class="font-semibold text-center mb-5">Selos de segurança</p>
-        <img
-          class="mx-auto"
-          src="https://cdn.awsli.com.br/production/static/img/struct/stamp_encryptssl.png"
-          loading="lazy"
-        />
+        <img class="mx-auto" src="/img/footer/seguro.png" loading="lazy" />
       </div>
       <div class="flex-1 flex flex-col gap-4">
         <button @click="sobeTopoTela">
@@ -129,22 +125,18 @@
         <div class="grid gap-5 grid-cols-2 place-items-center">
           <img
             class="w-36"
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/correiosenvio.png"
+            src="/img/footer/correiosEnvio.png"
             loading="lazy"
           />
+          <img class="w-28" src="/public/img/footer/loggi.png" loading="lazy" />
           <img
-            class="w-28"
-            src="https://cdn.awsli.com.br/1929/1929647/arquivos/loggienvio.png"
+            class="w-32"
+            src="/public/img/footer/Azul_Cargo_Express_logo.png"
             loading="lazy"
           />
           <img
             class="w-32"
-            src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Azul_Cargo_Express_logo.png"
-            loading="lazy"
-          />
-          <img
-            class="w-32"
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LATAM_Cargo_logo.svg/2560px-LATAM_Cargo_logo.svg.png"
+            src="/public/img/footer/LATAM_Cargo_logo.svg.png"
             loading="lazy"
           />
         </div>
@@ -154,7 +146,7 @@
           <p class="font-semibold text-center mb-5">Formas de pagamento</p>
           <img
             class="mx-auto"
-            src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/pix-logo.png?v=2c71ac9"
+            src="/public/img/footer/pix-logo.png"
             loading="lazy"
           />
         </div>
