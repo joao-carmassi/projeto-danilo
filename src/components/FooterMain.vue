@@ -128,15 +128,15 @@
             src="/img/footer/correiosEnvio.png"
             loading="lazy"
           />
-          <img class="w-28" src="/public/img/footer/loggi.png" loading="lazy" />
+          <img class="w-28" src="/img/footer/loggi.png" loading="lazy" />
           <img
             class="w-32"
-            src="/public/img/footer/Azul_Cargo_Express_logo.png"
+            src="/img/footer/Azul_Cargo_Express_logo.png"
             loading="lazy"
           />
           <img
             class="w-32"
-            src="/public/img/footer/LATAM_Cargo_logo.svg.png"
+            src="/img/footer/LATAM_Cargo_logo.svg.png"
             loading="lazy"
           />
         </div>
@@ -144,11 +144,7 @@
       <div class="flex flex-col flex-1">
         <div>
           <p class="font-semibold text-center mb-5">Formas de pagamento</p>
-          <img
-            class="mx-auto"
-            src="/public/img/footer/pix-logo.png"
-            loading="lazy"
-          />
+          <img class="mx-auto" src="/img/footer/pix-logo.png" loading="lazy" />
         </div>
         <img class="p-5" src="/img/footer/pagamentos.png" loading="lazy" />
       </div>
