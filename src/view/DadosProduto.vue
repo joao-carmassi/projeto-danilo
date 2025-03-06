@@ -11,39 +11,7 @@
           class="col-span-5 flex-col-reverse gap-5 md:flex-row flex items-start md:col-span-2 place-items-center"
         >
           <div class="h-24">
-            <div
-              v-if="
-                (produto.categoria === 'COMPRESSOR' &&
-                  produto.marca === 'HITACHI') ||
-                (produto.categoria === 'COMPRESSOR' &&
-                  produto.marca === 'TOSHIBA')
-              "
-              class="flex justify-center md:flex-col gap-3"
-            >
-              <button
-                class="rounded-md duration-200 h-24 lg:h-32 border border-gray-400 hover:border-secondary aspect-square"
-                @click="trocaImage(`compressor-${produto.marca}`)"
-              >
-                <img
-                  loading="lazy"
-                  class="rounded-md aspect-square"
-                  :src="`./img/produtos/compressor-${produto.marca}.png`"
-                  alt="Imagem do produto"
-                />
-              </button>
-              <button
-                class="rounded-md duration-200 h-24 lg:h-32 border border-gray-400 hover:border-secondary aspect-square"
-                @click="trocaImage(produto.id)"
-              >
-                <img
-                  loading="lazy"
-                  class="rounded-md aspect-square"
-                  :src="`./img/produtos/${produto.id}.png`"
-                  alt="Imagem do produto"
-                />
-              </button>
-            </div>
-            <div v-else class="flex justify-center md:flex-col gap-3">
+            <div class="flex justify-center md:flex-col gap-3">
               <button
                 class="rounded-md duration-200 h-24 lg:h-32 border border-gray-400 hover:border-secondary aspect-square"
                 @click="trocaImage(produto.id)"
@@ -60,21 +28,6 @@
           <div>
             <img
               loading="lazy"
-              v-if="
-                (produto.categoria === 'COMPRESSOR' &&
-                  produto.marca === 'HITACHI') ||
-                (produto.categoria === 'COMPRESSOR' &&
-                  produto.marca === 'TOSHIBA')
-              "
-              :src="
-                outraImagens || `./img/produtos/compressor-${produto.marca}.png`
-              "
-              class="w-[50rem] rounded-xl object-contain aspect-square"
-              alt="Imagem do produto"
-            />
-            <img
-              loading="lazy"
-              v-else
               :src="outraImagens || `./img/produtos/${produto.id}.png`"
               class="w-[50rem] rounded-xl object-contain aspect-square"
               alt="Imagem do produto"

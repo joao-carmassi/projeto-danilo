@@ -12,17 +12,6 @@
         loading="lazy"
       /> -->
       <img
-        v-if="
-          (produto.categoria === 'COMPRESSOR' && produto.marca === 'HITACHI') ||
-          (produto.categoria === 'COMPRESSOR' && produto.marca === 'TOSHIBA')
-        "
-        :src="`./img/produtos/compressor-${produto.marca}.png`"
-        class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
-        alt="Imagem do produto"
-        loading="lazy"
-      />
-      <img
-        v-else
         :src="`./img/produtos/${produto.id}.png`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
