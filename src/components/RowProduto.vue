@@ -6,15 +6,6 @@
   >
     <img
       loading="lazy"
-      v-if="produto.categoria === 'COMPRESSOR'"
-      :src="`./img/produtos/compressor-${produto.marca}.png`"
-      alt="Imagem do produto"
-      class="block object-contain aspect-square border border-secondary rounded-sm"
-      :class="img"
-    />
-    <img
-      v-else
-      loading="lazy"
       :src="`./img/produtos/${produto.id}.png`"
       alt="Imagem do produto"
       class="block object-contain aspect-square border border-secondary rounded-sm"
