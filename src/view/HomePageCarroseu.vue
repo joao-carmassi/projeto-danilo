@@ -282,17 +282,17 @@
           to="/produtos/DIAGNÓSTICO"
           class="md:hover:scale-105 duration-200"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 1.png" />
+          <img loading="lazy" src="/img/home/MINI BANNER 1.webp" />
         </RouterLink>
         <a
           target="_blank"
           href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
           class="md:hover:scale-105 duration-200"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 2.png" />
+          <img loading="lazy" src="/img/home/MINI BANNER 2.webp" />
         </a>
         <RouterLink to="/manuais" class="md:hover:scale-105 duration-200">
-          <img loading="lazy" src="/img/home/MINI BANNER 3.png" />
+          <img loading="lazy" src="/img/home/MINI BANNER 3.webp" />
         </RouterLink>
       </div>
     </section>
@@ -373,7 +373,7 @@
                   <img
                     loading="lazy"
                     class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
-                    :src="`./img/marcas/${marca}.png`"
+                    :src="`./img/marcas/${marca}.webp`"
                     :alt="`Logo ${marca}`"
                   />
                 </RouterLink>
@@ -392,13 +392,13 @@
         <img
           loading="lazy"
           class="w-full rounded-lg hidden md:block"
-          src="/img/home/final.png"
+          src="/img/home/final.webp"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
         />
         <img
           loading="lazy"
           class="w-full md:hidden"
-          src="/img/home/mobile 4.png"
+          src="/img/home/mobile 4.webp"
           alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
         />
       </a>

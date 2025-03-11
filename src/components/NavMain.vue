@@ -260,7 +260,7 @@
                         <img
                           loading="lazy"
                           class="h-7"
-                          src="/img/nav/logoManualCelular.png"
+                          src="/img/nav/logoManualCelular.webp"
                         />
                         <p
                           class="text-secondary group-hover:underline font-semibold"
@@ -437,7 +437,7 @@
           </div>
           <div class="flex items-center lg:gap-5 justify-end">
             <RouterLink to="/manuais" class="flex group items-center">
-              <img loading="lazy" class="h-8" src="/img/nav/manuais.png" />
+              <img loading="lazy" class="h-8" src="/img/nav/manuais.webp" />
               <p
                 class="text-white hidden leading-5 lg:block group-hover:underline"
               >

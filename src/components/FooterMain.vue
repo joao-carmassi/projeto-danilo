@@ -6,7 +6,7 @@
     >
       <div class="col-span-full">
         <p class="font-semibold text-center mb-5">Selos de segurança</p>
-        <img class="mx-auto" src="/img/footer/seguro.png" loading="lazy" />
+        <img class="mx-auto" src="/img/footer/seguro.webp" loading="lazy" />
       </div>
       <div class="flex-1 flex flex-col gap-4">
         <button @click="sobeTopoTela">
@@ -125,18 +125,18 @@
         <div class="grid gap-5 grid-cols-2 place-items-center">
           <img
             class="w-36"
-            src="/img/footer/correiosEnvio.png"
+            src="/img/footer/correiosEnvio.webp"
             loading="lazy"
           />
-          <img class="w-28" src="/img/footer/loggi.png" loading="lazy" />
+          <img class="w-28" src="/img/footer/loggi.webp" loading="lazy" />
           <img
             class="w-32"
-            src="/img/footer/Azul_Cargo_Express_logo.png"
+            src="/img/footer/Azul_Cargo_Express_logo.webp"
             loading="lazy"
           />
           <img
             class="w-32"
-            src="/img/footer/LATAM_Cargo_logo.svg.png"
+            src="/img/footer/LATAM_Cargo_logo.svg.webp"
             loading="lazy"
           />
         </div>
@@ -144,9 +144,9 @@
       <div class="flex flex-col flex-1">
         <div>
           <p class="font-semibold text-center mb-5">Formas de pagamento</p>
-          <img class="mx-auto" src="/img/footer/pix-logo.png" loading="lazy" />
+          <img class="mx-auto" src="/img/footer/pix-logo.webp" loading="lazy" />
         </div>
-        <img class="p-5" src="/img/footer/pagamentos.png" loading="lazy" />
+        <img class="p-5" src="/img/footer/pagamentos.webp" loading="lazy" />
       </div>
     </div>
     <div class="footer bg-base-200 text-base-content p-5 px-10">

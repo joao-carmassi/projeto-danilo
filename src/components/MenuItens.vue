@@ -12,7 +12,7 @@
             >
               <img
                 class="inline h-4"
-                src="/img/nav/categoria.png"
+                src="/img/nav/categoria.webp"
                 loading="lazy"
               />CATEGORIAS
             </p>
@@ -83,7 +83,7 @@
             ><img
               loading="lazy"
               class="inline h-5"
-              :src="`./img/nav/${item.foto}.png`"
+              :src="`./img/nav/${item.foto}.webp`"
             />
             {{ item.foto }}</RouterLink
           >

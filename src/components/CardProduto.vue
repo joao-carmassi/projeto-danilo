@@ -6,13 +6,13 @@
     <RouterLink class="flex flex-col gap-2" :to="`/produto/${produto.id}`">
       <!-- <img
         v-if="testeECompressor"
-        :src="`./img/produtos/compressor-${produto.marca}.png`"
+        :src="`./img/produtos/compressor-${produto.marca}.webp`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
         loading="lazy"
       /> -->
       <img
-        :src="`./img/produtos/${produto.id}.png`"
+        :src="`./img/produtos/${produto.id}.webp`"
         class="w-full object-contain border border-secondary border-solid aspect-square rounded-md"
         alt="Imagem do produto"
         loading="lazy"
@@ -20,7 +20,7 @@
       <RouterLink :to="`/marca/${produto.marca}`">
         <img
           class="w-12 mt-1.5"
-          :src="`./img/marcas/${produto.marca}.png`"
+          :src="`./img/marcas/${produto.marca}.webp`"
           :alt="`Logo ${produto.marca}`"
           loading="lazy"
         />
