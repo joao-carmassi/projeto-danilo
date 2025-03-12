@@ -58,7 +58,6 @@ export default {
       let nome = this.produto.nome;
       if (!this.negrito) return nome;
 
-      // Divide a pesquisa em palavras e as destaca individualmente
       const termos = this.negrito.split(" ").filter(Boolean);
       termos.forEach((termo) => {
         const regex = new RegExp(`(${termo})`, "gi");
@@ -72,7 +71,6 @@ export default {
       let codigo = this.produto.codigos.join(", ");
       if (!this.negrito) return codigo;
 
-      // Divide a pesquisa em palavras e as destaca individualmente
       const termos = this.negrito.split(" ").filter(Boolean);
       termos.forEach((termo) => {
         const regex = new RegExp(`(${termo})`, "gi");
