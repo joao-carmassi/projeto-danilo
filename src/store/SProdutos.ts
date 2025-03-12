@@ -177,6 +177,24 @@ export const storeProdutos = defineStore("counter", {
       return marcasPorTipo;
     },
 
+    async separaMarcasDeUmaCategoria(categoria: string) {
+      const produtos = await this.getProdutos();
+      const marcas = new Set<string>();
+
+      for (const marca in produtos) {
+        const produtosMarca = produtos[marca];
+        const produtosCategoria = produtosMarca.filter(
+          (produto) => produto.categoria === categoria
+        );
+
+        produtosCategoria.forEach((produto) => {
+          marcas.add(produto.marca);
+        });
+      }
+
+      return Array.from(marcas);
+    },
+
     filtraPordutosPorTipo(tipo: string, produtos: IProdutos) {
       const produtosAFiltrar = produtos;
       let resultado: IProduto[] = [];

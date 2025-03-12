@@ -410,6 +410,8 @@ export default {
   },
   async created() {
     this.marcas = await this.SProdutos.getMarcas();
+    const teste = await this.SProdutos.separaMarcasDeUmaCategoria(this.id);
+    console.log(teste);
     this.subcategorias = await this.SProdutos.getSubcategorias();
     Object.keys(this.subcategorias).forEach((key) => {
       this.subcategorias[key] = this.subcategorias[key].filter(
