@@ -389,18 +389,16 @@
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
-        <img
-          loading="lazy"
-          class="w-full rounded-lg hidden md:block"
-          src="/img/home/final.png"
-          alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
-        />
-        <img
-          loading="lazy"
-          class="w-full md:hidden"
-          src="/img/home/mobile 4.png"
-          alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcset="/img/home/final.png" />
+          <source media="(max-width: 767px)" srcset="/img/home/mobile4.png" />
+          <img
+            loading="lazy"
+            class="w-full md:rounded-lg rounded-none md:h-96"
+            src="/img/home/mobile4.png"
+            alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
+          />
+        </picture>
       </a>
     </section>
 

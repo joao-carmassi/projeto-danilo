@@ -12,46 +12,40 @@
     data-teste="a"
   >
     <swiper-slide class="my-auto">
-      <img
-        loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 2.png"
-        alt="Imagem produto"
-      />
-      <img
-        loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="/img/home/web.png"
-        alt="Imagem produto"
-      />
+      <picture>
+        <source media="(min-width: 1024px)" srcset="/img/home/web.png" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile2.png" />
+        <img
+          loading="lazy"
+          class="w-full md:h-[26rem] object-cover object-center"
+          src="/img/home/mobile2.png"
+          alt="Imagem produto"
+        />
+      </picture>
     </swiper-slide>
     <swiper-slide class="my-auto">
-      <img
-        loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 1.png"
-        alt="Imagem produto"
-      />
-      <img
-        loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="/img/home/web 2.png"
-        alt="Imagem produto"
-      />
+      <picture>
+        <source media="(min-width: 1024px)" srcset="/img/home/web2.png" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile1.png" />
+        <img
+          loading="lazy"
+          class="w-full md:h-[26rem] object-cover object-center"
+          src="/img/home/mobile1.png"
+          alt="Imagem produto"
+        />
+      </picture>
     </swiper-slide>
     <swiper-slide class="my-auto">
-      <img
-        loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 3.png"
-        alt="Imagem produto"
-      />
-      <img
-        loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="/img/home/web3.png"
-        alt="Imagem produto"
-      />
+      <picture>
+        <source media="(min-width: 1024px)" srcset="/img/home/web3.png" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile3.png" />
+        <img
+          loading="lazy"
+          class="w-full md:h-[26rem] object-cover object-center"
+          src="/img/home/mobile3.png"
+          alt="Imagem produto"
+        />
+      </picture>
     </swiper-slide>
   </swiper>
 </template>
