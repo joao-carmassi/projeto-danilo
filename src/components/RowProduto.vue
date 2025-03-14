@@ -56,22 +56,27 @@ export default {
   computed: {
     deixaNomeDoProdutoIgualPesquisaNegrito() {
       let nome = this.produto.nome;
-      if (nome.includes(this.negrito as string)) {
-        nome = nome.replace(
-          new RegExp(this.negrito as string, "g"),
-          `<span class="font-bold">${this.negrito}</span>`
-        );
-      }
+      if (!this.negrito) return nome;
+
+      const termos = this.negrito.split(" ").filter(Boolean);
+      termos.forEach((termo) => {
+        const regex = new RegExp(`(${termo})`, "gi");
+        nome = nome.replace(regex, `<span class="font-bold">$1</span>`);
+      });
+
       return nome;
     },
+
     deixaCodigoDoProdutoIgualPesquisaNegrito() {
       let codigo = this.produto.codigos.join(", ");
-      if (codigo.includes(this.negrito as string)) {
-        codigo = codigo.replace(
-          new RegExp(this.negrito as string, "g"),
-          `<span class="font-bold">${this.negrito}</span>`
-        );
-      }
+      if (!this.negrito) return codigo;
+
+      const termos = this.negrito.split(" ").filter(Boolean);
+      termos.forEach((termo) => {
+        const regex = new RegExp(`(${termo})`, "gi");
+        codigo = codigo.replace(regex, `<span class="font-bold">$1</span>`);
+      });
+
       return codigo;
     },
   },

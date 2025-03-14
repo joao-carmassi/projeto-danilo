@@ -71,13 +71,20 @@ export const storeProdutos = defineStore("counter", {
       await this.baixaProdutos();
       const produtos = this.produtos;
       let resultado: IProduto[] = [];
+
+      const termosPesquisa = pesquisa.toLowerCase().split(" "); // Divide a pesquisa em palavras
+
       for (const categoria in produtos) {
         const produtosCategoria = produtos[categoria].filter((produto) => {
           const nome = produto.nome.toLowerCase();
-          const codigo = produto.codigos.join(" ").toLowerCase();
-          const pesquisaLower = pesquisa.toLowerCase();
-          return nome.includes(pesquisaLower) || codigo.includes(pesquisaLower);
+          const codigos = produto.codigos.join(" ").toLowerCase();
+
+          // Verifica se todos os termos de pesquisa estão no nome ou nos códigos
+          return termosPesquisa.every(
+            (termo) => nome.includes(termo) || codigos.includes(termo)
+          );
         });
+
         if (produtosCategoria.length > 0) {
           resultado = [...resultado, ...produtosCategoria];
         }
