@@ -113,7 +113,7 @@
                 </svg>
                 <div>
                   <p>Todos os dias</p>
-                  <p>7 às 20 horas</p>
+                  <p>7 às 17 horas</p>
                 </div>
               </div>
             </div>
