@@ -239,6 +239,7 @@ export default {
       immediate: true,
       handler() {
         this.id = this.$route.params.id as string;
+        this.pegaMarcasCategoria();
         this.filtroSubcategoria = this.$route.params
           .filtroSubcategoria as string;
 
@@ -266,6 +267,9 @@ export default {
   },
 
   methods: {
+    async pegaMarcasCategoria() {
+      this.marcas = await this.SProdutos.separaMarcasDeUmaCategoria(this.id);
+    },
     filtraProdutosMarca(marca: string) {
       fechaDrawer();
       this.marcaAFiltrar = marca;
@@ -409,7 +413,7 @@ export default {
     }, 250);
   },
   async created() {
-    this.marcas = await this.SProdutos.getMarcas();
+    this.pegaMarcasCategoria();
     this.subcategorias = await this.SProdutos.getSubcategorias();
     Object.keys(this.subcategorias).forEach((key) => {
       this.subcategorias[key] = this.subcategorias[key].filter(
