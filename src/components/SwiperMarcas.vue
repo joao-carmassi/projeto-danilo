@@ -8,19 +8,19 @@
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     :effect="'fade'"
     :fadeEffect="{ crossFade: true }"
-    class="swiper-container relative swiperMarcas swiper-marcas"
+    class="relative swiper-container swiper-marcas swiperMarcas"
     data-teste="a"
   >
     <swiper-slide class="my-auto">
       <img
         loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 2.webp"
+        class="w-full lg:hidden md:h-[26rem] object-center object-cover"
+        src="/img/home/mobile2.webp"
         alt="Imagem produto"
       />
       <img
         loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
+        class="h-[26rem] hidden lg:block md:h-[26rem] object-center object-cover"
         src="/img/home/web.webp"
         alt="Imagem produto"
       />
@@ -28,27 +28,27 @@
     <swiper-slide class="my-auto">
       <img
         loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 1.webp"
+        class="w-full lg:hidden md:h-[26rem] object-center object-cover"
+        src="/img/home/mobile1.webp"
         alt="Imagem produto"
       />
       <img
         loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
-        src="/img/home/web 2.webp"
+        class="h-[26rem] hidden lg:block md:h-[26rem] object-center object-cover"
+        src="/img/home/web2.webp"
         alt="Imagem produto"
       />
     </swiper-slide>
     <swiper-slide class="my-auto">
       <img
         loading="lazy"
-        class="md:h-[26rem] lg:hidden w-full object-cover object-center"
-        src="/img/home/mobile 3.webp"
+        class="w-full lg:hidden md:h-[26rem] object-center object-cover"
+        src="/img/home/mobile3.webp"
         alt="Imagem produto"
       />
       <img
         loading="lazy"
-        class="hidden md:h-[26rem] lg:block object-cover object-center h-[26rem]"
+        class="h-[26rem] hidden lg:block md:h-[26rem] object-center object-cover"
         src="/img/home/web3.webp"
         alt="Imagem produto"
       />
