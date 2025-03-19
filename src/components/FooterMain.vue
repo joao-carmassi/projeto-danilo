@@ -1,18 +1,18 @@
 <template>
   <footer>
-    <hr class="md:hidden w-full border-secondary" />
+    <hr class="border-secondary w-full md:hidden" />
     <div
-      class="grid border-secondary md:border px-5 md:rounded-lg md:mb-16 grid-cols-none md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-10 py-8 w-10/12 mx-auto justify-between items-center"
+      class="grid grid-cols-none border-secondary justify-between w-10/12 gap-x-5 gap-y-10 items-center lg:gap-x-10 lg:grid-cols-4 md:border md:grid-cols-2 md:mb-16 md:rounded-lg mx-auto px-5 py-8"
     >
       <div class="col-span-full">
-        <p class="font-semibold text-center mb-5">Selos de segurança</p>
+        <p class="text-center font-semibold mb-5">Selos de segurança</p>
         <img class="mx-auto" src="/img/footer/seguro.webp" loading="lazy" />
       </div>
-      <div class="flex-1 flex flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-4">
         <button @click="sobeTopoTela">
           <img
             class="w-20 mx-auto"
-            src="/img/favicon.png"
+            src="/img/favicon.webp"
             alt="Logo Loja do vrf"
             loading="lazy"
           />
@@ -33,7 +33,7 @@
             <a
               target="_blank"
               href="mailto:vendas@lojadovrf.com.br"
-              class="rounded-t-md flex flex-col font-semibold tracking-wide rounded-none items-center gap-0 p-2"
+              class="flex flex-col p-2 rounded-none rounded-t-md font-semibold gap-0 items-center tracking-wide"
             >
               <span class="block font-normal">Envie uma Mensagem:</span>
               <div class="flex gap-1 items-center">
@@ -63,12 +63,12 @@
             <a
               target="_blank"
               href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
-              class="flex flex-col font-semibold tracking-wide rounded-none items-center gap-0 p-2"
+              class="flex flex-col p-2 rounded-none font-semibold gap-0 items-center tracking-wide"
             >
               <span class="block font-normal">Compre por telefone:</span>
               <div class="flex gap-1 items-center">
                 <svg
-                  class="inline text-green-500"
+                  class="text-green-500 inline"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -91,7 +91,7 @@
           <hr />
           <li>
             <div
-              class="rounded-b-md hover:bg-base-100 flex flex-col font-semibold tracking-wide rounded-none items-center gap-0 p-2"
+              class="flex flex-col p-2 rounded-b-md rounded-none font-semibold gap-0 hover:bg-base-100 items-center tracking-wide"
             >
               <span class="block font-normal">Horário de atendimento:</span>
               <div class="flex gap-1 items-center">
@@ -121,8 +121,8 @@
         </ul>
       </div>
       <div class="flex-1">
-        <p class="font-semibold text-center mb-5">Meios de envio</p>
-        <div class="grid gap-5 grid-cols-2 place-items-center">
+        <p class="text-center font-semibold mb-5">Meios de envio</p>
+        <div class="grid grid-cols-2 gap-5 place-items-center">
           <img
             class="w-36"
             src="/img/footer/correiosEnvio.webp"
@@ -141,15 +141,15 @@
           />
         </div>
       </div>
-      <div class="flex flex-col flex-1">
+      <div class="flex flex-1 flex-col">
         <div>
-          <p class="font-semibold text-center mb-5">Formas de pagamento</p>
+          <p class="text-center font-semibold mb-5">Formas de pagamento</p>
           <img class="mx-auto" src="/img/footer/pix-logo.webp" loading="lazy" />
         </div>
         <img class="p-5" src="/img/footer/pagamentos.webp" loading="lazy" />
       </div>
     </div>
-    <div class="footer bg-base-200 text-base-content p-5 px-10">
+    <div class="bg-base-200 p-5 text-base-content footer px-10">
       <aside>
         <p>Copyright © 2024 - Todos os direitos reservados a Loja do VRF</p>
       </aside>
