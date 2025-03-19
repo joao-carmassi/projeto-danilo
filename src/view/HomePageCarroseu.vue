@@ -282,17 +282,17 @@
           to="/produtos/DIAGNÓSTICO"
           class="duration-200 md:hover:scale-105"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 1.webp" />
+          <img src="/img/home/MINI BANNER 1.webp" />
         </RouterLink>
         <a
           target="_blank"
           href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
           class="duration-200 md:hover:scale-105"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 2.webp" />
+          <img src="/img/home/MINI BANNER 2.webp" />
         </a>
         <RouterLink to="/manuais" class="duration-200 md:hover:scale-105">
-          <img loading="lazy" src="/img/home/MINI BANNER 3.webp" />
+          <img src="/img/home/MINI BANNER 3.webp" />
         </RouterLink>
       </div>
     </section>

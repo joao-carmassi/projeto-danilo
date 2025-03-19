@@ -13,13 +13,11 @@
   >
     <swiper-slide class="my-auto">
       <img
-        loading="lazy"
         class="w-full lg:hidden md:h-[26rem] object-center object-cover"
         src="/img/home/mobile2.webp"
         alt="Imagem produto"
       />
       <img
-        loading="lazy"
         class="h-[26rem] hidden lg:block md:h-[26rem] object-center object-cover"
         src="/img/home/web.webp"
         alt="Imagem produto"

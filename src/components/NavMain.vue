@@ -1,32 +1,30 @@
 <template>
   <div class="w-full">
-    <nav id="navBar" class="w-full gap-2 shadow-sm px-5 py-2.5 bg-secondary">
-      <div class="flex gap-3 flex-col">
-        <div class="flex items-center justify-center h-12">
+    <nav id="navBar" class="bg-secondary shadow-sm w-full gap-2 px-5 py-2.5">
+      <div class="flex flex-col gap-3">
+        <div class="flex h-12 justify-center items-center">
           <div class="h-full aspect-square">
             <div
-              class="itens-pc md:w-44 lg:w-64 hidden h-full lg:flex justify-center items-center"
+              class="h-full justify-center hidden items-center itens-pc lg:flex lg:w-64 md:w-44"
             >
               <RouterLink
                 @click="vaiParaHome"
-                class="flex gap-3 w-fit lg:justify-center items-center"
+                class="flex w-fit gap-3 items-center lg:justify-center"
                 to="/"
               >
                 <img
-                  loading="lazy"
-                  class="md:h-6 lg:h-9 rounded-full border-2 p-1.5 border-primary aspect-square"
-                  src="/img/simbolo.png"
+                  class="border-2 border-primary p-1.5 rounded-full aspect-square lg:h-9 md:h-6"
+                  src="/img/simbolo.webp"
                   alt="Iconi VRF"
                 />
                 <img
-                  loading="lazy"
                   class="md:w-4/6"
-                  src="/img/logo.png"
+                  src="/img/logo.webp"
                   alt="Lodo loja do VRF"
                 />
               </RouterLink>
             </div>
-            <div class="Itens-Celular block lg:hidden">
+            <div class="block Itens-Celular lg:hidden">
               <input
                 id="my-drawer-3"
                 type="checkbox"
@@ -35,13 +33,13 @@
               <label
                 for="my-drawer-3"
                 aria-label="open sidebar"
-                class="btn border border-white btn-square z-40 lg:hidden btn-ghost"
+                class="btn btn-ghost btn-square border border-white lg:hidden z-40"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="inline-block h-6 w-6 stroke-current text-white"
+                  class="h-6 text-white w-6 inline-block stroke-current"
                 >
                   <path
                     stroke-linecap="round"
@@ -58,23 +56,23 @@
                   class="drawer-overlay"
                 ></label>
                 <div
-                  class="menu p-0 join join-vertical w-72 max-w-[66%] bg-base-200 min-h-full overflow-auto"
+                  class="bg-base-200 p-0 w-72 join join-vertical max-w-[66%] menu min-h-full overflow-auto"
                 >
                   <div
-                    class="h-5 bg-secondary text-white flex items-center justify-end px-5"
+                    class="flex bg-secondary h-5 justify-end text-white items-center px-5"
                   ></div>
                   <div
-                    class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
+                    class="collapse collapse-arrow border border-gray-400 rounded-none join-item"
                   >
                     <input
-                      class="px-4 min-h-14"
+                      class="min-h-14 px-4"
                       type="checkbox"
                       name="my-accordion-4"
                     />
                     <div
-                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                      class="collapse-title flex text-md text-secondary font-semibold items-center min-h-14 px-4"
                     >
-                      <div class="flex items-center justify-center gap-1">
+                      <div class="flex justify-center gap-1 items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -95,12 +93,12 @@
                       </div>
                     </div>
                     <div class="collapse-content flex flex-col">
-                      <ul class="menu rounded-md p-0 dropdown-content z-[1]">
+                      <ul class="dropdown-content p-0 rounded-md menu z-[1]">
                         <li>
                           <a
                             target="_blank"
                             href="mailto:vendas@lojadovrf.com.br"
-                            class="rounded-t-md flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                            class="flex flex-col p-2 rounded-none rounded-t-md font-semibold gap-0 items-start tracking-wide"
                           >
                             <span class="block font-normal"
                               >Envie uma Mensagem:</span
@@ -132,14 +130,14 @@
                           <a
                             target="_blank"
                             href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
-                            class="flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                            class="flex flex-col p-2 rounded-none font-semibold gap-0 items-start tracking-wide"
                           >
                             <span class="block font-normal"
                               >Compre por telefone:</span
                             >
                             <div class="flex gap-1 items-start">
                               <svg
-                                class="inline text-green-500"
+                                class="text-green-500 inline"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 fill="none"
@@ -164,7 +162,7 @@
                         <hr />
                         <li>
                           <div
-                            class="rounded-b-md hover:bg-base-200 flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                            class="flex flex-col p-2 rounded-b-md rounded-none font-semibold gap-0 hover:bg-base-200 items-start tracking-wide"
                           >
                             <span class="block font-normal"
                               >Horário de atendimento:</span
@@ -206,23 +204,23 @@
                         tipo === 'VALVULA DE EXPANSÃO' ||
                         tipo === 'SENSOR'
                       "
-                      class="collapse rounded-none collapse-arrow join-item border-gray-400 border"
+                      class="collapse collapse-arrow border border-gray-400 rounded-none join-item"
                     >
                       <input
-                        class="px-4 min-h-14"
+                        class="min-h-14 px-4"
                         type="checkbox"
                         name="my-accordion-4"
                       />
                       <div
-                        class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                        class="collapse-title flex text-md text-secondary font-semibold items-center min-h-14 px-4"
                       >
                         {{ tipo }}
                       </div>
-                      <div class="collapse-content pl-3 flex flex-col">
+                      <div class="collapse-content flex flex-col pl-3">
                         <RouterLink
                           @click="fecharAside"
                           :class="{ 'border-t': index !== 0 }"
-                          class="py-2.5 pl-2 border-gray-300 font-semibold"
+                          class="border-gray-300 font-semibold pl-2 py-2.5"
                           :to="`/produtos/${tipo}/${subcategoria}`"
                           v-for="(subcategoria, index) in subcategorias[tipo]"
                           :key="index"
@@ -233,10 +231,10 @@
                     </div>
                     <div
                       v-else
-                      class="collapse rounded-none join-item border-gray-400 border"
+                      class="collapse border border-gray-400 rounded-none join-item"
                     >
                       <div
-                        class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold text-secondary"
+                        class="collapse-title flex text-md text-secondary font-semibold items-center min-h-14 px-4"
                       >
                         <RouterLink
                           @click="fecharAside"
@@ -247,10 +245,10 @@
                     </div>
                   </div>
                   <div
-                    class="collapse rounded-none join-item border-gray-400 border"
+                    class="collapse border border-gray-400 rounded-none join-item"
                   >
                     <div
-                      class="collapse-title flex items-center px-4 min-h-14 text-md font-semibold"
+                      class="collapse-title flex text-md font-semibold items-center min-h-14 px-4"
                     >
                       <RouterLink
                         @click="fecharAside"
@@ -263,7 +261,7 @@
                           src="/img/nav/logoManualCelular.webp"
                         />
                         <p
-                          class="text-secondary group-hover:underline font-semibold"
+                          class="text-secondary font-semibold group-hover:underline"
                         >
                           MANUAIS
                         </p>
@@ -277,17 +275,17 @@
           <div class="h-full lg:hidden">
             <button
               @click="vaiParaHome"
-              class="h-full w-2/3 flex justify-center items-center gap-2 lg:hidden py-2.5 mx-auto"
+              class="flex h-full justify-center w-2/3 gap-2 items-center lg:hidden mx-auto py-2.5"
             >
               <img
                 loading="lazy"
                 class="w-full"
-                src="/img/logo.png"
+                src="/img/logo.webp"
                 alt="Loja Do VRF"
               />
             </button>
           </div>
-          <div class="hidden lg:flex gap-1 items-center">
+          <div class="gap-1 hidden items-center lg:flex">
             <div id="idMenuBotao" class="hidden">
               <input
                 hidden=""
@@ -303,16 +301,16 @@
               </label>
             </div>
             <InputPesquisaProduto
-              class="md:w-72 ml-3 lg:w-[25rem] xl:w-[38rem]"
+              class="lg:w-[25rem] md:w-72 ml-3 xl:w-[38rem]"
             />
             <details
               id="detailsTelefone"
-              class="hidden md:block dropdown dropdown-end m-0"
+              class="dropdown dropdown-end m-0 hidden md:block"
             >
               <summary
-                class="btn bg-secondary hover:bg-secondary border-none py-1.5 h-fit btn-sm text-left pl-1 m-1"
+                class="btn btn-sm bg-secondary border-none h-fit m-1 text-left hover:bg-secondary pl-1 py-1.5"
               >
-                <div class="flex items-center justify-center gap-1">
+                <div class="flex justify-center gap-1 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -327,21 +325,21 @@
                   >
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
                   </svg>
-                  <p class="text-white leading-4 font-normal text-nowrap">
-                    Contato<span class="font-semibold block"
+                  <p class="text-nowrap text-white font-normal leading-4">
+                    Contato<span class="block font-semibold"
                       >(11) 96918-9244</span
                     >
                   </p>
                 </div>
               </summary>
               <ul
-                class="menu w-56 rounded-md p-0 dropdown-content bg-base-100 z-[1] shadow"
+                class="dropdown-content bg-base-100 p-0 rounded-md shadow w-56 menu z-[1]"
               >
                 <li>
                   <a
                     target="_blank"
                     href="mailto:vendas@lojadovrf.com.br"
-                    class="rounded-t-md flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                    class="flex flex-col p-2 rounded-none rounded-t-md font-semibold gap-0 items-start tracking-wide"
                   >
                     <span class="block font-normal">Envie uma Mensagem:</span>
                     <div class="flex gap-1 items-start">
@@ -371,12 +369,12 @@
                   <a
                     target="_blank"
                     href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
-                    class="flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                    class="flex flex-col p-2 rounded-none font-semibold gap-0 items-start tracking-wide"
                   >
                     <span class="block font-normal">Compre por telefone:</span>
                     <div class="flex gap-1 items-start">
                       <svg
-                        class="inline text-green-500"
+                        class="text-green-500 inline"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -401,7 +399,7 @@
                 <hr />
                 <li>
                   <div
-                    class="rounded-b-md hover:bg-base-100 flex flex-col font-semibold tracking-wide rounded-none items-start gap-0 p-2"
+                    class="flex flex-col p-2 rounded-b-md rounded-none font-semibold gap-0 hover:bg-base-100 items-start tracking-wide"
                   >
                     <span class="block font-normal"
                       >Horário de atendimento:</span
@@ -435,11 +433,11 @@
               </ul>
             </details>
           </div>
-          <div class="flex items-center lg:gap-5 justify-end">
+          <div class="flex justify-end items-center lg:gap-5">
             <RouterLink to="/manuais" class="flex group items-center">
-              <img loading="lazy" class="h-8" src="/img/nav/manuais.webp" />
+              <img class="h-8" src="/img/nav/manuais.webp" />
               <p
-                class="text-white hidden leading-5 lg:block group-hover:underline"
+                class="text-white group-hover:underline hidden leading-5 lg:block"
               >
                 Manuais <span class="block font-semibold">Técnico</span>
               </p>
@@ -447,7 +445,7 @@
             <div class="dropdown dropdown-end">
               <RouterLink
                 to="/carrinho"
-                class="btn border-white focus:border-secondary border-2 btn-ghost btn-circle"
+                class="btn btn-circle btn-ghost border-2 border-white focus:border-secondary"
               >
                 <div class="indicator">
                   <svg
@@ -472,7 +470,7 @@
             </div>
           </div>
         </div>
-        <div class="lg:hidden h-12 flex items-center justify-center w-full">
+        <div class="flex h-12 justify-center w-full items-center lg:hidden">
           <InputPesquisaProduto class="w-full" />
         </div>
       </div>
