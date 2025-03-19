@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://lojadovrf.com.br/sitemap.xml
