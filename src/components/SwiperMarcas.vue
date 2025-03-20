@@ -16,7 +16,6 @@
         <source media="(min-width: 1024px)" srcset="/img/home/web.webp" />
         <source media="(min-width: 768px)" srcset="/img/home/mobile2.webp" />
         <img
-          loading="lazy"
           class="w-full md:h-[26rem] object-center object-cover"
           src="/img/home/mobile2.webp"
           alt="Imagem produto"

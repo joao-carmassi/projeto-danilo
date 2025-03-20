@@ -393,7 +393,6 @@
           <source media="(min-width: 768px)" srcset="/img/home/final.webp" />
           <source media="(max-width: 767px)" srcset="/img/home/mobile4.webp" />
           <img
-            loading="lazy"
             class="w-full md:rounded-lg"
             src="/img/home/mobile4.webp"
             alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
