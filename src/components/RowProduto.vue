@@ -6,7 +6,7 @@
   >
     <img
       loading="lazy"
-      :src="`./img/produtos/${produto.id}.png`"
+      :src="`./img/produtos/${produto.id}.webp`"
       alt="Imagem do produto"
       class="block object-contain aspect-square border border-secondary rounded-sm"
       :class="img"

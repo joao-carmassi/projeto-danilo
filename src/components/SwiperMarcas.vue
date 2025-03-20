@@ -8,41 +8,41 @@
     :modules="[Navigation, Pagination, Autoplay, EffectFade]"
     :effect="'fade'"
     :fadeEffect="{ crossFade: true }"
-    class="swiper-container relative swiperMarcas swiper-marcas"
+    class="relative swiper-container swiper-marcas swiperMarcas"
     data-teste="a"
   >
     <swiper-slide class="my-auto">
       <picture>
-        <source media="(min-width: 1024px)" srcset="/img/home/web.png" />
-        <source media="(min-width: 768px)" srcset="/img/home/mobile2.png" />
+        <source media="(min-width: 1024px)" srcset="/img/home/web.webp" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile2.webp" />
         <img
           loading="lazy"
-          class="w-full md:h-[26rem] object-cover object-center"
-          src="/img/home/mobile2.png"
+          class="w-full md:h-[26rem] object-center object-cover"
+          src="/img/home/mobile2.webp"
           alt="Imagem produto"
         />
       </picture>
     </swiper-slide>
     <swiper-slide class="my-auto">
       <picture>
-        <source media="(min-width: 1024px)" srcset="/img/home/web2.png" />
-        <source media="(min-width: 768px)" srcset="/img/home/mobile1.png" />
+        <source media="(min-width: 1024px)" srcset="/img/home/web2.webp" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile1.webp" />
         <img
           loading="lazy"
-          class="w-full md:h-[26rem] object-cover object-center"
-          src="/img/home/mobile1.png"
+          class="w-full md:h-[26rem] object-center object-cover"
+          src="/img/home/mobile1.webp"
           alt="Imagem produto"
         />
       </picture>
     </swiper-slide>
     <swiper-slide class="my-auto">
       <picture>
-        <source media="(min-width: 1024px)" srcset="/img/home/web3.png" />
-        <source media="(min-width: 768px)" srcset="/img/home/mobile3.png" />
+        <source media="(min-width: 1024px)" srcset="/img/home/web3.webp" />
+        <source media="(min-width: 768px)" srcset="/img/home/mobile3.webp" />
         <img
           loading="lazy"
-          class="w-full md:h-[26rem] object-cover object-center"
-          src="/img/home/mobile3.png"
+          class="w-full md:h-[26rem] object-center object-cover"
+          src="/img/home/mobile3.webp"
           alt="Imagem produto"
         />
       </picture>

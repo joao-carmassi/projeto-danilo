@@ -5,15 +5,15 @@
     </section> -->
     <section>
       <SwiperMarcas />
-      <hr class="border-secondary hidden md:block border-b-2" />
+      <hr class="border-b-2 border-secondary hidden md:block" />
     </section>
     <section>
-      <div class="md:mb-10 border-b border-gray-300">
+      <div class="border-b border-gray-300 md:mb-10">
         <div
-          class="hidden lg:w-10/12 mx-auto md:grid grid-cols-2 gap-y-3 lg:grid-cols-4 py-3"
+          class="grid-cols-2 gap-y-3 hidden lg:grid-cols-4 lg:w-10/12 md:grid mx-auto py-3"
         >
           <div
-            class="flex justify-center items-center border-r h-full border-gray-400 w-full gap-2"
+            class="flex border-gray-400 border-r h-full justify-center w-full gap-2 items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,14 +32,14 @@
               ></path>
             </svg>
             <p>
-              <span class="block text-secondary font-semibold"
+              <span class="text-secondary block font-semibold"
                 >ESPECIALISTAS TÉCNICOS</span
               >
               EM VRF
             </p>
           </div>
           <div
-            class="flex justify-center items-center lg:border-r h-full border-gray-400 w-full gap-2"
+            class="flex border-gray-400 h-full justify-center w-full gap-2 items-center lg:border-r"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,13 +60,13 @@
               ></path>
             </svg>
             <p>
-              <span class="block text-secondary font-semibold">ENTREGAMOS</span>
+              <span class="text-secondary block font-semibold">ENTREGAMOS</span>
               EM TODO BRASIL
             </p>
           </div>
-          <hr class="lg:hidden col-span-full border-gray-400" />
+          <hr class="col-span-full border-gray-400 lg:hidden" />
           <div
-            class="flex justify-center items-center border-r h-full border-gray-400 w-full gap-2"
+            class="flex border-gray-400 border-r h-full justify-center w-full gap-2 items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,14 +100,14 @@
               </g>
             </svg>
             <p>
-              <span class="block text-secondary font-semibold"
+              <span class="text-secondary block font-semibold"
                 >7% DE DESCONTO</span
               >
               NO PIX
             </p>
           </div>
           <div
-            class="flex justify-center border-gray-400 items-center h-full w-full gap-2"
+            class="flex border-gray-400 h-full justify-center w-full gap-2 items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@
               <path d="M11 15l2 0"></path>
             </svg>
             <p>
-              <span class="block text-secondary font-semibold"
+              <span class="text-secondary block font-semibold"
                 >PARCELAMOS EM 12X</span
               >
               NO CARTÃO DE CRÉDITO
@@ -142,10 +142,10 @@
             :loop="true"
             :autoplay="{ delay: 3000 }"
             :modules="[Navigation, Autoplay, Virtual]"
-            class="swiper-container w-full"
+            class="w-full swiper-container"
           >
             <swiper-slide>
-              <div class="flex justify-center items-center h-full w-full gap-2">
+              <div class="flex h-full justify-center w-full gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -163,7 +163,7 @@
                   ></path>
                 </svg>
                 <p>
-                  <span class="block text-secondary font-semibold"
+                  <span class="text-secondary block font-semibold"
                     >ESPECIALISTA TÉCNICOS</span
                   >
                   EM VRF
@@ -172,7 +172,7 @@
             </swiper-slide>
             <swiper-slide>
               <div
-                class="flex justify-center items-center lg:border-r h-full w-full gap-2"
+                class="flex h-full justify-center w-full gap-2 items-center lg:border-r"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@
                   ></path>
                 </svg>
                 <p>
-                  <span class="block text-secondary font-semibold"
+                  <span class="text-secondary block font-semibold"
                     >ENTREGAMOS</span
                   >
                   EM TODO BRASIL
@@ -201,7 +201,7 @@
               </div></swiper-slide
             >
             <swiper-slide>
-              <div class="flex justify-center items-center h-full w-full gap-2">
+              <div class="flex h-full justify-center w-full gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -234,7 +234,7 @@
                   </g>
                 </svg>
                 <p>
-                  <span class="block text-secondary font-semibold"
+                  <span class="text-secondary block font-semibold"
                     >7% DE DESCONTO</span
                   >
                   NO PIX
@@ -243,7 +243,7 @@
             >
             <swiper-slide
               ><div
-                class="flex justify-center items-center h-full w-full gap-2"
+                class="flex h-full justify-center w-full gap-2 items-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +265,7 @@
                   <path d="M11 15l2 0"></path>
                 </svg>
                 <p>
-                  <span class="block text-secondary font-semibold"
+                  <span class="text-secondary block font-semibold"
                     >PARCELAMOS EM 12X</span
                   >
                   NO CARTÃO DE CRÉDITO
@@ -276,23 +276,23 @@
         </div>
       </div>
       <div
-        class="flex px-0 md:gap-5 items-center flex-row md:w-11/12 lg:w-10/12 mx-auto"
+        class="flex flex-row items-center lg:w-10/12 md:gap-5 md:w-11/12 mx-auto px-0"
       >
         <RouterLink
           to="/produtos/DIAGNÓSTICO"
-          class="md:hover:scale-105 duration-200"
+          class="duration-200 md:hover:scale-105"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 1.png" />
+          <img src="/img/home/MINI BANNER 1.webp" />
         </RouterLink>
         <a
           target="_blank"
           href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
-          class="md:hover:scale-105 duration-200"
+          class="duration-200 md:hover:scale-105"
         >
-          <img loading="lazy" src="/img/home/MINI BANNER 2.png" />
+          <img src="/img/home/MINI BANNER 2.webp" />
         </a>
-        <RouterLink to="/manuais" class="md:hover:scale-105 duration-200">
-          <img loading="lazy" src="/img/home/MINI BANNER 3.png" />
+        <RouterLink to="/manuais" class="duration-200 md:hover:scale-105">
+          <img src="/img/home/MINI BANNER 3.webp" />
         </RouterLink>
       </div>
     </section>
@@ -303,18 +303,18 @@
     >
       <hr class="border-secondary block md:hidden" />
       <div
-        class="md:w-11/12 px-5 md:px-0 lg:w-10/12 md:relative mx-auto rounded-lg md:bg-[#d4f1fd] md:my-16"
+        class="rounded-lg lg:w-10/12 md:bg-[#d4f1fd] md:my-16 md:px-0 md:relative md:w-11/12 mx-auto px-5"
       >
-        <div class="grid place-items-center pb-3 md:pb-4 pt-5 md:pt-5">
+        <div class="grid md:pb-4 md:pt-5 pb-3 place-items-center pt-5">
           <TituloCategoria :categoria="categoria" />
-          <hr class="border-secondary border-b-2 rounded-xl w-16 mx-auto" />
+          <hr class="border-b-2 border-secondary rounded-xl w-16 mx-auto" />
         </div>
         <swiper
           :slides-per-view="2"
           :loop="true"
           :navigation="true"
           :modules="[Navigation, Virtual]"
-          class="swiper-container md:w-11/12 lg:w-10/12"
+          class="lg:w-10/12 md:w-11/12 swiper-container"
           :space-between="40"
           :breakpoints="{
             640: { slidesPerView: 2 },
@@ -336,21 +336,21 @@
     </section>
     <section>
       <div
-        class="md:w-11/12 md:mt-10 bg-[#d4f1fd] md:rounded-lg py-10 lg:w-10/12 mx-auto"
+        class="bg-[#d4f1fd] lg:w-10/12 md:mt-10 md:rounded-lg md:w-11/12 mx-auto py-10"
       >
         <div class="text-center">
-          <h2 class="font-semibold text-secondary text-3xl">
+          <h2 class="text-3xl text-secondary font-semibold">
             Escolha pela marca
           </h2>
         </div>
-        <div class="relative w-10/12 md:w-full mx-auto pt-5">
+        <div class="w-10/12 md:w-full mx-auto pt-5 relative">
           <swiper
             :slides-per-view="2"
             :loop="true"
             :navigation="true"
             :modules="[Navigation, Virtual]"
             :virtual="true"
-            class="swiper-container swiper-marcas w-10/12"
+            class="w-10/12 swiper-container swiper-marcas"
             :breakpoints="{
               640: { slidesPerView: 2 },
               768: { slidesPerView: 3 },
@@ -364,16 +364,16 @@
               :virtualIndex="index"
             >
               <div
-                class="md:hover:scale-105 flex justify-center items-center duration-200 py-2"
+                class="flex justify-center duration-200 items-center md:hover:scale-105 py-2"
               >
                 <RouterLink
-                  class="bg-white shadow-md relative w-8/12 rounded-full aspect-square"
+                  class="bg-white rounded-full shadow-md w-8/12 aspect-square relative"
                   :to="`/marca/${marca}`"
                 >
                   <img
                     loading="lazy"
-                    class="absolute w-10/12 right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2"
-                    :src="`./img/marcas/${marca}.png`"
+                    class="w-10/12 -translate-y-1/2 absolute right-1/2 top-1/2 translate-x-1/2"
+                    :src="`./img/marcas/${marca}.webp`"
                     :alt="`Logo ${marca}`"
                   />
                 </RouterLink>
@@ -385,17 +385,17 @@
     </section>
     <section class="grid place-items-center">
       <a
-        class="w-full md:w-11/12 lg:w-10/12 mx-auto md:my-16 grid place-items-center"
+        class="grid w-full lg:w-10/12 md:my-16 md:w-11/12 mx-auto place-items-center"
         target="_blank"
         href="https://wa.me/5511969189244?text=Olá!%0AVim através do site da loja do VRF e preciso de peças."
       >
         <picture class="w-full">
-          <source media="(min-width: 768px)" srcset="/img/home/final.png" />
-          <source media="(max-width: 767px)" srcset="/img/home/mobile4.png" />
+          <source media="(min-width: 768px)" srcset="/img/home/final.webp" />
+          <source media="(max-width: 767px)" srcset="/img/home/mobile4.webp" />
           <img
             loading="lazy"
             class="w-full md:rounded-lg"
-            src="/img/home/mobile4.png"
+            src="/img/home/mobile4.webp"
             alt="NÃO ENCONTROU O QUE PROCURAVA? CLIQUE AQUI PARA FALAR COM UM DOS NOSSOS CONSULTORES"
           />
         </picture>
@@ -403,16 +403,16 @@
     </section>
 
     <section
-      class="md:pb-16 w-full flex justify-center items-center gap-5 flex-col"
+      class="flex flex-col justify-center w-full gap-5 items-center md:pb-16"
     >
       <div
-        class="w-full md:rounded-lg flex flex-col py-14 md:py-20 justify-center items-center bg-secondary md:w-11/12 lg:w-10/12 mx-auto"
+        class="flex flex-col bg-secondary justify-center w-full items-center lg:w-10/12 md:py-20 md:rounded-lg md:w-11/12 mx-auto py-14"
       >
         <p class="text-lg text-white">Estamos no instagram:</p>
         <a
           href="https://www.instagram.com/lojadovrf/"
           target="_blank"
-          class="text-4xl md:text-5xl font-semibold text-white"
+          class="text-4xl text-white font-semibold md:text-5xl"
           >@lojadovrf</a
         >
       </div>

@@ -18,7 +18,7 @@
             <img
               loading="lazy"
               class="w-32"
-              :src="`./img/marcas/${marca}.png`"
+              :src="`./img/marcas/${marca}.webp`"
               :alt="`Logo ${marca}`"
             />
           </div>
@@ -26,7 +26,7 @@
             <img
               loading="lazy"
               class="aspect-square mx-auto object-cover rounded-md"
-              :src="`./manuais/icons/${marca}.png`"
+              :src="`./manuais/icons/${marca}.webp`"
               :alt="`Capa marca`"
             />
           </div>

@@ -2,23 +2,27 @@
   <section>
     <section>
       <div class="w-full block">
-        <img loading="lazy" class="w-full" :src="`./manuais/capas/${id}.jpg`" />
+        <img
+          loading="lazy"
+          class="w-full"
+          :src="`./manuais/capas/${id}.webp`"
+        />
       </div>
-      <div class="flex items-center justify-center py-10">
+      <div class="flex justify-center items-center py-10">
         <h2
           id="tituloManuais"
-          class="text-3xl uppercase border-b-2 border-gray-500 pb-1 font-semibold text-secondary"
+          class="border-b-2 border-gray-500 text-3xl text-secondary font-semibold pb-1 uppercase"
         >
           Manuais Técnicos
         </h2>
       </div>
       <div
-        class="flex mx-auto flex-col-reverse gap-y-5 py-5 pb-16 md:flex-row items-start justify-center"
+        class="flex flex-col-reverse justify-center gap-y-5 items-start md:flex-row mx-auto pb-16 py-5"
       >
-        <div class="w-full flex gap-x-5 flex-col justify-center items-start">
-          <div class="w-full grid place-items-center">
+        <div class="flex flex-col justify-center w-full gap-x-5 items-start">
+          <div class="grid w-full place-items-center">
             <h2
-              class="bg-secondary text-white text-xl px-5 rounded-md md:py-2 font-semibold text-center"
+              class="bg-secondary rounded-md text-center text-white text-xl font-semibold md:py-2 px-5"
             >
               Unidade Condensadora
             </h2>
@@ -30,7 +34,7 @@
               v-for="(manual, index) in condensadoraManual"
               :key="index"
             >
-              <li class="my-2 break-all link-hover font-semibold">
+              <li class="break-all font-semibold link-hover my-2">
                 <a
                   :href="`./manuais/pdfs/${manual.documento}.pdf`"
                   :download="`${manual.documento}.pdf`"
@@ -44,12 +48,12 @@
             </div>
           </ul>
         </div>
-        <hr class="border-secondary md:hidden w-full" />
-        <div class="divider divider-secondary divider-horizontal"></div>
-        <div class="w-full flex flex-col justify-center items-start">
-          <div class="w-full grid place-items-center">
+        <hr class="border-secondary w-full md:hidden" />
+        <div class="divider divider-horizontal divider-secondary"></div>
+        <div class="flex flex-col justify-center w-full items-start">
+          <div class="grid w-full place-items-center">
             <h2
-              class="bg-secondary text-white text-xl px-5 rounded-md py-2 font-semibold text-center"
+              class="bg-secondary rounded-md text-center text-white text-xl font-semibold px-5 py-2"
             >
               Unidade Evaporadora
             </h2>
@@ -61,7 +65,7 @@
               v-for="(manual, index) in evaporadoraManual"
               :key="index"
             >
-              <li class="my-2 break-all link-hover font-semibold">
+              <li class="break-all font-semibold link-hover my-2">
                 <a
                   :href="`./manuais/pdfs/${manual.documento}.pdf`"
                   :download="`${manual.documento}`"

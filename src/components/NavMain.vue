@@ -13,15 +13,13 @@
                 to="/"
               >
                 <img
-                  loading="lazy"
                   class="border-2 border-primary p-1.5 rounded-full aspect-square lg:h-9 md:h-6"
-                  src="/img/simbolo.png"
+                  src="/img/simbolo.webp"
                   alt="Iconi VRF"
                 />
                 <img
-                  loading="lazy"
                   class="md:w-4/6"
-                  src="/img/logo.png"
+                  src="/img/logo.webp"
                   alt="Lodo loja do VRF"
                 />
               </RouterLink>
@@ -260,7 +258,7 @@
                         <img
                           loading="lazy"
                           class="h-7"
-                          src="/img/nav/logoManualCelular.png"
+                          src="/img/nav/logoManualCelular.webp"
                         />
                         <p
                           class="text-secondary font-semibold group-hover:underline"
@@ -282,7 +280,7 @@
               <img
                 loading="lazy"
                 class="w-full"
-                src="/img/logo.png"
+                src="/img/logo.webp"
                 alt="Loja Do VRF"
               />
             </button>
@@ -437,7 +435,7 @@
           </div>
           <div class="flex justify-end items-center lg:gap-5">
             <RouterLink to="/manuais" class="flex group items-center">
-              <img loading="lazy" class="h-8" src="/img/nav/manuais.png" />
+              <img class="h-8" src="/img/nav/manuais.webp" />
               <p
                 class="text-white group-hover:underline hidden leading-5 lg:block"
               >

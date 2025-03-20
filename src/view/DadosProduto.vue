@@ -19,7 +19,7 @@
                 <img
                   loading="lazy"
                   class="rounded-md aspect-square"
-                  :src="`./img/produtos/${produto.id}.png`"
+                  :src="`./img/produtos/${produto.id}.webp`"
                   alt="Imagem do produto"
                 />
               </button>
@@ -28,7 +28,7 @@
           <div>
             <img
               loading="lazy"
-              :src="outraImagens || `./img/produtos/${produto.id}.png`"
+              :src="outraImagens || `./img/produtos/${produto.id}.webp`"
               class="w-[50rem] rounded-xl object-contain aspect-square"
               alt="Imagem do produto"
             />
@@ -39,7 +39,7 @@
             <img
               loading="lazy"
               class="w-28"
-              :src="`./img/marcas/${produto.marca}.png`"
+              :src="`./img/marcas/${produto.marca}.webp`"
               :alt="`Logo marca ${produto.marca}`"
             />
           </RouterLink>
@@ -97,18 +97,18 @@
               <img
                 loading="lazy"
                 class="w-32"
-                src="/img/footer/correiosEnvio.png"
+                src="/img/footer/correiosEnvio.webp"
               />
-              <img loading="lazy" class="w-28" src="/img/footer/loggi.png" />
+              <img loading="lazy" class="w-28" src="/img/footer/loggi.webp" />
               <img
                 loading="lazy"
                 class="w-28"
-                src="/img/footer/Azul_Cargo_Express_logo.png"
+                src="/img/footer/Azul_Cargo_Express_logo.webp"
               />
               <img
                 loading="lazy"
                 class="w-28"
-                src="/img/footer/LATAM_Cargo_logo.svg.png"
+                src="/img/footer/LATAM_Cargo_logo.svg.webp"
               />
             </div>
           </div>
@@ -217,7 +217,7 @@ export default {
       window.scrollTo(0, 0);
     },
     trocaImage(img: string | number) {
-      this.outraImagens = `./img/produtos/${img}.png`;
+      this.outraImagens = `./img/produtos/${img}.webp`;
     },
   },
   computed: {
