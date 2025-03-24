@@ -100,14 +100,15 @@ export default {
     condensadoraManual() {
       return (
         this.pdfs[this.id]?.filter(
-          (manual) => manual.tipo === "Condensadora"
+          (manual) => manual.tipo.toLocaleLowerCase() === "condensadora"
         ) || []
       );
     },
     evaporadoraManual() {
       return (
-        this.pdfs[this.id]?.filter((manual) => manual.tipo === "Evaporadora") ||
-        []
+        this.pdfs[this.id]?.filter(
+          (manual) => manual.tipo.toLocaleLowerCase() === "evaporadora"
+        ) || []
       );
     },
   },
