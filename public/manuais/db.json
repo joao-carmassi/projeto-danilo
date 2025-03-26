@@ -15,7 +15,7 @@
     {
       "marca": "MIDEA",
       "modelo": "ATOM",
-      "tipo": "Condensadora",
+      "tipo": "CONDENSADORA",
       "documento": "Manual de Projeto - Atom"
     },
     {
@@ -151,7 +151,7 @@
       "documento": "Manual de Serviços - MMY"
     },
     {
-      "marca": "MIDEA",
+      "marca": "TOSHIBA",
       "modelo": "MMY",
       "tipo": "CONDENSADORA",
       "documento": "Manual de Serviços e Peças - MMY"
