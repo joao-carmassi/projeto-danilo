@@ -1,39 +1,66 @@
 import HomePageCarroseu from "@/view/HomePageCarroseu.vue";
 import NotFound from "@/view/NotFound.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
     path: "/",
+    name: "Home",
     component: HomePageCarroseu,
+    meta: { title: "Loja do VRF - Home" },
   },
   {
     path: "/produto/:id",
-    component: () => import("@/view/DadosProduto.vue"),
+    name: "Produto",
+    component: () =>
+      import(/* webpackChunkName: "produto" */ "@/view/DadosProduto.vue"),
+    meta: { title: "Detalhes do Produto" },
   },
   {
     path: "/produtos/:id",
-    component: () => import("@/view/MostraProdutos.vue"),
+    name: "Produtos",
+    component: () =>
+      import(/* webpackChunkName: "produtos" */ "@/view/MostraProdutos.vue"),
+    meta: { title: "Lista de Produtos" },
   },
   {
     path: "/produtos/:id/:filtroSubcategoria",
-    component: () => import("@/view/MostraProdutos.vue"),
+    name: "ProdutosFiltrados",
+    component: () =>
+      import(
+        /* webpackChunkName: "produtos-filtrados" */ "@/view/MostraProdutos.vue"
+      ),
+    meta: { title: "Produtos Filtrados" },
   },
   {
     path: "/carrinho",
-    component: () => import("@/view/CarrinhoPage.vue"),
+    name: "Carrinho",
+    component: () =>
+      import(/* webpackChunkName: "carrinho" */ "@/view/CarrinhoPage.vue"),
+    meta: { title: "Carrinho de Compras" },
   },
   {
     path: "/marca/:id",
-    component: () => import("@/view/MostraMarca.vue"),
+    name: "Marca",
+    component: () =>
+      import(/* webpackChunkName: "marca" */ "@/view/MostraMarca.vue"),
+    meta: { title: "Marca de Produtos" },
   },
   {
     path: "/manuais",
-    component: () => import("@/view/PaginaManuais.vue"),
+    name: "Manuais",
+    component: () =>
+      import(/* webpackChunkName: "manuais" */ "@/view/PaginaManuais.vue"),
+    meta: { title: "Manuais Técnicos" },
   },
   {
     path: "/manuais/:id",
-    component: () => import("@/view/MostraManualMarca.vue"),
+    name: "ManualMarca",
+    component: () =>
+      import(
+        /* webpackChunkName: "manual-marca" */ "@/view/MostraManualMarca.vue"
+      ),
+    meta: { title: "Manual da Marca" },
   },
   {
     path: "/:pathMatch(.*)*",
@@ -41,18 +68,28 @@ const routes = [
   },
   {
     path: "/404",
+    name: "NotFound",
     component: NotFound,
+    meta: { title: "Página Não Encontrada" },
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
+// Verifica e atualiza o título da página dinamicamente
+router.afterEach((to) => {
+  if (typeof to.meta.title === "string") {
+    document.title = to.meta.title;
+  }
+});
+
+// Lógica aprimorada para rotas específicas
 router.beforeEach((to, from, next) => {
-  if (window.location.href.includes("/img/produtos/")) {
-    window.location.href = "/";
+  if (to.path.startsWith("/img/produtos")) {
+    next("/");
   } else {
     next();
   }

@@ -80,7 +80,7 @@
           <RouterLink
             :to="`/produtos/${item.nome}`"
             class="flex justify-center font-semibold gap-1 items-center tracking-wide"
-            ><img class="h-5 inline" :src="`./img/nav/${item.foto}.webp`" />
+            ><img class="h-5 inline" :src="`/img/nav/${item.foto}.webp`" />
             {{ item.foto }}</RouterLink
           >
           <div

@@ -373,7 +373,7 @@
                   <img
                     loading="lazy"
                     class="w-10/12 -translate-y-1/2 absolute right-1/2 top-1/2 translate-x-1/2"
-                    :src="`./img/marcas/${marca}.webp`"
+                    :src="`/img/marcas/${marca}.webp`"
                     :alt="`Logo ${marca}`"
                   />
                 </RouterLink>

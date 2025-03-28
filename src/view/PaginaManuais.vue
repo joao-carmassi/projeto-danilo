@@ -18,7 +18,7 @@
             <img
               loading="lazy"
               class="w-32"
-              :src="`./img/marcas/${marca}.webp`"
+              :src="`/img/marcas/${marca}.webp`"
               :alt="`Logo ${marca}`"
             />
           </div>
