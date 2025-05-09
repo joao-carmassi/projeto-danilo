@@ -11,7 +11,6 @@ const sliceAbreNav = createSlice({
       return { ...state, block: !state.block };
     },
     mudaHidden: (state, action) => {
-      console.log(action.payload);
       return { ...state, hidden: action.payload };
     },
   },
