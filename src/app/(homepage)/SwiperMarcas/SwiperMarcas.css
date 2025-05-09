@@ -1,0 +1,52 @@
+.swiper-marcas {
+  --swiper-navigation-size: 25px !important;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 0px !important;
+  position: relative !important;
+}
+
+.swiperNav {
+  --swiper-navigation-size: 35px !important;
+  --swiper-navigation-sides-offset: 0px !important;
+}
+
+.swiperPaginaProduto {
+  --swiper-navigation-size: 35px !important;
+  --swiper-navigation-sides-offset: 0px !important;
+}
+
+.swiper-container {
+  --swiper-navigation-size: 50px;
+  --swiper-navigation-color: #080069;
+  --swiper-pagination-color: white;
+  --swiper-navigation-sides-offset: 50px;
+  position: unset;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+  }
+}
+
+.swiperMarcas {
+  & .swiper-button-prev,
+  & .swiper-button-next {
+    background-color: white;
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    opacity: 0;
+  }
+
+  &:hover .swiper-button-prev,
+  &:hover .swiper-button-next {
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-container {
+    --swiper-navigation-size: 40px;
+    --swiper-navigation-sides-offset: 3px;
+  }
+}

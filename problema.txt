@@ -1,0 +1,91 @@
+quando eu acesso a url 
+
+http://localhost:3000/produtos/DIAGNÓSTICO/
+
+minha pagina funciona normal.
+
+Quando eu faco o build qualquer pagina funciona tbm, menos quando eu acesso 
+
+https://joao-carmassi.github.io/teste/produtos/DIAGNÓSTICO  
+
+a pagina da um erro:
+
+GET https://joao-carmassi.github.io/teste/produtos/DIAGN%C3%93STICO 404 (Not Found)
+ 
+.env:
+
+NEXT_PUBLIC_WEBSITE_BASE_PATH=/teste
+
+next.config.ts:
+ 
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  trailingSlash: true,
+  output: 'export',
+  assetPrefix: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
+  basePath: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
+  images: {
+    loader: 'custom',
+    imageSizes: [128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+  },
+  transpilePackages: ['next-image-export-optimizer'],
+  env: {
+    nextImageExportOptimizer_imageFolderPath: 'public/assets/img',
+    nextImageExportOptimizer_exportFolderPath: 'out',
+    nextImageExportOptimizer_quality: '80',
+    nextImageExportOptimizer_storePicturesInWEBP: 'true',
+    nextImageExportOptimizer_generateAndUseBlurImages: 'false',
+    nextImageExportOptimizer_exportFolderName: 'nextImageExportOptimizer',
+    nextImageExportOptimizer_remoteImageCacheTTL: '0',
+  },
+};
+
+export default nextConfig;
+
+meu componente do next:
+
+import getProdutos from '@/utils/getProdutos';
+import ContainerProdutos from './ContainerProdutos';
+
+interface Props {
+params: Promise<{
+categoria: string;
+}>;
+}
+
+const PaginaProdutos = async ({ params }: Props) => {
+const { categoria } = await params;
+const categoriaArrumada = decodeURIComponent(categoria);
+
+const todasMarcas = getProdutos.separaMarcasDeUmProduto();
+const marcas = todasMarcas\[categoriaArrumada] ?? \[];
+
+const todasCategorias = getProdutos.agrupaSubcategoriasPorCategoria();
+const categorias = todasCategorias\[categoriaArrumada] ?? \[];
+
+const todosOsProdutosPorCategoria = getProdutos.porCategoria();
+const produtos = todosOsProdutosPorCategoria\[categoriaArrumada] ?? \[];
+
+const path = process.env.NEXT\_PUBLIC\_WEBSITE\_BASE\_PATH;
+
+return ( <main>
+\<ContainerProdutos
+categoria={categoriaArrumada}
+path={path as string}
+produtos={produtos}
+categorias={categorias}
+marcas={marcas}
+/> </main>
+);
+};
+
+export async function generateStaticParams() {
+const listas = getProdutos.agrupaSubcategoriasPorCategoria();
+return Object.keys(listas).map((cat) => ({
+categoria: encodeURIComponent(cat),
+}));
+}
+
+export default PaginaProdutos;

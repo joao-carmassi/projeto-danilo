@@ -1,43 +1,42 @@
-import tailwindcssAnimate from "tailwindcss-animate";
-import daisyui from "daisyui";
+import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,vue}"],
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {},
       fontFamily: {
-        montSerrat: ["Montserrat", "sans-serif"],
+        montSerrat: ['Montserrat', 'sans-serif'],
       },
       animation: {},
       keyframes: {},
     },
   },
-  plugins: [tailwindcssAnimate, daisyui],
+  plugins: [daisyui],
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#009fe3",
+          primary: '#009fe3',
 
-          secondary: "#080069",
+          secondary: '#080069',
 
-          accent: "#00ffff",
+          accent: '#00ffff',
 
-          neutral: "gray",
+          neutral: 'gray',
 
-          "base-100": "white",
-          "base-200": "#f5f5f5",
-          "base-300": "#ebebeb",
+          'base-100': 'white',
+          'base-200': '#f5f5f5',
+          'base-300': '#ebebeb',
 
-          info: "#0000ff",
+          info: '#0000ff',
 
-          success: "green",
+          success: 'green',
 
-          warning: "yellow",
+          warning: 'yellow',
 
-          error: "red",
+          error: 'red',
         },
       },
     ],

@@ -1,6 +1,6 @@
-import type { IProduto } from "./IProdutos";
+import type { IProdutos } from './IProdutos';
 
 export default interface ICarrinho {
-  produto: IProduto;
+  produto: IProdutos;
   quantidade: number;
 }

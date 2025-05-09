@@ -1,8 +1,4 @@
 export interface IProdutos {
-  [key: string]: IProduto[];
-}
-
-export interface IProduto {
   sku: string;
   nome: string;
   marca: string;
@@ -10,6 +6,6 @@ export interface IProduto {
   subcategoria: string;
   prazo: string;
   descricao: string;
-  id: string | number;
+  id: string;
   codigos: string[];
 }
