@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
-  // output: 'export',
+  output: 'export',
   assetPrefix: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
   basePath: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
   images: {
