@@ -1,5 +1,5 @@
 {
-  "framework": "null",
+  "framework": null,
   "buildCommand": "next build && next-image-export-optimizer",
   "outputDirectory": "out"
 }
