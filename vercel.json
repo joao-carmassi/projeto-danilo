@@ -1,5 +1,5 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm run build && npm run export",
+  "buildCommand": "next build && next-image-export-optimizer",
   "outputDirectory": "out"
 }
