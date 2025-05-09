@@ -2,12 +2,12 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
-  output: 'export',
+  // output: 'export',
   assetPrefix: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
   basePath: process.env.NEXT_PUBLIC_WEBSITE_BASE_PATH,
   images: {
     loader: 'custom',
-    imageSizes: [128, 256, 384,],
+    imageSizes: [128, 256, 384],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
   transpilePackages: ['next-image-export-optimizer'],
