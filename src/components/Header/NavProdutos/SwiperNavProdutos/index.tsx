@@ -15,7 +15,7 @@ interface Props {
 }
 
 // ajuste aqui quantos produtos por marca ;-;
-const ITEMS_PER_BRAND = 10;
+const ITEMS_PER_BRAND = 5;
 
 // função simples de shuffle
 function shuffleArray<T>(arr: T[]): T[] {
