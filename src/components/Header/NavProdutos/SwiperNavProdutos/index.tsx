@@ -54,7 +54,7 @@ const SwiperNavProdutos = ({ produtos }: Props) => {
     >
       {produtosFiltrados.map((produto, idx) => (
         <SwiperSlide key={produto.sku + idx} virtualIndex={idx}>
-          <div className="mx-2 border border-gray-400">
+          <div className="mx-2">
             <CardProduto produto={produto} />
           </div>
         </SwiperSlide>
