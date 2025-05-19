@@ -272,8 +272,8 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
             </div>
           </div>
           <div className="h-full lg:hidden">
-            <button
-              // @click="vaiParaHome"
+            <Link
+              href="/"
               className="flex h-full justify-center w-2/3 gap-2 items-center lg:hidden mx-auto py-2.5"
             >
               <img
@@ -281,7 +281,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                 src={`${path}/assets/img/logo.webp`}
                 alt="Loja Do VRF"
               />
-            </button>
+            </Link>
           </div>
           <div className="gap-1 hidden items-center lg:flex">
             <InputEscondeNav />
