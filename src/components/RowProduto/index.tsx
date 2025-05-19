@@ -47,7 +47,10 @@ const RowProduto = ({ produto, imgSize, pesquisa = '' }: Props) => {
 
   return (
     <Link
-      href={`/produto/${slugify(produto.sku, { lower: true, strict: true })}`}
+      href={`/produto/${slugify(`${produto.nome}-${produto.sku}`, {
+        lower: true,
+        strict: true,
+      })}`}
       className="flex items-center gap-3"
     >
       <ExportedImage
