@@ -12,6 +12,15 @@ import slugify from 'slugify';
 const Home = () => {
   const marcas = filtraMarcas();
   const produtosMarcas = getProdutos.porMarca();
+  console.log(
+    'PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130 >',
+    slugify('PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130', {
+      strict: true,
+      lower: true,
+    }),
+    '>',
+    encodeURIComponent('PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130')
+  );
 
   return (
     <main className="bg-base-100">

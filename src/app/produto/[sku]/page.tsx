@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
 
   const todosProdutos = getProdutos.todos();
   const produto = todosProdutos.find(
-    (p) => slugify(p.sku, { strict: true, lower: true }) === sku
+    (p) => slugify(`${p.nome}-${p.sku}`, { strict: true, lower: true }) === sku
   ) as IProdutos;
 
   return {
@@ -37,7 +37,8 @@ async function PaginaProduto({ params }: Props) {
   const rawSku = sku;
   const todosProdutos = getProdutos.todos();
   const produto = todosProdutos.find(
-    (p) => slugify(p.sku, { strict: true, lower: true }) === rawSku
+    (p) =>
+      slugify(`${p.nome}-${p.sku}`, { strict: true, lower: true }) === rawSku
   ) as IProdutos;
 
   if (!produto) {
@@ -233,7 +234,10 @@ async function PaginaProduto({ params }: Props) {
 
 export async function generateStaticParams() {
   return produtos.data.map((produto) => ({
-    sku: slugify(produto.sku, { strict: true, lower: true }),
+    sku: slugify(`${produto.nome}-${produto.sku}`, {
+      strict: true,
+      lower: true,
+    }),
   }));
 }
 

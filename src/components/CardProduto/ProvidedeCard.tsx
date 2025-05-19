@@ -34,7 +34,10 @@ const ProvidedCardProduto = ({ produto }: Props) => {
     >
       <Link
         className="flex flex-col gap-2"
-        href={`/produto/${slugify(produto.sku, { strict: true, lower: true })}`}
+        href={`/produto/${slugify(`${produto.nome}-${produto.sku}`, {
+          strict: true,
+          lower: true,
+        })}`}
       >
         <ExportedImage
           placeholder="empty"
