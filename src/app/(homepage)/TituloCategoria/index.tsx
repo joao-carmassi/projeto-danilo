@@ -8,7 +8,10 @@ interface Props {
 
 const TituloMarca = ({ categoria }: Props) => {
   return (
-    <Link href={`/marca/${slugify(categoria, { strict: true, lower: true })}`}>
+    <Link
+      prefetch={false}
+      href={`/marca/${slugify(categoria, { strict: true, lower: true })}`}
+    >
       <ExportedImage
         placeholder="empty"
         width={240}

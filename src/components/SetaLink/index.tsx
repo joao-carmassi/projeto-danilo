@@ -5,7 +5,7 @@ const SetaLink = ({ nome }: { nome: string }) => {
     <div className="breadcrumbs pb-0 text-sm">
       <ul>
         <li>
-          <Link className="" href="/">
+          <Link prefetch={false} className="" href="/">
             Pagina inicial
           </Link>
         </li>

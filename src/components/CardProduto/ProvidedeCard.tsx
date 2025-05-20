@@ -33,8 +33,12 @@ const ProvidedCardProduto = ({ produto }: Props) => {
       className="bg-base-100 group relative border border-gray-200 lg:hover:scale-105 duration-300 shadow-lg [--tw-shadow-color:rgba(17, 17, 17, 0.9)] flex flex-col gap-2 rounded-lg p-3 md:p-4 my-5"
     >
       <Link
+        prefetch={false}
         className="flex flex-col gap-2"
-        href={`/produto/${slugify(produto.sku, { strict: true, lower: true })}`}
+        href={`/produto/${slugify(`${produto.nome}-${produto.sku}`, {
+          strict: true,
+          lower: true,
+        })}`}
       >
         <ExportedImage
           placeholder="empty"

@@ -41,6 +41,7 @@ const SwiperMarcas = ({ marcas }: SwiperMarcasProps) => {
         <SwiperSlide key={marca} className="my-auto">
           <div className="flex h-fit justify-center duration-200 items-center md:hover:scale-105 py-2">
             <Link
+              prefetch={false}
               className="bg-white rounded-full shadow-md w-8/12 aspect-square relative"
               href={`/marca/${slugify(marca, { strict: true, lower: true })}`}
             >

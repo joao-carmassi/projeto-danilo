@@ -12,6 +12,15 @@ import slugify from 'slugify';
 const Home = () => {
   const marcas = filtraMarcas();
   const produtosMarcas = getProdutos.porMarca();
+  console.log(
+    'PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130 >',
+    slugify('PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130', {
+      strict: true,
+      lower: true,
+    }),
+    '>',
+    encodeURIComponent('PLACA DE CONTROLE PRINCIPAL EB0808_2055291+1898130')
+  );
 
   return (
     <main className="bg-base-100">
@@ -139,6 +148,7 @@ const Home = () => {
         </div>
         <div className="flex flex-row justify-between items-center lg:w-10/12 md:gap-5 md:w-11/12 mx-auto px-0">
           <Link
+            prefetch={false}
             aria-label="Link Pagina DIAGNÓSTICO"
             href={`/produtos/${slugify('DIAGNÓSTICO', {
               lower: true,
@@ -171,6 +181,7 @@ const Home = () => {
             />
           </a>
           <Link
+            prefetch={false}
             aria-label="Link pagina manuais"
             href="/manuais"
             className="duration-200 md:hover:scale-105"

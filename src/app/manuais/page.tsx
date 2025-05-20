@@ -26,6 +26,7 @@ const PaginaManuais = () => {
             className="shadow-lg md:hover:scale-105 duration-300 [--tw-shadow-color:rgba(17, 17, 17, 0.9)] p-5 rounded-lg border border-gray-200"
           >
             <Link
+              prefetch={false}
               className="flex flex-col gap-4"
               href={`/manuais/${slugify(marca, {
                 lower: true,
