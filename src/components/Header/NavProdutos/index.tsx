@@ -109,6 +109,7 @@ const NavProdutos = ({ categorias, subcategorias }: Props) => {
                     {categorias.map((categoria) => (
                       <li className="categoriaNav" key={categoria}>
                         <Link
+                          prefetch={false}
                           href={`/produtos/${slugify(categoria, {
                             strict: true,
                             lower: true,
@@ -125,6 +126,7 @@ const NavProdutos = ({ categorias, subcategorias }: Props) => {
                           {subcategorias[categoria].length > 0 && (
                             <div className="h-[26rem] shadow-md px-5 py-3">
                               <Link
+                                prefetch={false}
                                 href={`/produtos/${slugify(categoria, {
                                   strict: true,
                                   lower: true,
@@ -139,6 +141,7 @@ const NavProdutos = ({ categorias, subcategorias }: Props) => {
                                   (subcategoria, index) => (
                                     <li className="w-fit" key={index}>
                                       <Link
+                                        prefetch={false}
                                         href={`/produtos/${slugify(categoria, {
                                           strict: true,
                                           lower: true,
@@ -163,6 +166,7 @@ const NavProdutos = ({ categorias, subcategorias }: Props) => {
             {itemsNav.map((item) => (
               <li className="categoriaNav" key={item.nome}>
                 <Link
+                  prefetch={false}
                   href={`/produtos/${slugify(item.nome, {
                     strict: true,
                     lower: true,
@@ -188,6 +192,7 @@ const NavProdutos = ({ categorias, subcategorias }: Props) => {
                             key={subcategoria}
                           >
                             <Link
+                              prefetch={false}
                               href={`/produtos/${slugify(item.nome, {
                                 lower: true,
                                 strict: true,

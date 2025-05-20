@@ -148,6 +148,7 @@ const Home = () => {
         </div>
         <div className="flex flex-row justify-between items-center lg:w-10/12 md:gap-5 md:w-11/12 mx-auto px-0">
           <Link
+            prefetch={false}
             aria-label="Link Pagina DIAGNÓSTICO"
             href={`/produtos/${slugify('DIAGNÓSTICO', {
               lower: true,
@@ -180,6 +181,7 @@ const Home = () => {
             />
           </a>
           <Link
+            prefetch={false}
             aria-label="Link pagina manuais"
             href="/manuais"
             className="duration-200 md:hover:scale-105"

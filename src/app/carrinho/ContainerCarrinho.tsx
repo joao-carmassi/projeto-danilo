@@ -39,7 +39,9 @@ const ContainerCarrinho = () => {
       <div className="breadcrumbs px-4 pt-5 text-sm">
         <ul>
           <li>
-            <Link href="/">Pagina inicial</Link>
+            <Link prefetch={false} href="/">
+              Pagina inicial
+            </Link>
           </li>
           <li>carrinho</li>
         </ul>
@@ -85,6 +87,7 @@ const ContainerCarrinho = () => {
                     Iniciar consulta
                   </button>
                   <Link
+                    prefetch={false}
                     className="w-full btn btn-success btn-outline text-base-100"
                     href="/"
                   >
@@ -97,7 +100,11 @@ const ContainerCarrinho = () => {
         ) : (
           <div className="flex flex-col px-5 gap-3 items-center">
             <p className="text-lg italic">O carrinho de compras está vazio.</p>
-            <Link href="/" className="btn btn-secondary text-base-100">
+            <Link
+              prefetch={false}
+              href="/"
+              className="btn btn-secondary text-base-100"
+            >
               Ver produtos
             </Link>
           </div>

@@ -115,6 +115,7 @@ async function PaginaProduto({ params }: Props) {
             </div>
             <div className="flex col-span-5 md:col-span-2 flex-col gap-4">
               <Link
+                prefetch={false}
                 href={`/marca/${slugify(produto.marca, {
                   strict: true,
                   lower: true,

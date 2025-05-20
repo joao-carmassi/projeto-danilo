@@ -47,6 +47,7 @@ const RowProduto = ({ produto, imgSize, pesquisa = '' }: Props) => {
 
   return (
     <Link
+      prefetch={false}
       href={`/produto/${slugify(`${produto.nome}-${produto.sku}`, {
         lower: true,
         strict: true,

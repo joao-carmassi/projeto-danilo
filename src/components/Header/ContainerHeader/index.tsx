@@ -34,6 +34,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
           <div className="h-full aspect-square">
             <div className="h-full justify-center hidden items-center itens-pc lg:flex lg:w-64 md:w-44">
               <Link
+                prefetch={false}
                 className="flex w-fit gap-3 items-center lg:justify-center"
                 href="/"
               >
@@ -219,6 +220,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                             <div className="collapse-content flex flex-col pl-3">
                               {subcategorias[categoria].map((subcategoria) => (
                                 <Link
+                                  prefetch={false}
                                   key={subcategoria}
                                   className="border-gray-300 font-semibold pl-2 py-2.5"
                                   href={`/produtos/${slugify(categoria, {
@@ -239,6 +241,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                         >
                           <div className="collapse-title flex text-md text-secondary font-semibold items-center min-h-14 px-4">
                             <Link
+                              prefetch={false}
                               href={`/produtos/${slugify(categoria, {
                                 strict: true,
                                 lower: true,
@@ -254,6 +257,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                   <div className="collapse border border-gray-400 rounded-none join-item">
                     <div className="collapse-title flex text-md font-semibold items-center min-h-14 px-4">
                       <Link
+                        prefetch={false}
                         href="/manuais"
                         className="flex gap-2 group items-center"
                       >
@@ -273,6 +277,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
           </div>
           <div className="h-full lg:hidden">
             <Link
+              prefetch={false}
               href="/"
               className="flex h-full justify-center w-2/3 gap-2 items-center lg:hidden mx-auto py-2.5"
             >
@@ -408,7 +413,11 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
             </details>
           </div>
           <div className="flex justify-end items-center lg:gap-5">
-            <Link href="/manuais" className="flex group items-center">
+            <Link
+              prefetch={false}
+              href="/manuais"
+              className="flex group items-center"
+            >
               <img
                 className="h-8"
                 src={`${path}/assets/img/nav/manuais.webp`}
@@ -419,6 +428,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
             </Link>
             <div className="dropdown dropdown-end">
               <Link
+                prefetch={false}
                 href="/carrinho"
                 className="btn btn-circle btn-ghost border-2 border-white focus:border-secondary"
               >
