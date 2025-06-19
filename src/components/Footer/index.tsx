@@ -62,7 +62,7 @@ const Footer = () => {
             <li>
               <a
                 target="_blank"
-                href="mailto:contato@lojadovrf.com.br"
+                href="mailto:vendas@lojadovrf.com.br"
                 className="flex flex-col p-2 rounded-none rounded-t-md font-semibold gap-0 items-center tracking-wide"
               >
                 <span className="block font-normal">Envie uma Mensagem:</span>
@@ -82,7 +82,7 @@ const Footer = () => {
                     <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
                     <path d="M3 7l9 6l9 -6"></path>
                   </svg>
-                  <p>contato@lojadovrf.com.br</p>
+                  <p>vendas@lojadovrf.com.br</p>
                 </div>
               </a>
             </li>
