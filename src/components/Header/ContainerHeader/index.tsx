@@ -293,11 +293,8 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
             <div className="lg:w-[25rem] md:w-72 ml-3 xl:w-[38rem]">
               <InputPesquisa />
             </div>
-            <details
-              id="detailsTelefone"
-              className="dropdown dropdown-end m-0 hidden md:block"
-            >
-              <summary className="btn btn-sm bg-secondary border-none h-fit m-1 text-left hover:bg-secondary pl-1 py-1.5">
+            <div className="relative group hidden md:block">
+              <button className="btn btn-sm bg-secondary border-none h-fit m-1 text-left hover:bg-secondary pl-1 py-1.5">
                 <div className="flex justify-center gap-1 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -318,8 +315,8 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                     <span className="block font-semibold">(11) 96918-9244</span>
                   </p>
                 </div>
-              </summary>
-              <ul className="dropdown-content bg-base-100 p-0 rounded-md shadow w-56 menu z-50">
+              </button>
+              <ul className="absolute hidden group-hover:flex flex-col bg-base-100 p-0 rounded-md shadow w-56 menu z-50">
                 <li>
                   <a
                     target="_blank"
@@ -410,7 +407,7 @@ const ContainerHeader = ({ categorias, subcategorias }: Props) => {
                   </div>
                 </li>
               </ul>
-            </details>
+            </div>
           </div>
           <div className="flex justify-end items-center lg:gap-5">
             <Link
